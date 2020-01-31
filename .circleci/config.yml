@@ -1,9 +1,6 @@
 version: 2.0
 jobs:
   build:
-    branches:
-      only:
-        - master
     docker:
       - image: circleci/node:12.13
 
@@ -13,6 +10,27 @@ jobs:
       - checkout
 
       # Download and cache dependencies
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "package.json" }}
+            # fallback to using the latest cache if no exact match is found
+            - v1-dependencies-
+      - run: yarn install
+      - save_cache:
+          paths:
+            - node_modules
+          key: v1-dependencies-{{ checksum "package.json" }}
+      - run: yarn setup
+      - run: yarn test
+  release:
+    branches:
+      only:
+        - master
+    docker:
+      - image: circleci/node:12.13
+    working_directory: ~/repository
+    steps:
+      - checkout
       - restore_cache:
           keys:
             - v1-dependencies-{{ checksum "package.json" }}
@@ -34,5 +52,54 @@ jobs:
           paths:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
-
+      - run: yarn setup
       - run: yarn run release
+  release-alpha:
+    branches:
+      only:
+        - master
+    docker:
+      - image: circleci/node:12.13
+    working_directory: ~/repository
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "package.json" }}
+            # fallback to using the latest cache if no exact match is found
+            - v1-dependencies-
+      - run:
+          name: Setup Environment
+          command: |
+            echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> ~/.npmrc
+            echo "export GH_TOKEN=$GH_TOKEN" >> $BASH_ENV
+      - run:
+          name: Setup github
+          command: |
+            git config --global user.email $GITHUB_EMAIL
+            git config --global user.name $GITHUB_USER
+
+      - run: yarn install
+      - save_cache:
+          paths:
+            - node_modules
+          key: v1-dependencies-{{ checksum "package.json" }}
+      - run: yarn setup
+      - run: yarn run release-alpha
+workflows:
+  version: 2
+  build-test-and-deploy:
+    branches:
+      only:
+        - master
+    jobs:
+      - build
+      - release:
+          requires:
+            - build
+  build-test-and-deploy-alpha:
+    jobs:
+      - build
+      - release-alpha:
+          requires:
+            - build
