@@ -11,10 +11,8 @@
     "eslint": "beemo eslint .",
     "jest": "beemo jest",
     "prettier": "beemo prettier",
-    "prerelease": "yarn run clean",
-    "prerelease-alpha": "yarn run clean",
-    "release-alpha": "beemo run-script pre-release",
-    "release": "beemo run-script auto-release"
+    "release-alpha": "git reset --hard && beemo run-script pre-release",
+    "release": "git reset --hard && beemo run-script auto-release"
   },
   "repository": {
     "type": "git",
