@@ -1,0 +1,6 @@
+#!/usr/bin/env node
+
+process.env.BEEMO_CONFIG_MODULE = '@rajzik/lumos';
+process.env.BEEMO_MANUAL_URL = 'https://github.com/rajzik/lumos';
+
+require('@beemo/cli');
