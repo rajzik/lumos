@@ -3,14 +3,18 @@
   "name": "lumos-root",
   "version": "0.0.0",
   "scripts": {
-    "prepare": "beemo create-config --silent",
+    "prepare": "beemo create-config eslint prettier",
+    "setup": "tsc --build",
+    "clean": "rimraf packages/*/{lib,*.tsbuildinfo}",
     "build": "beemo typescript --build --reference-workspaces",
     "test": "yarn run build && yarn run jest && yarn run eslint",
     "eslint": "beemo eslint .",
     "jest": "beemo jest",
-    "prettier": "beemo prettier \"./packages/**/*.{ts,js}\"",
-    "prerelease": "yarn run test && yarn run build",
-    "release": "beemo run-script auto-release"
+    "prettier": "beemo prettier",
+    "prerelease": "yarn run clean",
+    "prerelease-alpha": "yarn run clean",
+    "release-alpha": "git reset --hard && beemo run-script pre-release",
+    "release": "git reset --hard && beemo run-script auto-release"
   },
   "repository": {
     "type": "git",
@@ -38,7 +42,8 @@
         "node": true
       },
       "rules": {
-        "import/prefer-default-export": "off"
+        "import/prefer-default-export": "off",
+        "@typescript-eslint/interface-name-prefix": "off"
       },
       "ignore": [
         "*.config.js"
@@ -59,11 +64,14 @@
     "./packages/*"
   ],
   "devDependencies": {
-    "@commitlint/cli": "^8.3.4",
+    "@beemo/core": "^1.1.2",
+    "@beemo/cli": "^1.0.8",
+    "@commitlint/cli": "^8.3.5",
     "@commitlint/config-conventional": "^8.3.4",
     "graphql": "^14.6.0",
     "graphql-tag": "^2.10.1",
     "husky": "^4.2.1",
-    "lerna": "^3.20.2"
+    "lerna": "^3.20.2",
+    "rimraf": "^3.0.1"
   }
 }
