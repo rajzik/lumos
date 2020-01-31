@@ -84,16 +84,16 @@ workflows:
     jobs:
       - build
       - release:
+          requires:
+            - build
           filters:
             branches:
               only:
                 - master
-        requires:
-          - build
       - release-alpha:
-        filters:
-          branches:
-            ignore:
-              - master
-        requires:
-          - build
+          requires:
+            - build
+          filters:
+            branches:
+              ignore:
+                - master
