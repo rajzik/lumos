@@ -30,10 +30,10 @@ repository. Before filing a new issue, try to make sure your problem doesn’t a
 
 ## Requesting new features
 
-If you work for Airbnb, please create an issue and start a discussion about the feature you want
+If you work for Lumos, please create an issue and start a discussion about the feature you want
 added to Lumos, and why.
 
-Otherwise, we will not be accepting new features from individuals outside of Airbnb.
+Otherwise, we will not be accepting new features from individuals outside of Lumos.
 
 ## Releasing and versioning
 
