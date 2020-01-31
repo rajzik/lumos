@@ -15,6 +15,7 @@
     "noEmitOnError": true,
     "noImplicitReturns": true,
     "noUnusedLocals": true,
+    "resolveJsonModule": true,
     "pretty": true,
     "removeComments": false,
     "strict": true,
