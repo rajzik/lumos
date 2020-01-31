@@ -22,7 +22,6 @@ jobs:
           paths:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
-      - run: yarn setup
       - run: yarn test
   release:
     executor: my-executor
@@ -49,7 +48,6 @@ jobs:
           paths:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
-      - run: yarn setup
       - run: yarn run release
   release-alpha:
     executor: my-executor
