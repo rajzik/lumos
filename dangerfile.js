@@ -1,9 +1,9 @@
 /* eslint-disable import/no-extraneous-dependencies */
-import {
+const {
   checkForInvalidLocks,
   checkForConventionalPrefix,
   checkForConventionalSquashCommit,
-} from '@rajzik/config-danger';
+} = require('@rajzik/config-danger');
 
 checkForInvalidLocks();
 checkForConventionalPrefix();
