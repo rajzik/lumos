@@ -55,9 +55,6 @@ jobs:
       - run: yarn setup
       - run: yarn run release
   release-alpha:
-    branches:
-      only:
-        - master
     docker:
       - image: circleci/node:12.13
     working_directory: ~/repository
@@ -89,9 +86,6 @@ jobs:
 workflows:
   version: 2
   build-test-and-deploy:
-    branches:
-      only:
-        - master
     jobs:
       - build
       - release:
