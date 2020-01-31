@@ -3,7 +3,7 @@
   "name": "lumos-root",
   "version": "0.0.0",
   "scripts": {
-    "prepare": "beemo create-config eslint prettier",
+    "prepare": "yarn setup && beemo create-config eslint prettier",
     "setup": "tsc --build",
     "clean": "rimraf packages/*/{lib,*.tsbuildinfo}",
     "build": "beemo typescript --build --reference-workspaces",
@@ -64,8 +64,6 @@
     "./packages/*"
   ],
   "devDependencies": {
-    "@beemo/core": "^1.1.2",
-    "@beemo/cli": "^1.0.8",
     "@commitlint/cli": "^8.3.5",
     "@commitlint/config-conventional": "^8.3.4",
     "graphql": "^14.6.0",
