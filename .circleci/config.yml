@@ -1,14 +1,16 @@
-version: 2.0
-jobs:
-  build:
+version: 2.1
+
+executors:
+  my-executor:
     docker:
       - image: circleci/node:12.13
-
     working_directory: ~/repository
 
+jobs:
+  build:
+    executor: my-executor
     steps:
       - checkout
-
       # Download and cache dependencies
       - restore_cache:
           keys:
@@ -23,9 +25,7 @@ jobs:
       - run: yarn setup
       - run: yarn test
   release:
-    docker:
-      - image: circleci/node:12.13
-    working_directory: ~/repository
+    executor: my-executor
     steps:
       - checkout
       - restore_cache:
@@ -52,9 +52,7 @@ jobs:
       - run: yarn setup
       - run: yarn run release
   release-alpha:
-    docker:
-      - image: circleci/node:12.13
-    working_directory: ~/repository
+    executor: my-executor
     steps:
       - checkout
       - restore_cache:
@@ -83,22 +81,19 @@ jobs:
 workflows:
   version: 2
   build-test-and-deploy:
-    filters:
-      branches:
-        only:
-          - master
     jobs:
       - build
       - release:
+          filters:
+            branches:
+              only:
+                - master
           requires:
             - build
-  build-test-and-deploy-alpha:
-    filters:
-      branches:
-        ignore:
-          - master
-    jobs:
-      - build
       - release-alpha:
+        filters:
+          branches:
+            ignore:
+              - master
           requires:
             - build
