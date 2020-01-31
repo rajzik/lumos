@@ -9,7 +9,8 @@ import { prompt } from 'enquirer';
 import execa from 'execa';
 import fs from 'fs';
 import { BANNER } from '../constants';
-import { installDeps, removeDeps } from '../helpers';
+import { installDeps } from '../helpers/installDeps';
+import { removeDeps } from '../helpers/removeDeps';
 
 interface EjectPrompt {
   monorepo: boolean;
