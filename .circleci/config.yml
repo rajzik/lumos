@@ -88,12 +88,10 @@ workflows:
             - build
           filters:
             branches:
-              only:
-                - master
+              only: master
       - release-alpha:
           requires:
             - build
           filters:
             branches:
-              ignore:
-                - master
+              ignore: master
