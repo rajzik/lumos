@@ -11,7 +11,7 @@
     "eslint": "beemo eslint .",
     "jest": "beemo jest",
     "prettier": "beemo prettier",
-    "release-alpha": "lerna publish --canary --force-publish --yes",
+    "release-alpha": "git reset --hard && lerna publish --canary --force-publish --yes",
     "release": "git reset --hard && beemo run-script auto-release"
   },
   "repository": {
