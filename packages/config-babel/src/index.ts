@@ -50,6 +50,7 @@ export function getConfig({
     case 'development': {
       if (react) {
         plugins.push(
+          'react-refresh/babel',
           '@babel/plugin-transform-react-jsx-source',
           '@babel/plugin-transform-react-jsx-self',
         );

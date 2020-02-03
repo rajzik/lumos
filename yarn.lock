@@ -2676,6 +2676,11 @@
     "@webassemblyjs/wast-parser" "1.8.5"
     "@xtuc/long" "4.2.2"
 
+"@webhotelier/webpack-fast-refresh@^1.2.6":
+  version "1.2.6"
+  resolved "https://registry.yarnpkg.com/@webhotelier/webpack-fast-refresh/-/webpack-fast-refresh-1.2.6.tgz#83c0376052a5d242ccbbde287e59bf51802a5caf"
+  integrity sha512-tRZ5/XOxxce6RA0G/SeCw6nphFxdvQ0Nt5uh6xE35lObM5zS4vM1Y9hOzqDsxg5bu0WSMy6RRycHHZc6Yzgmtg==
+
 "@xtuc/ieee754@^1.2.0":
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/@xtuc/ieee754/-/ieee754-1.2.0.tgz#eef014a3145ae477a1cbc00cd1e552336dceb790"
@@ -10242,6 +10247,11 @@ react-is@^16.8.1:
   version "16.9.0"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.9.0.tgz#21ca9561399aad0ff1a7701c01683e8ca981edcb"
   integrity sha512-tJBzzzIgnnRfEm046qRcURvwQnZVXmuCbscxUO5RWrGTXpon2d4c8mI0D8WE6ydVIm29JiLB6+RslkIvym9Rjw==
+
+react-refresh@^0.7.2:
+  version "0.7.2"
+  resolved "https://registry.yarnpkg.com/react-refresh/-/react-refresh-0.7.2.tgz#f30978d21eb8cac6e2f2fde056a7d04f6844dd50"
+  integrity sha512-u5l7fhAJXecWUJzVxzMRU2Zvw8m4QmDNHlTrT5uo3KBlYBhmChd7syAakBoay1yIiVhx/8Fi7a6v6kQZfsw81Q==
 
 read-cmd-shim@^1.0.1:
   version "1.0.4"

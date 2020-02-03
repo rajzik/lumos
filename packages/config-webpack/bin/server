@@ -7,6 +7,7 @@ const { PORT } = require('../lib/helpers');
 const port = process.env.PORT || PORT;
 const args = process.argv.slice(2);
 
+args.push('--hot');
 // Unix socket
 if (Number.isNaN(parseInt(port, 10))) {
   args.push('--socket', port);
