@@ -1,5 +1,4 @@
 /* eslint-disable no-nested-ternary */
-
 import { WebpackConfig } from '@beemo/driver-webpack';
 import {
   ASSET_EXT_PATTERN,
@@ -13,7 +12,7 @@ import HtmlWebpackPlugin from 'html-webpack-plugin';
 import InlineManifestWebpackPlugin from 'inline-manifest-webpack-plugin';
 import path from 'path';
 import TerserPlugin from 'terser-webpack-plugin';
-import webpack from 'webpack';
+import webpack, { Configuration } from 'webpack';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 import { getESMAliases, getFavIcon, PORT, PROD, ROOT } from './helpers';
 
@@ -36,9 +35,11 @@ export function getConfig({
   entry = 'index.tsx',
   srcFolder,
 }: WebpackOptions): WebpackConfig {
-  const srcPath = path.join(ROOT, srcFolder, entry);
+  const srcPath = path.join(ROOT, srcFolder);
   const publicPath = path.join(ROOT, buildFolder);
-  const entryFiles = [srcPath];
+  let entryFiles: Configuration['entry'] = {
+    core: [srcPath],
+  };
   const plugins = [
     new webpack.NamedChunksPlugin(),
     new webpack.EnvironmentPlugin({
@@ -74,6 +75,7 @@ export function getConfig({
       // Inline the runtime chunk to enable long-term caching
       new InlineManifestWebpackPlugin(),
     );
+    entryFiles = path.join(ROOT, srcFolder, entry);
   } else if (react) {
     plugins.push(
       // Enable hot module replacement
@@ -86,9 +88,7 @@ export function getConfig({
 
     bail: PROD,
 
-    entry: {
-      core: entryFiles,
-    },
+    entry: entryFiles,
 
     plugins,
 
