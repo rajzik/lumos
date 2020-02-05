@@ -28,7 +28,7 @@ export interface WebpackOptions {
 
 export function getConfig({
   analyzeBundle = false,
-  buildFolder = 'public',
+  buildFolder = 'build',
   port = PORT,
   react = false,
   sourceMaps = false,
@@ -49,17 +49,22 @@ export function getConfig({
     new webpack.DefinePlugin({
       __DEV__: JSON.stringify(!PROD),
     }),
-    new HtmlWebpackPlugin({
-      chunks: ['runtime', 'core'],
-      chunksSortMode: 'none',
-      template: `${srcFolder}/index.html`,
-      filename: 'index.html',
-      favicon: getFavIcon(srcPath),
-    }),
-  ];
+  ].filter(Boolean);
 
   if (analyzeBundle) {
     plugins.push(new BundleAnalyzerPlugin());
+  }
+
+  if (!PROD) {
+    plugins.push(
+      new HtmlWebpackPlugin({
+        chunks: ['runtime', 'core'],
+        chunksSortMode: 'none',
+        template: `${srcFolder}/index.html`,
+        filename: 'index.html',
+        favicon: getFavIcon(srcPath),
+      }),
+    );
   }
 
   if (PROD) {
@@ -131,8 +136,8 @@ export function getConfig({
     output: {
       path: publicPath,
       publicPath: '/',
-      filename: PROD ? 'assets/[name].[contenthash].js' : 'assets/[name].js',
-      chunkFilename: PROD ? 'assets/[name].[contenthash].chunk.js' : 'assets/[name].[id].js',
+      filename: PROD ? '[name].js' : 'assets/[name].js',
+      chunkFilename: PROD ? '[name].[contenthash].chunk.js' : 'assets/[name].[id].js',
       sourceMapFilename: '[file].map',
     },
 

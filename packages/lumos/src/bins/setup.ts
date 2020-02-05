@@ -98,7 +98,7 @@ function addScriptsToPackage(response: SetupPrompt) {
   }
 
   if (drivers.includes('webpack')) {
-    scripts.build = 'NODE_ENV=production lumos webpack';
+    scripts.build = 'cross-env NODE_ENV=production lumos webpack';
     scripts.start = 'lumos create-config webpack --silent && lumos-webpack-server';
 
     delete scripts.prebuild;
