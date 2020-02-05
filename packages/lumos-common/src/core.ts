@@ -42,6 +42,7 @@ export interface LumosSettings {
   srcFolder: string;
   testFolder: string;
   typesFolder: string;
+  entryPoint?: string;
 }
 
 export interface LumosPackage extends PackageConfig {
