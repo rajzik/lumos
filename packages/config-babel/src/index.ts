@@ -33,7 +33,6 @@ export function getConfig({
   const plugins: NonNullable<BabelConfig['plugins']> = [
     'babel-plugin-idx',
     ['babel-plugin-transform-dev', { evaluate: false }],
-    'babel-plugin-styled-components',
   ];
 
   // Flags

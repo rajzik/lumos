@@ -36,7 +36,6 @@
     "@rajzik/lumos-common": "^1.4.1",
     "babel-plugin-graphql-tag": "^2.5.0",
     "babel-plugin-idx": "^2.4.0",
-    "babel-plugin-styled-components": "^1.10.7",
     "babel-plugin-transform-dev": "^2.0.1",
     "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
     "babel-plugin-typescript-to-proptypes": "^1.2.1"
