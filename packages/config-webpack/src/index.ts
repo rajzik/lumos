@@ -24,6 +24,7 @@ export interface WebpackOptions {
   react?: boolean;
   sourceMaps?: boolean;
   srcFolder: string;
+  entry?: string;
 }
 
 export function getConfig({
@@ -32,11 +33,12 @@ export function getConfig({
   port = PORT,
   react = false,
   sourceMaps = false,
+  entry = 'index.tsx',
   srcFolder,
 }: WebpackOptions): WebpackConfig {
-  const srcPath = path.join(ROOT, srcFolder);
+  const srcPath = path.join(ROOT, srcFolder, entry);
   const publicPath = path.join(ROOT, buildFolder);
-  const entry = [srcPath];
+  const entryFiles = [srcPath];
   const plugins = [
     new webpack.NamedChunksPlugin(),
     new webpack.EnvironmentPlugin({
@@ -85,7 +87,7 @@ export function getConfig({
     bail: PROD,
 
     entry: {
-      core: entry,
+      core: entryFiles,
     },
 
     plugins,
@@ -135,7 +137,6 @@ export function getConfig({
 
     output: {
       path: publicPath,
-      publicPath: '/',
       filename: PROD ? '[name].js' : 'assets/[name].js',
       chunkFilename: PROD ? '[name].[contenthash].chunk.js' : 'assets/[name].[id].js',
       sourceMapFilename: '[file].map',
