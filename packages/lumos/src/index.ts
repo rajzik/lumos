@@ -162,7 +162,7 @@ export default function cli(tool: Beemo) {
   /**
    * WEBPACK
    * - Set common and custom arguments.
-   * - Handle Bable and TS integration.
+   * - Handle Babel and TS integration.
    */
   tool.onRunDriver.listen((context, driver) => {
     context.addOptions(['--colors', '--progress', '--bail']);
