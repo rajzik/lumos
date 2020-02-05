@@ -1,30 +1,11 @@
 /* eslint-disable no-nested-ternary */
 import { WebpackConfig } from '@beemo/driver-webpack';
-import {
-  ASSET_EXT_PATTERN,
-  EXTS,
-  getCommitHash,
-  GQL_EXT_PATTERN,
-  TJSX_EXT_PATTERN,
-} from '@rajzik/lumos-common';
-import HtmlWebpackPlugin from 'html-webpack-plugin';
-// @ts-ignore Not typed
-import InlineManifestWebpackPlugin from 'inline-manifest-webpack-plugin';
+import { ASSET_EXT_PATTERN, EXTS, GQL_EXT_PATTERN, TJSX_EXT_PATTERN } from '@rajzik/lumos-common';
 import path from 'path';
 import TerserPlugin from 'terser-webpack-plugin';
-import webpack, { Configuration } from 'webpack';
-import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
-import { getESMAliases, getFavIcon, PORT, PROD, ROOT } from './helpers';
-
-export interface WebpackOptions {
-  analyzeBundle?: boolean;
-  buildFolder?: string;
-  port?: string | number;
-  react?: boolean;
-  sourceMaps?: boolean;
-  srcFolder: string;
-  entry?: string;
-}
+import { Configuration } from 'webpack';
+import { getESMAliases, getPlugins, PORT, PROD, ROOT } from './helpers';
+import { WebpackOptions } from './types';
 
 export function getConfig({
   analyzeBundle = false,
@@ -32,55 +13,38 @@ export function getConfig({
   port = PORT,
   react = false,
   sourceMaps = false,
-  entry = 'index.tsx',
   srcFolder,
+  entryPoint,
 }: WebpackOptions): WebpackConfig {
   const srcPath = path.join(ROOT, srcFolder);
   const publicPath = path.join(ROOT, buildFolder);
   let entryFiles: Configuration['entry'] = {
     core: [srcPath],
   };
-  const plugins = [
-    new webpack.NamedChunksPlugin(),
-    new webpack.EnvironmentPlugin({
-      LAZY_LOAD: false,
-      RENDER_ENV: 'browser',
-      SILENCE_POLYGLOT_WARNINGS: true,
-      SENTRY_RELEASE: PROD ? getCommitHash() || 'production' : 'development',
-      AMP: false,
-    }),
-    new webpack.DefinePlugin({
-      __DEV__: JSON.stringify(!PROD),
-    }),
-  ].filter(Boolean);
+  let output: Configuration['output'] = {
+    path: publicPath,
+    publicPath: '/',
+    filename: PROD ? 'assets/[name].[contenthash].js' : 'assets/[name].js',
+    chunkFilename: PROD ? 'assets/[name].[contenthash].chunk.js' : 'assets/[name].[id].js',
+    sourceMapFilename: '[file].map',
+  };
+  const plugins = getPlugins({
+    analyzeBundle,
+    buildFolder,
+    port,
+    react,
+    sourceMaps,
+    entryPoint,
+    srcFolder,
+  });
 
-  if (analyzeBundle) {
-    plugins.push(new BundleAnalyzerPlugin());
-  }
-
-  if (!PROD) {
-    plugins.push(
-      new HtmlWebpackPlugin({
-        chunks: ['runtime', 'core'],
-        chunksSortMode: 'none',
-        template: `${srcFolder}/index.html`,
-        filename: 'index.html',
-        favicon: getFavIcon(srcPath),
-      }),
-    );
-  }
-
-  if (PROD) {
-    plugins.push(
-      // Inline the runtime chunk to enable long-term caching
-      new InlineManifestWebpackPlugin(),
-    );
-    entryFiles = path.join(ROOT, srcFolder, entry);
-  } else if (react) {
-    plugins.push(
-      // Enable hot module replacement
-      new webpack.HotModuleReplacementPlugin(),
-    );
+  if (entryPoint && PROD) {
+    entryFiles = path.join(ROOT, srcFolder, entryPoint);
+    output = {
+      path: publicPath,
+      filename: '[name].js',
+      sourceMapFilename: '[file].map',
+    };
   }
 
   return {
@@ -135,12 +99,7 @@ export function getConfig({
       extensions: ['.wasm', '.mjs', ...EXTS],
     },
 
-    output: {
-      path: publicPath,
-      filename: PROD ? '[name].js' : 'assets/[name].js',
-      chunkFilename: PROD ? '[name].[contenthash].chunk.js' : 'assets/[name].[id].js',
-      sourceMapFilename: '[file].map',
-    },
+    output,
 
     devtool: PROD ? (sourceMaps ? 'source-map' : false) : 'cheap-module-source-map',
 

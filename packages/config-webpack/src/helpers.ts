@@ -1,6 +1,13 @@
 import { Path } from '@beemo/core';
-import { getPackage } from '@rajzik/lumos-common';
+import { getCommitHash, getPackage } from '@rajzik/lumos-common';
 import glob from 'fast-glob';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
+// @ts-ignore
+import InlineManifestWebpackPlugin from 'inline-manifest-webpack-plugin';
+import path from 'path';
+import webpack, { Configuration } from 'webpack';
+import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
+import { WebpackOptions } from './types';
 
 const { WEBPACK_ESM_SCOPES, WEBPACK_ESM_PACKAGES } = process.env;
 
@@ -41,7 +48,7 @@ export function getESMAliases(): AliasMap {
       const esPath = new Path(modulePath, 'es');
       const esmPath = new Path(modulePath, 'esm');
 
-      // airbnb-foo/lib -> airbnb-foo/esm
+      // ori-foo/lib -> ori-foo/esm
       // optimal/lib -> optimal/esm
       if (esPath.exists() || esmPath.exists()) {
         const aliasPath = esPath.exists() ? `${packageName}/es` : `${packageName}/esm`;
@@ -85,4 +92,57 @@ export function getFavIcon(srcPath: string): string {
   }
 
   return favicon;
+}
+
+export function getPlugins({
+  analyzeBundle,
+  srcFolder,
+  entryPoint,
+}: WebpackOptions): Configuration['plugins'] {
+  const srcPath = path.join(ROOT, srcFolder);
+
+  const plugins = [
+    new webpack.NamedChunksPlugin(),
+    new webpack.EnvironmentPlugin({
+      LAZY_LOAD: false,
+      RENDER_ENV: 'browser',
+      SILENCE_POLYGLOT_WARNINGS: true,
+      SENTRY_RELEASE: PROD ? getCommitHash() || 'production' : 'development',
+      AMP: false,
+    }),
+    new webpack.DefinePlugin({
+      __DEV__: JSON.stringify(!PROD),
+    }),
+  ];
+
+  if (analyzeBundle) {
+    plugins.push(new BundleAnalyzerPlugin());
+  }
+
+  if (!PROD) {
+    plugins.push(
+      new HtmlWebpackPlugin({
+        chunks: ['runtime', 'core'],
+        chunksSortMode: 'none',
+        template: `${srcFolder}/index.html`,
+        filename: 'index.html',
+        favicon: getFavIcon(srcPath),
+      }),
+      new webpack.HotModuleReplacementPlugin(),
+    );
+  }
+
+  if (!entryPoint && PROD) {
+    plugins.push(
+      new HtmlWebpackPlugin({
+        chunks: ['runtime', 'core'],
+        chunksSortMode: 'none',
+        template: `${srcFolder}/index.html`,
+        filename: 'index.html',
+        favicon: getFavIcon(srcPath),
+      }),
+      new InlineManifestWebpackPlugin(),
+    );
+  }
+  return plugins;
 }
