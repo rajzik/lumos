@@ -1,12 +1,10 @@
-// @ts-check
-
 import { getExtendsList, getIgnoreList } from '@rajzik/config-eslint';
 import { getSettings } from '@rajzik/lumos-common';
 
 const { tool } = process.beemo;
 const { next, node } = getSettings();
 
-module.exports = {
+export = {
   extends: getExtendsList({
     next,
     node,

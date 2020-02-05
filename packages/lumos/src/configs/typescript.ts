@@ -1,12 +1,10 @@
-// @ts-check
-
 import { getConfig, getConfigWithProjectRefs } from '@rajzik/config-typescript';
 import { getSettings } from '@rajzik/lumos-common';
 
 const { context } = process.beemo;
 const { buildFolder, srcFolder, testFolder, typesFolder, node, react, library } = getSettings();
 
-module.exports = context.args.referenceWorkspaces
+export = context.args.referenceWorkspaces
   ? getConfigWithProjectRefs({
       node,
       react,
