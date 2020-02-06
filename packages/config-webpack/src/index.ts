@@ -120,7 +120,7 @@ export function getConfig({
     },
 
     optimization: {
-      runtimeChunk: 'single',
+      runtimeChunk: entryPoint && PROD ? false : 'single',
       minimize: PROD,
       minimizer: [
         new TerserPlugin({
