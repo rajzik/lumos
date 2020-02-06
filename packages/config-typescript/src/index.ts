@@ -11,6 +11,7 @@ export interface TypeScriptOptions {
   testFolder: string;
   typesFolder: string;
   workspaces?: string[];
+  emitDeclarationOnly?: boolean;
 }
 
 export function getCompilerOptions({
@@ -18,10 +19,11 @@ export function getCompilerOptions({
   next = false,
   node = false,
   react = false,
+  emitDeclarationOnly = false,
 }: Partial<TypeScriptOptions>) {
   const options: TypeScriptConfig['compilerOptions'] = {
     allowSyntheticDefaultImports: true,
-    declaration: library,
+    declaration: library || emitDeclarationOnly,
     esModuleInterop: true,
     forceConsistentCasingInFileNames: true,
     isolatedModules: next && !library,

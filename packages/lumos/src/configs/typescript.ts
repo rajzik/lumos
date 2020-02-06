@@ -19,4 +19,5 @@ export = context.args.referenceWorkspaces
       testFolder,
       typesFolder,
       workspaces: context.workspaces,
+      emitDeclarationOnly: !!context.args.emitDeclarationOnly,
     });
