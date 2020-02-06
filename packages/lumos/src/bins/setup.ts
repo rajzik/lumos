@@ -76,9 +76,10 @@ function addScriptsToPackage(response: SetupPrompt) {
   }
 
   if (drivers.includes('jest')) {
-    scripts.jest = 'NODE_ENV=test TZ=UTC lumos jest';
+    scripts.jest = 'cross-env NODE_ENV=test TZ=UTC lumos jest';
     scripts['jest:coverage'] = `${client} run jest -- --coverage`;
-    scripts.test = `${client} run jest:coverage`;
+    scripts.testCi = `${client} run jest:coverage`;
+    scripts.test = `${client} run jest`;
   }
 
   if (drivers.includes('prettier')) {
