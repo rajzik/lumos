@@ -30,7 +30,7 @@
     "node": ">=12.0.0"
   },
   "dependencies": {
-    "@beemo/cli": "^1.0.8",
+    "@beemo/cli": "^1.0.9",
     "@beemo/core": "^1.1.4",
     "@rajzik/lumos-common": "^1.4.2",
     "chalk": "^3.0.0",
