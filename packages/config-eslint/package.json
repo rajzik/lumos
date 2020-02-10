@@ -18,7 +18,7 @@
     "access": "public"
   },
   "dependencies": {
-    "@beemo/core": "^1.1.2",
+    "@beemo/core": "^1.1.4",
     "@beemo/driver-eslint": "^1.2.1",
     "@rajzik/lumos-common": "^1.4.2",
     "@typescript-eslint/eslint-plugin": "^2.19.0",
