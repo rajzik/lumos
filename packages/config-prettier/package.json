@@ -22,7 +22,7 @@
   },
   "dependencies": {
     "@beemo/core": "^1.1.4",
-    "@beemo/driver-prettier": "^1.2.1",
+    "@beemo/driver-prettier": "^1.2.2",
     "@rajzik/lumos-common": "^1.4.3",
     "prettier": "^1.19.1"
   }
