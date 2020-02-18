@@ -16,6 +16,7 @@ export interface JestOptions {
   testFolder: string;
   threshold?: number;
   workspaces?: string[];
+  testingLibrary?: boolean;
 }
 
 const exts = EXTS.map(ext => ext.slice(1));
@@ -45,6 +46,7 @@ export function getConfig({
   testFolder,
   threshold = 40,
   workspaces = [],
+  testingLibrary = false,
 }: JestOptions) {
   const roots: string[] = [];
   const setupFiles = [fromHere('setup/shims.js'), fromHere('setup/console.js')];
@@ -65,6 +67,10 @@ export function getConfig({
 
   if (graphql) {
     setupFilesAfterEnv.unshift(fromHere('bootstrap/graphql.js'));
+  }
+
+  if (testingLibrary) {
+    setupFilesAfterEnv.push('@testing-library/jest-dom/extend-expect');
   }
 
   const config: JestConfig = {

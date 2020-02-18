@@ -38,6 +38,7 @@ export interface LumosSettings {
   library: boolean;
   next: boolean;
   node: boolean;
+  testingLibrary: boolean;
   react: boolean;
   srcFolder: string;
   testFolder: string;

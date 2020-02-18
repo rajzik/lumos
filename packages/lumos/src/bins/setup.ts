@@ -16,6 +16,7 @@ interface SetupPrompt {
   next: boolean;
   scaffold: boolean;
   scripts: boolean;
+  testingLibrary: boolean;
   yarn: boolean;
 }
 
@@ -42,6 +43,10 @@ function addLumosToPackage(response: SetupPrompt) {
 
   if (response.node) {
     lumos.settings!.node = true;
+  }
+
+  if (response.testingLibrary) {
+    lumos.settings!.testingLibrary = true;
   }
 
   if (response.libs.includes('react')) {
@@ -164,6 +169,11 @@ export async function setup() {
     },
     {
       type: 'confirm',
+      name: 'testingLibrary',
+      message: 'Do you want to use testing library?',
+    },
+    {
+      type: 'confirm',
       name: 'scripts',
       message: 'Do you want to define package scripts?',
     },
@@ -174,10 +184,13 @@ export async function setup() {
     },
   ]);
 
+  if (response.testingLibrary && response.drivers.includes('jest')) {
+    response.drivers.push('jest');
+  }
+
   if (response.drivers.includes('jest') && !response.drivers.includes('babel')) {
     response.drivers.push('babel');
   }
-
   console.log(`${chalk.cyan('[2/6]')} Updating package settings`);
 
   addLumosToPackage(response);
