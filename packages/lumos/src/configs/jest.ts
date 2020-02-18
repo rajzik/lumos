@@ -1,7 +1,7 @@
 import { getConfig } from '@rajzik/config-jest';
 import { getSettings } from '@rajzik/lumos-common';
 
-const { coverage, graphql, react, srcFolder, testFolder, node } = getSettings();
+const { coverage, graphql, react, srcFolder, testFolder, node, testingLibrary } = getSettings();
 
 export = getConfig({
   srcFolder,
@@ -11,4 +11,5 @@ export = getConfig({
   node,
   threshold: coverage,
   workspaces: process.beemo.tool.getWorkspacePaths({ relative: true }),
+  testingLibrary,
 });
