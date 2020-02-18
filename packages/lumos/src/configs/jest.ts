@@ -1,11 +1,11 @@
 import { getConfig } from '@rajzik/config-jest';
 import { getSettings } from '@rajzik/lumos-common';
 
-const { coverage, graphql, react, srcFolder, testFolder, node, testingLibrary } = getSettings();
+const { coverage, graphql, react, srcFolder, testsFolder, node, testingLibrary } = getSettings();
 
 export = getConfig({
   srcFolder,
-  testFolder,
+  testsFolder,
   graphql,
   react,
   node,

@@ -41,7 +41,7 @@ export interface LumosSettings {
   testingLibrary: boolean;
   react: boolean;
   srcFolder: string;
-  testFolder: string;
+  testsFolder: string;
   typesFolder: string;
   entryPoint?: string;
 }
@@ -104,7 +104,7 @@ export function getSettings(): LumosSettings {
     react: false,
     testingLibrary: false,
     srcFolder: 'src',
-    testFolder: 'test',
+    testsFolder: 'tests',
     typesFolder: 'types',
     ...settings,
   };

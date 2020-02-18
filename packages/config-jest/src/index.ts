@@ -13,7 +13,7 @@ export interface JestOptions {
   react?: boolean;
   node?: boolean;
   srcFolder: string;
-  testFolder: string;
+  testsFolder: string;
   threshold?: number;
   workspaces?: string[];
   testingLibrary?: boolean;
@@ -43,7 +43,7 @@ export function getConfig({
   react = false,
   node = false,
   srcFolder,
-  testFolder,
+  testsFolder,
   threshold = 40,
   workspaces = [],
   testingLibrary = false,
@@ -75,7 +75,7 @@ export function getConfig({
 
   const config: JestConfig = {
     bail: false,
-    collectCoverageFrom: [createCoveragePattern(srcFolder), createCoveragePattern(testFolder)],
+    collectCoverageFrom: [createCoveragePattern(srcFolder), createCoveragePattern(testsFolder)],
     coverageDirectory: './coverage',
     coveragePathIgnorePatterns: IGNORE_PATHS.filter(ignore => !ignore.startsWith('*')),
     coverageReporters: ['lcov', 'json-summary', 'html'],

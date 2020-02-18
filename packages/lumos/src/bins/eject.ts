@@ -77,7 +77,7 @@ function migratePackageScripts(lumos: LumosPackage['lumos']) {
   const pkg = editJsonFile(pkgPath);
   const scripts = pkg.get('scripts') || {};
   const srcFolder = lumos.settings.srcFolder || 'src';
-  const testFolder = lumos.settings.testFolder || 'test';
+  const testFolder = lumos.settings.testsFolder || 'tests';
 
   if (scripts.prepare?.includes('create-config')) {
     delete scripts.prepare;

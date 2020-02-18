@@ -8,7 +8,7 @@ export interface TypeScriptOptions {
   node?: boolean;
   react?: boolean;
   srcFolder: string;
-  testFolder: string;
+  testsFolder: string;
   typesFolder: string;
   workspaces?: string[];
   emitDeclarationOnly?: boolean;
@@ -60,7 +60,7 @@ export function getConfig(options: TypeScriptOptions): TypeScriptConfig {
   };
 
   if (options.includeTests) {
-    config.include.push(`./${options.testFolder}/**/*`);
+    config.include.push(`./${options.testsFolder}/**/*`);
   }
 
   if (options.library) {

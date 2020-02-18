@@ -15,13 +15,7 @@ function createWorkspacesGlob(workspaces: string[]): string {
 }
 
 export default function cli(tool: Beemo) {
-  const {
-    buildFolder,
-    docsFolder,
-    srcFolder,
-    testFolder: testsFolder,
-    typesFolder,
-  } = getSettings();
+  const { buildFolder, docsFolder, srcFolder, testsFolder, typesFolder } = getSettings();
   const usingBabel = tool.isPluginEnabled('driver', 'babel');
   const usingPrettier = tool.isPluginEnabled('driver', 'prettier');
   const usingJest = tool.isPluginEnabled('driver', 'jest');
