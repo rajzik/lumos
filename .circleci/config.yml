@@ -48,7 +48,6 @@ jobs:
           paths:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
-      - run: git diff packages/lumos/bin/lumos
       - run: yarn run release
   release-alpha:
     executor: my-executor
