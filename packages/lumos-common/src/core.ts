@@ -102,6 +102,7 @@ export function getSettings(): LumosSettings {
     next: false,
     node: false,
     react: false,
+    testingLibrary: false,
     srcFolder: 'src',
     testFolder: 'test',
     typesFolder: 'types',
