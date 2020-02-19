@@ -42,7 +42,8 @@ export function getConfig({
     entryFiles = path.join(ROOT, srcFolder, entryPoint);
     output = {
       path: publicPath,
-      filename: '[name].js',
+      filename: 'index.js',
+      chunkFilename: '[name].[contenthash].chunk.js',
       sourceMapFilename: '[file].map',
     };
   }
