@@ -32,6 +32,7 @@ export = {
         'no-restricted-globals': 'off',
         'no-unused-vars': 'off',
         'no-unused-expressions': 'off', // Replaced with typescript version
+        camelcase: 'off', // Replaced with typescript version
 
         // IMPORT (Conflicts with TS patterns)
         'import/extensions': [

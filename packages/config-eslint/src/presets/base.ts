@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/camelcase */
 import { Path } from '@beemo/core';
 import { ASSET_EXT_PATTERN, EXTS, EXTS_GROUP, GQL_EXT_PATTERN } from '@rajzik/lumos-common';
 
@@ -24,6 +25,7 @@ export = {
     global: 'readonly',
     // Mostly references to `process.env.NODE_ENV`
     process: 'readonly',
+    __webpack_public_path__: true,
   },
 
   env: {
