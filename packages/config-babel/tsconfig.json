@@ -6,7 +6,7 @@
   },
   "exclude": [
     "lib",
-    "test"
+    "tests"
   ],
   "extends": "../../tsconfig.options.json",
   "include": [

@@ -14,6 +14,9 @@
       "path": "packages/config-jest"
     },
     {
+      "path": "packages/config-jest/tests"
+    },
+    {
       "path": "packages/config-prettier"
     },
     {
