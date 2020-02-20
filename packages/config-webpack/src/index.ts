@@ -46,6 +46,10 @@ export function getConfig({
       chunkFilename: '[name].[contenthash].chunk.js',
       sourceMapFilename: '[file].map',
     };
+  } else if (entryPoint) {
+    entryFiles = {
+      core: [path.join(ROOT, srcFolder, entryPoint)],
+    };
   }
 
   return {
