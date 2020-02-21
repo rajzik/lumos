@@ -1,6 +1,5 @@
 /* eslint-disable @typescript-eslint/camelcase */
-import { Path } from '@beemo/core';
-import { ASSET_EXT_PATTERN, EXTS, EXTS_GROUP, GQL_EXT_PATTERN } from '@rajzik/lumos-common';
+import { EXTS_GROUP } from '@rajzik/lumos-common';
 
 export = {
   root: true,
@@ -13,7 +12,7 @@ export = {
 
   extends: ['airbnb', 'plugin:jsx-a11y/recommended'],
 
-  plugins: ['import', 'react', 'react-hooks'],
+  plugins: ['react', 'react-hooks'],
 
   globals: {
     __DEV__: 'readonly',
@@ -37,16 +36,6 @@ export = {
 
   settings: {
     propWrapperFunctions: ['forbidExtraProps', 'exact', 'Object.freeze'],
-    'import/ignore': ['node_modules', '\\.json$', ASSET_EXT_PATTERN.source, GQL_EXT_PATTERN.source],
-    'import/extensions': EXTS,
-    'import/resolver': {
-      node: {
-        extensions: EXTS,
-      },
-      [Path.resolve('../resolvers/graphql.js', __dirname).path()]: {
-        extensions: ['.gql', '.graphql'],
-      },
-    },
   },
 
   rules: {

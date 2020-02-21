@@ -1,4 +1,4 @@
-import { EXTS_GROUP, fromRoot } from '@rajzik/lumos-common';
+import { fromRoot } from '@rajzik/lumos-common';
 
 // In TS, all arguments are required for type information,
 // so we need to override the base JS setting.
@@ -9,11 +9,7 @@ const noUnused = { vars: 'all', args: 'none', ignoreRestSiblings: true };
 const project = fromRoot('tsconfig.eslint.json', true) || fromRoot('tsconfig.json');
 
 export = {
-  settings: {
-    'import/parsers': {
-      '@typescript-eslint/parser': ['.ts', '.tsx'],
-    },
-  },
+  settings: {},
 
   parserOptions: {
     project,
@@ -33,33 +29,6 @@ export = {
         'no-unused-vars': 'off',
         'no-unused-expressions': 'off', // Replaced with typescript version
         camelcase: 'off', // Replaced with typescript version
-
-        // IMPORT (Conflicts with TS patterns)
-        'import/extensions': [
-          'error',
-          'never',
-          {
-            json: 'always',
-          },
-        ],
-        'import/named': 'off',
-        'import/no-cycle': 'off',
-        'import/no-named-as-default': 'off',
-        'import/prefer-default-export': 'off', // Typescript will handle named export better than default
-        'import/no-extraneous-dependencies': [
-          'error',
-          {
-            devDependencies: [
-              `test/**/*.${EXTS_GROUP}`,
-              `tests/**/*.${EXTS_GROUP}`,
-              `**/*.test.${EXTS_GROUP}`,
-              `**/jest.config.${EXTS_GROUP}`,
-              `**/webpack.config.${EXTS_GROUP}`,
-              `**/webpack.config.*.${EXTS_GROUP}`,
-            ],
-            optionalDependencies: false,
-          },
-        ],
 
         // REACT (We dont use prop types)
         'react/default-props-match-prop-types': 'off',
