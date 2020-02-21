@@ -100,6 +100,7 @@ export function getConfig({
       '@babel/plugin-proposal-optional-catch-binding',
       '@babel/plugin-proposal-optional-chaining',
       '@babel/plugin-proposal-nullish-coalescing-operator',
+      '@babel/plugin-proposal-export-namespace-from',
       [
         '@babel/plugin-transform-runtime',
         {
