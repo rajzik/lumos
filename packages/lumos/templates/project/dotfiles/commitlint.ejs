@@ -2,40 +2,5 @@
 to: commitlint.config.js
 ---
 module.exports = {
-  extends: ['@commitlint/config-conventional'],
-  rules: {
-    'scope-case': [
-      2,
-      'always',
-      ['sentence-case', 'start-case', 'pascal-case', 'upper-case', 'lower-case'],
-    ],
-    'subject-full-stop': [2, 'always', '.'],
-    'subject-case': [2, 'always', 'sentence-case'],
-    'type-enum': [
-      2,
-      'always',
-      [
-        'type',
-        'tests',
-        'break',
-        'breaking',
-        'release',
-        'new',
-        'update',
-        'feature',
-        'fix',
-        'deps',
-        'docs',
-        'revert',
-        'style',
-        'security',
-        'types',
-        'misc',
-        'ci',
-        'build',
-        'test',
-        'internal',
-      ],
-    ],
-  },
+  extends: ['@rajzik/conventional-changelog-lint-config-beemo'],
 };

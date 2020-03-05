@@ -23,12 +23,14 @@
     "@beemo/driver-babel": "^1.2.2",
     "@beemo/driver-jest": "^1.2.1",
     "@rajzik/lumos-common": "^1.5.4",
-    "@testing-library/jest-dom": "^5.1.1",
-    "@testing-library/react": "^9.5.0",
     "@types/jest": "^25.1.3",
     "airbnb-js-shims": "^2.2.1",
     "cross-env": "^7.0.2",
     "dom-storage": "^2.1.0",
     "jest": "^25.1.0"
+  },
+  "peerDependencies": {
+    "@testing-library/jest-dom": "^5.1.1",
+    "@testing-library/react": "^9.5.0"
   }
 }

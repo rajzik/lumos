@@ -1,6 +1,6 @@
 import { Script } from '@beemo/core';
 import Octokit from '@octokit/rest';
-import { checkCommitFormat } from 'conventional-changelog-beemo';
+import { checkCommitFormat } from '@rajzik/conventional-changelog-beemo';
 import path from 'path';
 import { createGitHubClient } from '../helpers/createGitHubClient';
 

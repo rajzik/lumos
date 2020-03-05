@@ -1,5 +1,5 @@
 import { Path } from '@beemo/core';
-import { LumosPackage } from '@rajzik/lumos-common';
+import { LumosPackage, SCAFFOLD_DEPS, TESTING_LIBRARY_DEPS } from '@rajzik/lumos-common';
 import chalk from 'chalk';
 // @ts-ignore
 import editJsonFile from 'edit-json-file';
@@ -184,7 +184,7 @@ export async function setup() {
     },
   ]);
 
-  if (response.testingLibrary && response.drivers.includes('jest')) {
+  if (response.testingLibrary && !response.drivers.includes('jest')) {
     response.drivers.push('jest');
   }
 
@@ -197,11 +197,20 @@ export async function setup() {
 
   console.log(`${chalk.cyan('[3/6]')} Installing dependencies`);
 
-  await installDeps(
-    ['@rajzik/lumos', ...response.drivers.map(driver => `@rajzik/config-${driver}`)],
-    response.yarn,
-    response.type === 'monolib',
-  );
+  const dependencies = [
+    '@rajzik/lumos',
+    ...response.drivers.map(driver => `@rajzik/config-${driver}`),
+  ];
+
+  if (response.testingLibrary) {
+    dependencies.push(...TESTING_LIBRARY_DEPS);
+  }
+
+  if (response.scaffold) {
+    dependencies.push(...SCAFFOLD_DEPS);
+  }
+
+  await installDeps(dependencies, response.yarn, response.type === 'monolib');
 
   console.log(`${chalk.cyan('[4/6]')} Adding package scripts`);
 

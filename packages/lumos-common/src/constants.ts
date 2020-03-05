@@ -27,3 +27,11 @@ export const NODE_VERSION = '12.12';
 export const NODE_TARGET = { node: NODE_VERSION };
 
 export const WEB_TARGET = { ie: 11 };
+
+export const TESTING_LIBRARY_DEPS = ['@testing-library/jest-dom', '@testing-library/react'];
+
+export const SCAFFOLD_DEPS = [
+  '@rajzik/conventional-changelog-lint-config-beemo',
+  '@commitlint/cli',
+  'husky',
+];

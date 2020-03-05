@@ -1,4 +1,4 @@
-import { checkCommitFormat } from 'conventional-changelog-beemo';
+import { checkCommitFormat } from '@rajzik/conventional-changelog-beemo';
 
 // Verify the PR title contains the conventional-changelog required prefix.
 export function checkForConventionalPrefix() {

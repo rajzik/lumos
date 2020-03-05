@@ -47,7 +47,7 @@ export function getConfig({
   threshold = 40,
   workspaces = [],
   testingLibrary = false,
-}: JestOptions) {
+}: JestOptions): JestConfig {
   const roots: string[] = [];
   const setupFiles = [fromHere('setup/shims.js'), fromHere('setup/console.js')];
   const setupFilesAfterEnv = [fromHere('bootstrap/consumer.js')];
