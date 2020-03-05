@@ -26,7 +26,7 @@
     "@types/webpack-bundle-analyzer": "^2.13.3"
   },
   "dependencies": {
-    "@babel/core": "^7.8.6",
+    "@babel/core": "^7.8.7",
     "@beemo/core": "^1.1.5",
     "@beemo/driver-webpack": "^1.2.3",
     "@rajzik/lumos-common": "^1.5.4",
