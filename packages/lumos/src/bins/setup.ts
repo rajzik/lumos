@@ -197,17 +197,17 @@ export async function setup() {
 
   console.log(`${chalk.cyan('[3/6]')} Installing dependencies`);
 
-  const dependencies = [
+  let dependencies = [
     '@rajzik/lumos',
     ...response.drivers.map(driver => `@rajzik/config-${driver}`),
   ];
 
   if (response.testingLibrary) {
-    dependencies.push(...TESTING_LIBRARY_DEPS);
+    dependencies = [...dependencies, ...TESTING_LIBRARY_DEPS];
   }
 
   if (response.scaffold) {
-    dependencies.push(...SCAFFOLD_DEPS);
+    dependencies = [...dependencies, ...SCAFFOLD_DEPS];
   }
 
   await installDeps(dependencies, response.yarn, response.type === 'monolib');
