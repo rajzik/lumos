@@ -24,7 +24,7 @@ jobs:
       node_js: '13'
 
     - stage: Release
-    - name: Alpha
+      name: Alpha
       if: type = pull_request
       node_js: '13'
 
