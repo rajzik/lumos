@@ -45,10 +45,10 @@ jobs:
       name: NPM
       if: type = pull_request
       node_js: '13'
-      before_deploy:
+      before_prerelease:
         - echo "//registry.npmjs.org/:_authToken=\${NPM_TOKEN}" >> $HOME/.npmrc 2> /dev/null
 
-      deploy:
+      prerelease:
         provider: script
         script: yarn run release-alpha --dist-tag ${TRAVIS_BRANCH}
         skip_cleanup: true
