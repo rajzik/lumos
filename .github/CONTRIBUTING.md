@@ -54,6 +54,9 @@ Our linter will catch most issues that may exist in your code.
 
 ## Updating dependencies
 
+Most of the dependencies are updated automatically with dependabot.
+
+Otherwise follow this guide:
 To update dependencies in Lumos, run `yarn upgrade-interactive --latest` in the root of the
 project. This will display an interactive menu in which you can select dependencies to update (to
 the latest version) using the space bar and arrow keys.
