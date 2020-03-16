@@ -41,14 +41,14 @@ jobs:
         on:
           branch: master
 
-    - stage: build
-      name: NPM
+    - stage: prerelease
+      name: PRERELEASE
       if: type = pull_request
       node_js: '13'
       before_build:
         - echo "//registry.npmjs.org/:_authToken=\${NPM_TOKEN}" >> $HOME/.npmrc 2> /dev/null
 
-      build:
+      prerelease:
         provider: script
         script: yarn run release-alpha --dist-tag ${TRAVIS_BRANCH}
         skip_cleanup: true
