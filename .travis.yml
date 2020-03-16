@@ -24,8 +24,8 @@ jobs:
       node_js: '13'
 
     - stage: Release
-      name: NPM
-      if: branch = master
+    - name: Alpha
+      if: type = pull_request
       node_js: '13'
 
       before_alpha:
@@ -35,6 +35,9 @@ jobs:
         script: yarn run release-alpha --dist-tag ${TRAVIS_BRANCH}
         skip_cleanup: true
 
+    - name: Master
+      if: branch = master
+      node_js: '13'
       before_deploy:
         - git config --global user.name ${GITHUB_USER}
         - git config --global user.email ${GITHUB_EMAIL}
