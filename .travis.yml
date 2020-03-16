@@ -24,18 +24,7 @@ jobs:
       node_js: '13'
 
     - stage: Release
-      name: Alpha
-      if: type = pull_request
-      node_js: '13'
-
-      before_alpha:
-        - echo "//registry.npmjs.org/:_authToken=\${NPM_TOKEN}" >> $HOME/.npmrc 2> /dev/null
-      alpha:
-        provider: script
-        script: yarn run release-alpha --dist-tag ${TRAVIS_BRANCH}
-        skip_cleanup: true
-
-    - name: Master
+      name: NPM
       if: branch = master
       node_js: '13'
       before_deploy:
