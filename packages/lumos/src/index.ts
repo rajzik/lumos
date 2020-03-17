@@ -28,7 +28,7 @@ export default function cli(tool: Beemo) {
    * - Add default extensions.
    * - Add source and output dirs by default.
    */
-  tool.onRunDriver.listen((context, driver) => {
+  tool.onRunDriver.listen((context, _) => {
     if (!context.args.extensions) {
       context.addOption('--extensions', exts.join(','));
     }

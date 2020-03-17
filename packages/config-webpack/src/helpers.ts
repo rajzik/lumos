@@ -146,3 +146,12 @@ export function getPlugins({
   }
   return plugins;
 }
+
+const numberRegex = /^(0-9)*/;
+
+const invalidChars = /([/@\-\W])/g;
+
+export function getUniqueName() {
+  const { name } = getPackage();
+  return `_${name.replace(numberRegex, '').replace(invalidChars, '')}`;
+}

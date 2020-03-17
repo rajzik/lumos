@@ -4,7 +4,7 @@ import { ASSET_EXT_PATTERN, EXTS, GQL_EXT_PATTERN, TJSX_EXT_PATTERN } from '@raj
 import path from 'path';
 import TerserPlugin from 'terser-webpack-plugin';
 import { Configuration } from 'webpack';
-import { getESMAliases, getPlugins, PORT, PROD, ROOT } from './helpers';
+import { getESMAliases, getPlugins, getUniqueName, PORT, PROD, ROOT } from './helpers';
 import { WebpackOptions } from './types';
 
 export function getConfig({
@@ -45,6 +45,7 @@ export function getConfig({
       filename: 'index.js',
       chunkFilename: '[name].[contenthash].chunk.js',
       sourceMapFilename: '[file].map',
+      jsonpFunction: getUniqueName(),
     };
   } else if (entryPoint) {
     entryFiles = {
