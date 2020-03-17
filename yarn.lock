@@ -2281,6 +2281,11 @@
   resolved "https://registry.yarnpkg.com/@rajzik/conventional-changelog-beemo/-/conventional-changelog-beemo-2.0.1.tgz#df2414a1b67ac879c22bcfa2800a8ac5feebb1e6"
   integrity sha512-WL6IojaOIAanF2BC9NyGjnFf5Ia5UFmTZq+9UXXfgF+jeKjgheDDEpst+aRd2Q7yEGiML9Z91wbInlBPTC1r3w==
 
+"@rajzik/conventional-changelog-lint-config-beemo@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@rajzik/conventional-changelog-lint-config-beemo/-/conventional-changelog-lint-config-beemo-1.0.1.tgz#0ace1c7d0377df0ebd150a99ae71418e25bdde66"
+  integrity sha512-IMsLXO7VcTSdJM8rGT41HubNsoiO4iE7ZtzyJ0ezSqGSkkz94uhztNnYHiJFzeAJ8MCMOyDAHZiEHBiM68aY6w==
+
 "@sinonjs/commons@^1.7.0":
   version "1.7.0"
   resolved "https://registry.yarnpkg.com/@sinonjs/commons/-/commons-1.7.0.tgz#f90ffc52a2e519f018b13b6c4da03cbff36ebed6"
