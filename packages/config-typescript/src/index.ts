@@ -34,12 +34,12 @@ export function getCompilerOptions({
     noEmitOnError: true,
     noImplicitReturns: true,
     noUnusedLocals: true,
-    // We want to resolve json modules
-    resolveJsonModule: true,
     pretty: true,
     removeComments: false,
     strict: true,
     target: next || node ? 'es2018' : 'es2015',
+    // We want to resolve json modules
+    resolveJsonModule: true,
     // Use define in development for spec accuracy,
     // but omit in production for smaller file sizes.
     useDefineForClassFields: next && process.env.NODE_ENV === 'development',
