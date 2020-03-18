@@ -1,5 +1,5 @@
 import Beemo, { BeemoConfig } from '@beemo/core';
-import { PackageConfig } from '@boost/core';
+import { PackageStructure } from '@boost/common';
 import execa from 'execa';
 import glob from 'fast-glob';
 import fs from 'fs';
@@ -46,7 +46,7 @@ export interface LumosSettings {
   entryPoint?: string;
 }
 
-export interface LumosPackage extends PackageConfig {
+export interface LumosPackage extends PackageStructure {
   lumos: BeemoConfig<Partial<LumosSettings>>;
 }
 
