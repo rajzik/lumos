@@ -1,15 +1,6 @@
 import { Path } from '@beemo/core';
 import { IGNORE_PATHS } from '@rajzik/lumos-common';
 
-/**
- * @typedef {object} ConfigOptions
- * @property {boolean} [next]
- * @property {boolean} [node]
- * @property {boolean} [prettier]
- * @property {boolean} [typescript]
- *
- */
-
 export interface ESLintOptions {
   next?: boolean;
   node?: boolean;

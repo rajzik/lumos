@@ -1,11 +1,12 @@
+import { ESLintConfig } from '@beemo/driver-eslint';
 import { EXTS_GROUP } from '@rajzik/lumos-common';
 
-export = {
+const config: ESLintConfig = {
   plugins: ['promise', 'unicorn'],
 
   rules: {
     // Not enabled in Airbnb
-    'default-param-last': 'warn',
+    'default-param-last': 'error',
     'func-name-matching': [
       'error',
       'always',
@@ -18,13 +19,17 @@ export = {
     'multiline-comment-style': 'off',
     'multiline-ternary': ['error', 'never'],
     'no-constant-condition': 'error',
+    'no-constructor-return': 'error',
     'no-div-regex': 'error',
+    'no-dupe-else-if': 'error',
     'no-implicit-coercion': 'error',
-    'no-import-assign': 'warn',
+    'no-import-assign': 'error',
     'no-native-reassign': 'error',
     'no-negated-condition': 'error',
+    'no-setter-return': 'error',
     'no-useless-call': 'error',
-    'prefer-regex-literals': 'warn',
+    'prefer-exponentiation-operator': 'error',
+    'prefer-regex-literals': 'error',
     'require-atomic-updates': 'error',
 
     // Replaced with new proposals
@@ -59,7 +64,8 @@ export = {
     ],
     'react/jsx-key': 'error',
     'react/jsx-no-literals': 'error',
-    'react/jsx-no-useless-fragment': 'warn',
+    'react/jsx-no-useless-fragment': 'error',
+    'react/jsx-no-script-url': 'error',
     'react/jsx-sort-default-props': [
       'error',
       {
@@ -129,7 +135,7 @@ export = {
 
     // UNICORN
     'unicorn/catch-error-name': 'error',
-    'unicorn/consistent-function-scoping': 'warn',
+    'unicorn/consistent-function-scoping': 'error',
     'unicorn/custom-error-definition': 'error',
     'unicorn/error-message': 'error',
     'unicorn/escape-case': 'error',
@@ -147,17 +153,19 @@ export = {
     'unicorn/no-zero-fractions': 'error',
     'unicorn/number-literal-case': 'error',
     'unicorn/prefer-add-event-listener': 'error',
-    'unicorn/prefer-dataset': 'warn',
+    'unicorn/prefer-dataset': 'error',
     'unicorn/prefer-event-key': 'error',
-    'unicorn/prefer-exponentiation-operator': 'error',
     'unicorn/prefer-flat-map': 'error',
     'unicorn/prefer-includes': 'error',
+    'unicorn/prefer-modern-dom-apis': 'error',
+    'unicorn/prefer-negative-index': 'error',
     'unicorn/prefer-node-append': 'error',
     'unicorn/prefer-node-remove': 'error',
     'unicorn/prefer-starts-ends-with': 'error',
-    'unicorn/prefer-string-slice': 'warn',
+    'unicorn/prefer-string-slice': 'error',
     'unicorn/prefer-spread': 'off', // Currently broken
     'unicorn/prefer-text-content': 'error',
+    'unicorn/prefer-trim-start-end': 'error',
     'unicorn/prefer-type-error': 'error',
     'unicorn/regex-shorthand': 'error',
     'unicorn/throw-new-error': 'error',
@@ -172,3 +180,5 @@ export = {
     },
   ],
 };
+
+export = config;

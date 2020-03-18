@@ -1,8 +1,8 @@
-/* eslint-disable @typescript-eslint/camelcase */
 import { Path } from '@beemo/core';
+import { ESLintConfig } from '@beemo/driver-eslint';
 import { ASSET_EXT_PATTERN, EXTS, EXTS_GROUP, GQL_EXT_PATTERN } from '@rajzik/lumos-common';
 
-export = {
+const config: ESLintConfig = {
   root: true,
 
   parser: 'babel-eslint',
@@ -19,13 +19,11 @@ export = {
     __DEV__: 'readonly',
     // Metrics and analytics providers
     ga: 'readonly',
-    ori: 'readonly',
     newrelic: 'readonly',
     // Mostly for easier compatibility between browsers, workers, etc
     global: 'readonly',
     // Mostly references to `process.env.NODE_ENV`
     process: 'readonly',
-    __webpack_public_path__: true,
   },
 
   env: {
@@ -72,33 +70,35 @@ export = {
 
         // JEST
         'jest/expect-expect': 'error',
-        'jest/no-alias-methods': 'warn',
+        'jest/no-alias-methods': 'error',
         'jest/no-disabled-tests': 'error',
-        'jest/no-duplicate-hooks': 'warn',
-        'jest/no-expect-resolves': 'warn',
+        'jest/no-duplicate-hooks': 'error',
+        'jest/no-expect-resolves': 'error',
         'jest/no-export': 'error',
         'jest/no-focused-tests': 'error',
         'jest/no-identical-title': 'error',
         'jest/no-if': 'error',
-        'jest/no-jasmine-globals': 'warn',
+        'jest/no-jasmine-globals': 'error',
         'jest/no-jest-import': 'error',
         'jest/no-standalone-expect': 'error',
         'jest/no-test-callback': 'error',
-        'jest/no-test-prefixes': 'warn',
-        'jest/no-test-return-statement': 'warn',
-        'jest/prefer-hooks-on-top': 'warn',
-        'jest/prefer-spy-on': 'warn',
+        'jest/no-test-prefixes': 'error',
+        'jest/no-test-return-statement': 'error',
+        'jest/prefer-hooks-on-top': 'error',
+        'jest/prefer-spy-on': 'error',
         'jest/prefer-todo': 'error',
         'jest/prefer-to-be-null': 'error',
         'jest/prefer-to-be-undefined': 'error',
-        'jest/prefer-to-contain': 'warn',
+        'jest/prefer-to-contain': 'error',
         'jest/prefer-to-have-length': 'error',
-        'jest/require-to-throw-message': 'warn',
+        'jest/require-to-throw-message': 'error',
         'jest/require-top-level-describe': 'error',
-        'jest/valid-describe': 'warn',
+        'jest/valid-describe': 'error',
         'jest/valid-expect': 'error',
-        'jest/valid-title': 'warn',
+        'jest/valid-title': 'error',
       },
     },
   ],
 };
+
+export = config;

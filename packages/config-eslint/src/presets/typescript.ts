@@ -1,3 +1,4 @@
+import { ESLintConfig } from '@beemo/driver-eslint';
 import { EXTS_GROUP, fromRoot } from '@rajzik/lumos-common';
 
 // In TS, all arguments are required for type information,
@@ -8,7 +9,7 @@ const noUnused = { vars: 'all', args: 'none', ignoreRestSiblings: true };
 // so let's use a specialized TS config that globs everything.
 const project = fromRoot('tsconfig.eslint.json', true) || fromRoot('tsconfig.json');
 
-export = {
+const config: ESLintConfig = {
   settings: {
     'import/parsers': {
       '@typescript-eslint/parser': ['.ts', '.tsx'],
@@ -45,7 +46,7 @@ export = {
         'import/named': 'off',
         'import/no-cycle': 'off',
         'import/no-named-as-default': 'off',
-        'import/prefer-default-export': 'off', // Typescript will handle named export better than default
+        'import/prefer-default-export': 'warn', // Typescript will handle named export better than default
         'import/no-extraneous-dependencies': [
           'error',
           {
@@ -61,7 +62,7 @@ export = {
           },
         ],
 
-        // REACT (We dont use prop types)
+        // REACT (We don't use prop types)
         'react/default-props-match-prop-types': 'off',
         'react/jsx-filename-extension': [
           'error',
@@ -92,29 +93,29 @@ export = {
         '@typescript-eslint/no-empty-function': 'off', // Default props are usually empty
         '@typescript-eslint/no-empty-interface': 'error',
         '@typescript-eslint/no-explicit-any': [
-          'warn',
+          'error',
           { fixToUnknown: true, ignoreRestArgs: true },
         ],
-        '@typescript-eslint/no-extra-parens': 'warn',
+        '@typescript-eslint/no-extra-parens': 'error',
         '@typescript-eslint/no-for-in-array': 'error',
         '@typescript-eslint/no-misused-new': 'error',
         '@typescript-eslint/no-misused-promises': 'error',
         '@typescript-eslint/no-parameter-properties': 'error',
         '@typescript-eslint/no-require-imports': 'error',
+        '@typescript-eslint/no-throw-literal': 'error',
+        '@typescript-eslint/no-unnecessary-boolean-literal-compare': 'error',
         '@typescript-eslint/no-unused-vars': ['error', noUnused],
         '@typescript-eslint/no-use-before-define': 'error',
+        '@typescript-eslint/prefer-as-const': 'error',
         '@typescript-eslint/prefer-for-of': 'error',
         '@typescript-eslint/prefer-namespace-keyword': 'error',
+        '@typescript-eslint/prefer-optional-chain': 'error',
         '@typescript-eslint/promise-function-async': 'off', // Conflicts with other async rules
         '@typescript-eslint/require-await': 'error',
+        '@typescript-eslint/switch-exhaustiveness-check': 'error',
         '@typescript-eslint/triple-slash-reference': 'error',
         '@typescript-eslint/type-annotation-spacing': 'error',
-        '@typescript-eslint/unified-signatures': 'warn',
-        '@typescript-eslint/camelcase': 'warn',
-        '@typescript-eslint/consistent-type-definitions': ['error', 'interface'],
-        '@typescript-eslint/interface-name-prefix': ['warn', { prefixWithI: 'always' }],
-        '@typescript-eslint/no-unused-expressions': 'error',
-        '@typescript-eslint/prefer-optional-chain': 'error',
+        '@typescript-eslint/unified-signatures': 'error',
         '@typescript-eslint/prefer-nullish-coalescing': [
           'warn',
           { ignoreConditionalTests: false, ignoreMixedLogicalExpressions: false },
@@ -123,3 +124,5 @@ export = {
     },
   ],
 };
+
+export = config;
