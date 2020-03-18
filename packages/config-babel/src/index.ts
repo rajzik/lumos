@@ -31,8 +31,8 @@ export function getConfig({
   };
   const presets: NonNullable<BabelConfig['presets']> = [['@babel/preset-env', envOptions]];
   const plugins: NonNullable<BabelConfig['plugins']> = [
-    'babel-plugin-idx',
     ['babel-plugin-transform-dev', { evaluate: false }],
+    '@babel/plugin-transform-runtime',
   ];
 
   // Flags
@@ -95,18 +95,8 @@ export function getConfig({
 
   if (useNext) {
     plugins.push(
-      '@babel/plugin-transform-spread',
       '@babel/plugin-proposal-class-properties',
-      '@babel/plugin-proposal-optional-catch-binding',
-      '@babel/plugin-proposal-optional-chaining',
-      '@babel/plugin-proposal-nullish-coalescing-operator',
       '@babel/plugin-proposal-export-namespace-from',
-      [
-        '@babel/plugin-transform-runtime',
-        {
-          regenerator: true,
-        },
-      ],
     );
   }
 
