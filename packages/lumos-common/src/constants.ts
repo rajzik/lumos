@@ -22,7 +22,7 @@ export const IGNORE_PATHS = [
   '*.d.ts',
 ];
 
-export const NODE_VERSION = '12.12';
+export const NODE_VERSION = '12.16';
 
 export const NODE_TARGET = { node: NODE_VERSION };
 

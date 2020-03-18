@@ -17,6 +17,9 @@
   "publishConfig": {
     "access": "public"
   },
+  "engines": {
+    "node": ">=12.16.0"
+  },
   "dependencies": {
     "@babel/cli": "^7.8.4",
     "@babel/core": "^7.8.7",

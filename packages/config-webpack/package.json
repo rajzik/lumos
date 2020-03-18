@@ -17,6 +17,9 @@
   "publishConfig": {
     "access": "public"
   },
+  "engines": {
+    "node": ">=12.16.0"
+  },
   "bin": {
     "lumos-webpack-server": "./bin/server"
   },
