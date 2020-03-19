@@ -38,12 +38,12 @@ npx lumos create-config
 
 ## Supported drivers
 
-- babel
-- prettier
-- eslint
-- typescript
-- webpack
-- jest
+- [babel](../config-babel)
+- [prettier](../config-prettier)
+- [eslint](../config-eslint)
+- [typescript](../config-typescript)
+- [webpack](../config-webpack)
+- [jest](../config-jest)
 
 ### Set drivers manually
 

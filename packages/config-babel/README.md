@@ -2,3 +2,94 @@
 
 Factory functions for creating preset [Babel](https://babeljs.io/) configurations. Primarily used in
 unison with the [Lumos](https://www.npmjs.com/package/@rajzik/lumos) CLI.
+
+## Extending config
+
+__Update package.json:__
+
+```json
+{
+  "lumos": {
+    "eslint": {
+      "plugins": [
+        "styled-components"
+      ]
+    }
+  }
+}
+```
+
+__Create file in configs folder:__
+
+`configs/babel.js`
+
+```js
+modules.exports = {
+  plugins: [
+    'styled-components',
+  ],
+};
+```
+
+## Settings
+
+### Main settings
+
+```ts
+interface BabelOptions {
+  env?: LumosEnvSetting;
+  esm?: boolean;
+  graphql?: boolean;
+  library?: boolean;
+  next?: boolean;
+  node?: boolean;
+  react?: boolean;
+  typescript?: boolean;
+}
+```
+
+```ts
+interface LumosEnvSetting {
+  targets?:
+    | string
+    | string[]
+    | {
+        browsers?: string | string[];
+        esmodules?: boolean;
+        node?: string | 'current' | true;
+        safari?: string | 'tp';
+        [key: string]: unknown;
+      };
+  spec?: boolean;
+  loose?: boolean;
+  modules?: 'amd' | 'umd' | 'systemjs' | 'commonjs' | 'cjs' | 'auto' | false;
+  debug?: boolean;
+  include?: (string | RegExp)[];
+  exclude?: (string | RegExp)[];
+  useBuiltIns?: 'usage' | 'entry' | false;
+  forceAllTransforms?: boolean;
+  configPath?: string;
+  ignoreBrowserslistConfig?: boolean;
+  shippedProposals?: boolean;
+}
+```
+
+### Default values
+
+```ts
+{
+  env = {
+    loose: true,
+    modules: esm ? false : 'commonjs',
+    shippedProposals: next,
+    targets: node ? NODE_TARGET : WEB_TARGET,
+  },
+  esm = false,
+  graphql = false,
+  library = false,
+  next = false,
+  node = false,
+  react = false,
+  typescript = false,
+}
+```
