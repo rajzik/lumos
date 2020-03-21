@@ -31,7 +31,7 @@
   "dependencies": {
     "@babel/core": "^7.9.0",
     "@beemo/core": "^1.1.5",
-    "@beemo/driver-webpack": "^1.2.3",
+    "@beemo/driver-webpack": "^1.2.4",
     "@rajzik/lumos-common": "^1.7.1",
     "babel-loader": "^8.1.0",
     "cross-env": "^7.0.2",
