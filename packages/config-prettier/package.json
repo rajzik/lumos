@@ -27,6 +27,6 @@
     "@beemo/core": "^1.1.5",
     "@beemo/driver-prettier": "^1.2.2",
     "@rajzik/lumos-common": "^1.7.1",
-    "prettier": "^1.19.1"
+    "prettier": "^2.0.1"
   }
 }
