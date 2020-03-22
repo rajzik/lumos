@@ -3,17 +3,19 @@ import { IGNORE_PATHS } from '@rajzik/lumos-common';
 
 export function getConfig(): PrettierConfig {
   return {
-    arrowParens: 'avoid',
-    bracketSpacing: true,
-    jsxBracketSameLine: false,
     printWidth: 100,
-    proseWrap: 'always',
-    requirePragma: false,
+    tabWidth: 2,
+    useTabs: false,
     semi: true,
     singleQuote: true,
-    tabWidth: 2,
+    quoteProps: 'as-needed',
+    jsxSingleQuote: false,
     trailingComma: 'all',
-    useTabs: false,
+    bracketSpacing: true,
+    jsxBracketSameLine: false,
+    arrowParens: 'avoid',
+    requirePragma: false,
+    proseWrap: 'always',
   };
 }
 
