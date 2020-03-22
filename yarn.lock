@@ -1087,14 +1087,14 @@
   dependencies:
     "@types/webpack" "^4.41.8"
 
-"@boost/common@^1.8.2":
-  version "1.8.2"
-  resolved "https://registry.yarnpkg.com/@boost/common/-/common-1.8.2.tgz#affa8b0d1de8ee9e150ce3c3c53580c21bff9008"
-  integrity sha512-fdQILlK4ZQU/YOmBJWWPVeEPfPYc0mLL8DHskUIoyKg7H5eWi3gtwCaCdJq00l19OlMjNEU2qlHrQSQjhxlPzA==
+"@boost/common@^1.8.2", "@boost/common@^1.8.3":
+  version "1.8.3"
+  resolved "https://registry.yarnpkg.com/@boost/common/-/common-1.8.3.tgz#ea491c50c40f54f3eb094aa26c5134f0d759e206"
+  integrity sha512-3R0hfJ1eoiBcybCdvqZirKpXebNWHJ0GSNwwXEmQlEVWfS+8BTnE8Qg/+U8oZNhBS6DeA44Lh2AWEDNbHTZ2KA==
   dependencies:
     "@boost/internal" "^1.1.0"
     js-yaml "^3.13.1"
-    json5 "^2.1.1"
+    json5 "^2.1.2"
     optimal "^4.2.0"
     pretty-ms "^5.1.0"
 
