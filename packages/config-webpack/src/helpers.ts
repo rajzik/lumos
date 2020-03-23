@@ -123,7 +123,7 @@ export function getPlugins({
     plugins.push(
       new HtmlWebpackPlugin({
         chunks: ['runtime', 'core'],
-        chunksSortMode: 'none',
+        chunksSortMode: 'auto', // 'none',
         template: `${srcFolder}/index.html`,
         filename: 'index.html',
         favicon: getFavIcon(srcPath),
@@ -136,7 +136,7 @@ export function getPlugins({
     plugins.push(
       new HtmlWebpackPlugin({
         chunks: ['runtime', 'core'],
-        chunksSortMode: 'none',
+        chunksSortMode: 'auto', // 'none',
         template: `${srcFolder}/index.html`,
         filename: 'index.html',
         favicon: getFavIcon(srcPath),
