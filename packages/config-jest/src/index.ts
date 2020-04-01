@@ -17,6 +17,7 @@ export interface JestOptions {
   threshold?: number;
   workspaces?: string[];
   testingLibrary?: boolean;
+  testResultFileName?: string;
 }
 
 const exts = EXTS.map(ext => ext.slice(1));
@@ -47,6 +48,7 @@ export function getConfig({
   threshold = 40,
   workspaces = [],
   testingLibrary = false,
+  testResultFileName = 'TEST-RESULTS.xml',
 }: JestOptions): JestConfig {
   const roots: string[] = [];
   const setupFiles = [fromHere('setup/shims.js'), fromHere('setup/console.js')];
@@ -103,6 +105,7 @@ export function getConfig({
     testURL: 'http://localhost',
     timers: 'fake',
     verbose: false,
+    reporters: ['default', ['jest-junit', { outputName: testResultFileName }]],
   };
 
   if (graphql) {

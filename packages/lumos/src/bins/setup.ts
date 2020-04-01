@@ -29,6 +29,14 @@ function addLumosToPackage(response: SetupPrompt) {
     settings: {},
   };
 
+  if (response.libs.includes('react')) {
+    lumos.settings!.react = true;
+  }
+
+  if (response.libs.includes('testingLibrary')) {
+    lumos.settings!.testingLibrary = true;
+  }
+
   if (response.libs.includes('graphql')) {
     lumos.settings!.graphql = true;
   }
@@ -45,14 +53,6 @@ function addLumosToPackage(response: SetupPrompt) {
     lumos.settings!.node = true;
   }
 
-  if (response.testingLibrary) {
-    lumos.settings!.testingLibrary = true;
-  }
-
-  if (response.libs.includes('react')) {
-    lumos.settings!.react = true;
-  }
-
   pkg.set('lumos', lumos);
   pkg.save();
 }
@@ -62,6 +62,7 @@ function addScriptsToPackage(response: SetupPrompt) {
   const pkg = editJsonFile(pkgPath, {});
   const client = response.yarn ? 'yarn' : 'npm';
   const monorepo = response.type === 'monolib';
+
   // @ts-ignore
   const scripts = pkg.get('scripts') || {};
 
@@ -139,6 +140,7 @@ export async function setup() {
       message: 'Which libraries are you going to use?',
       choices: [
         { message: 'React', name: 'react' },
+        { message: 'Testing library', name: 'testingLibrary' },
         { message: 'GraphQL', name: 'graphql' },
       ],
     },
@@ -169,11 +171,6 @@ export async function setup() {
     },
     {
       type: 'confirm',
-      name: 'testingLibrary',
-      message: 'Do you want to use testing library?',
-    },
-    {
-      type: 'confirm',
       name: 'scripts',
       message: 'Do you want to define package scripts?',
     },
@@ -184,7 +181,7 @@ export async function setup() {
     },
   ]);
 
-  if (response.testingLibrary && !response.drivers.includes('jest')) {
+  if (response.libs.includes('testingLibrary') && !response.drivers.includes('jest')) {
     response.drivers.push('jest');
   }
 

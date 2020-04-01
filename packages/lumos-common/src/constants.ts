@@ -18,7 +18,8 @@ export const IGNORE_PATHS = [
   'lib/',
   'tmp/',
   'dist/',
-  'build',
+  'build/',
+  'configs/',
   '*.d.ts',
 ];
 

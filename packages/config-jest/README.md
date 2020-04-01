@@ -5,27 +5,25 @@ unison with the [Lumos](https://www.npmjs.com/package/@rajzik/lumos) CLI.
 
 ## Extending config
 
-__Update package.json:__
+**Update package.json:**
 
 ```json
 {
   "lumos": {
     "jest": {
-      "setupFilesAfterEnv": [
-        "@testing-library/jest-dom/extend-expect"
-      ]
+      "setupFilesAfterEnv": ["@testing-library/jest-dom/extend-expect"]
     }
   }
 }
 ```
 
-__Create file in configs folder:__
+**Create file in configs folder:**
 
 `configs/eslint.js`
 
 ```js
 modules.exports = {
-  setupFilesAfterEnv: ['@testing-library/jest-dom/extend-expect']
+  setupFilesAfterEnv: ['@testing-library/jest-dom/extend-expect'],
 };
 ```
 
@@ -43,20 +41,21 @@ export interface JestOptions {
   threshold?: number;
   workspaces?: string[];
   testingLibrary?: boolean;
+  testResultFileName?: string;
 }
 ```
 
 ### Default values
 
 ```ts
-{
-  graphql = false,
-  react = false,
-  node = false,
-  srcFolder,
-  testsFolder,
-  threshold = 40,
-  workspaces = [],
-  testingLibrary = false,
-}
+({
+  graphql = false, // Enables/disables support for react
+  react = false, // Enables/disabled support for react
+  node = false, // Enables/disables support for node
+  testingLibrary = false, // Enables/disabled testing library
+  threshold = 40, // code coverage threshold
+  testResultFileName = 'TEST-RESULTS.xml', // junit output filename
+});
 ```
+
+### [Beemo/jest](https://milesj.gitbook.io/beemo/driver/jest)

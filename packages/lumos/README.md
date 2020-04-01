@@ -10,9 +10,19 @@ Centralized CLI for JavaScript and TypeScript dev tools.
 - package.json
 - install @rajzik/lumos
 
-Setup initial project with this package.
+**Setup initial project with this package:**
 
 ```bash
+npm init
+npm install --save-dev @rajzik/lumos
+npx lumos-setup
+```
+
+**yarn:**
+
+```bash
+yarn init
+yarn add --dev @rajzik/lumos
 npx lumos-setup
 ```
 
@@ -33,7 +43,22 @@ npx lumos scaffold project dotfiles
 ## Create configs
 
 ```bash
-npx lumos create-config
+npx lumos create-config [driver list]
+```
+
+```bash
+npx lumos create-config eslint prettier
+```
+
+## Running drivers
+
+```bash
+npx lumos <name of driver> [--cli options]
+```
+
+```bash
+npx lumos eslint
+npm lumos typescript --build --reference-workspaces
 ```
 
 ## Supported drivers
@@ -49,12 +74,8 @@ npx lumos create-config
 
 ```json
 {
-
   "lumos": {
-    "drivers": [
-      "babel",
-      "eslint"
-    ]
+    "drivers": ["babel", "eslint"]
   }
 }
 ```
@@ -77,6 +98,7 @@ export interface LumosSettings {
   testsFolder: string;
   typesFolder: string;
   entryPoint?: string;
+  testResultFileName?: string;
 }
 ```
 
@@ -113,7 +135,6 @@ in package json
     }
   }
 }
-
 ```
 
 ## Modifying configs
@@ -123,7 +144,8 @@ in package json
 ```json
 {
   "lumos": {
-    "eslint": { // name of the driver
+    "eslint": {
+      // name of the driver
       "rules": {
         "import/prefer-default-export": "off"
       }
@@ -134,8 +156,7 @@ in package json
 
 ### Create file in `configs` folder
 
-Create javascript file inside this folder with name of driver.
-For example: `configs/eslint.js`
+Create javascript file inside this folder with name of driver. For example: `configs/eslint.js`
 
 ```js
 module.exports = {

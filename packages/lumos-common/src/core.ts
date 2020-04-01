@@ -44,6 +44,7 @@ export interface LumosSettings {
   testsFolder: string;
   typesFolder: string;
   entryPoint?: string;
+  testResultFileName?: string;
 }
 
 export interface LumosPackage extends PackageStructure {
