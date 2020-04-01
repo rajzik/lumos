@@ -5,7 +5,7 @@ Primarily used in unison with the [Lumos](https://www.npmjs.com/package/@rajzik/
 
 ## Extending config
 
-__Update package.json:__
+**Update package.json:**
 
 ```json
 {
@@ -17,7 +17,7 @@ __Update package.json:__
 }
 ```
 
-__Create file in configs folder:__
+**Create file in configs folder:**
 
 `configs/typescript.js`
 
@@ -52,3 +52,11 @@ interface BabelOptions {
   emitDeclarationOnly = false,
 }
 ```
+
+### CLI Options
+
+- `--[no-]clean` (bool) - Clean the target `outDir` before transpiling. Defaults to `true`.
+- `--reference-workspaces` (bool) - Automatically generate project references based on workspace
+  dependency graph. Defaults to `false`.
+
+### [Beemo/typescript](https://milesj.gitbook.io/beemo/driver/typescript)

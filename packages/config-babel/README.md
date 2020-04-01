@@ -5,29 +5,25 @@ unison with the [Lumos](https://www.npmjs.com/package/@rajzik/lumos) CLI.
 
 ## Extending config
 
-__Update package.json:__
+**Update package.json:**
 
 ```json
 {
   "lumos": {
     "eslint": {
-      "plugins": [
-        "styled-components"
-      ]
+      "plugins": ["styled-components"]
     }
   }
 }
 ```
 
-__Create file in configs folder:__
+**Create file in configs folder:**
 
 `configs/babel.js`
 
 ```js
 modules.exports = {
-  plugins: [
-    'styled-components',
-  ],
+  plugins: ['styled-components'],
 };
 ```
 
@@ -93,3 +89,9 @@ interface LumosEnvSetting {
   typescript = false,
 }
 ```
+
+### CLI Options
+
+- `--[no-]clean` (bool) - Clean the target `--out-dir` before transpiling. Defaults to `true`.
+
+### [Beemo/babel](https://milesj.gitbook.io/beemo/driver/babel)

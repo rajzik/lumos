@@ -5,7 +5,7 @@ used in unison with the [Lumos](https://www.npmjs.com/package/@rajzik/lumos) CLI
 
 ## Extending config
 
-__Update package.json:__
+**Update package.json:**
 
 ```json
 {
@@ -17,7 +17,7 @@ __Update package.json:__
 }
 ```
 
-__Create file in configs folder:__
+**Create file in configs folder:**
 
 `configs/prettier.js`
 
@@ -44,3 +44,5 @@ modules.exports = {
   useTabs: false,
 }
 ```
+
+### [Beemo/prettier](https://milesj.gitbook.io/beemo/driver/prettier)

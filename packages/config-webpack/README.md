@@ -5,15 +5,13 @@ Provides Webpack dependencies and configuration. Primarily used in unison with t
 
 ## Extending config
 
-__Create file in configs folder:__
+**Create file in configs folder:**
 
 `configs/babel.js`
 
 ```js
 modules.exports = {
-  plugins: [
-    new webpack.NamedChunksPlugin(),
-  ],
+  plugins: [new webpack.NamedChunksPlugin()],
 };
 ```
 
@@ -62,3 +60,5 @@ interface WebpackOptions {
   - Defines source code folder
 - entryPoint
   - Defines file which will be acting as entry point instead of index.html
+
+### [Beemo/webpack](https://milesj.gitbook.io/beemo/driver/webpack)
