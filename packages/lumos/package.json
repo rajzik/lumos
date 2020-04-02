@@ -34,7 +34,7 @@
     "@beemo/core": "^1.1.6",
     "@rajzik/conventional-changelog-beemo": "^2.0.1",
     "@rajzik/lumos-common": "^1.8.0",
-    "chalk": "^3.0.0",
+    "chalk": "^4.0.0",
     "check-node-version": "^4.0.2",
     "cross-env": "^7.0.2",
     "edit-json-file": "^1.4.0",
