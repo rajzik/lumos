@@ -37,6 +37,7 @@ export function getCompilerOptions({
     pretty: true,
     removeComments: false,
     strict: true,
+    strictNullChecks: true,
     target: next || node ? 'es2018' : 'es2015',
     // We want to resolve json modules
     resolveJsonModule: true,

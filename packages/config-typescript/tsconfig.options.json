@@ -17,6 +17,7 @@
     "pretty": true,
     "removeComments": false,
     "strict": true,
+    "strictNullChecks": true,
     "target": "es2015"
   }
 }
