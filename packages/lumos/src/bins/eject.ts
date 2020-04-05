@@ -3,7 +3,6 @@
 import { Path } from '@beemo/core';
 import { LumosPackage } from '@rajzik/lumos-common';
 import chalk from 'chalk';
-// @ts-ignore Not typed
 import editJsonFile from 'edit-json-file';
 import { prompt } from 'enquirer';
 import execa from 'execa';
@@ -75,7 +74,7 @@ function migrateDotfiles() {
 
 function migratePackageScripts(lumos: LumosPackage['lumos']) {
   const pkg = editJsonFile(pkgPath);
-  const scripts = pkg.get('scripts') || {};
+  const scripts = pkg.get<LumosPackage['scripts']>('scripts') || {};
   const srcFolder = lumos.settings.srcFolder || 'src';
   const testFolder = lumos.settings.testsFolder || 'tests';
 
@@ -184,7 +183,7 @@ export async function eject() {
   console.log(BANNER);
   console.log(`${chalk.cyan('[1/5]')} Ejecting Lumos`);
 
-  const lumos = editJsonFile(pkgPath).get('lumos');
+  const lumos = editJsonFile(pkgPath).get<LumosPackage['lumos']>('lumos');
 
   if (!lumos) {
     throw new Error("Project isn't Lumos enabled.");

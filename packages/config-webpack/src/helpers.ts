@@ -2,11 +2,11 @@ import { Path } from '@beemo/core';
 import { getCommitHash, getPackage } from '@rajzik/lumos-common';
 import glob from 'fast-glob';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
-// @ts-ignore
-import InlineManifestWebpackPlugin from 'inline-manifest-webpack-plugin';
 import path from 'path';
 import webpack, { Configuration } from 'webpack';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
+import { INVALID_CHARS, NUMBER_REGEX } from './constants';
+import { InlineManifestPlugin } from './plugins';
 import { WebpackOptions } from './types';
 
 const { WEBPACK_ESM_SCOPES, WEBPACK_ESM_PACKAGES } = process.env;
@@ -16,7 +16,7 @@ export const PROD = process.env.NODE_ENV === 'production';
 export const PORT = 3000;
 
 const esmScopes = ['@ori'];
-const esmPackages = ['ori-*'];
+const esmPackages = ['@ori-*'];
 
 if (WEBPACK_ESM_SCOPES) {
   esmScopes.push(...WEBPACK_ESM_SCOPES.split(','));
@@ -141,17 +141,29 @@ export function getPlugins({
         filename: 'index.html',
         favicon: getFavIcon(srcPath),
       }),
-      new InlineManifestWebpackPlugin(),
+      new InlineManifestPlugin(),
     );
   }
   return plugins;
 }
 
-const numberRegex = /^(0-9)*/;
-
-const invalidChars = /([/@\-\W])/g;
-
 export function getUniqueName() {
   const { name } = getPackage();
-  return `_${name.replace(numberRegex, '').replace(invalidChars, '')}`;
+  return `_${name.replace(NUMBER_REGEX, '').replace(INVALID_CHARS, '')}`;
+}
+
+export function getParallelValue(value: boolean | string | number | undefined): boolean | number {
+  if (value === undefined) {
+    return true;
+  }
+
+  if (value === 'true') {
+    return true;
+  }
+
+  if (value === 'false' || value === '') {
+    return false;
+  }
+
+  return Number(value || 1);
 }

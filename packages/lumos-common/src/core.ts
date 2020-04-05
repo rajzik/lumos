@@ -44,6 +44,9 @@ export interface LumosSettings {
   testsFolder: string;
   typesFolder: string;
   entryPoint?: string;
+  publicPath?: string;
+  root?: string;
+  parallel?: boolean | string | number;
   testResultFileName?: string;
 }
 

@@ -7,8 +7,10 @@
     "setup": "tsc --build",
     "clean": "rimraf packages/*/{lib,*.tsbuildinfo}",
     "build": "beemo typescript --build --reference-workspaces",
-    "test": "yarn run build && yarn run jest && yarn run eslint",
-    "eslint": "beemo eslint .",
+    "test": "yarn run build && yarn run jest && yarn run lint && yarn run test:webpack & yarn run test:webpack-entry",
+    "test:webpack": "cross-env NODE_ENV=production webpack --config ./packages/config-webpack/test/webpack.test.config.js",
+    "test:webpack-entry": "cross-env NODE_ENV=production webpack --config ./packages/config-webpack/test/webpack-entry.test.config.js",
+    "lint": "beemo eslint .",
     "jest": "beemo jest",
     "jest:coverage": "beemo jest --coverage",
     "prettier": "beemo prettier",
@@ -31,10 +33,12 @@
       "eslint",
       "jest",
       "prettier",
-      "typescript"
+      "typescript",
+      "webpack"
     ],
     "settings": {
-      "node": true
+      "node": true,
+      "testsFolder": "test"
     },
     "eslint": {
       "env": {

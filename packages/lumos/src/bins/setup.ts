@@ -23,7 +23,7 @@ interface SetupPrompt {
 const pkgPath = Path.resolve('package.json').path();
 
 function addLumosToPackage(response: SetupPrompt) {
-  const pkg = editJsonFile(pkgPath, {});
+  const pkg = editJsonFile(pkgPath);
   const lumos: Partial<LumosPackage['lumos']> = {
     drivers: response.drivers,
     settings: {},
@@ -59,12 +59,11 @@ function addLumosToPackage(response: SetupPrompt) {
 
 function addScriptsToPackage(response: SetupPrompt) {
   const { drivers } = response;
-  const pkg = editJsonFile(pkgPath, {});
+  const pkg = editJsonFile(pkgPath);
   const client = response.yarn ? 'yarn' : 'npm';
   const monorepo = response.type === 'monolib';
 
-  // @ts-ignore
-  const scripts = pkg.get('scripts') || {};
+  const scripts = pkg.get<LumosPackage['scripts']>('scripts') ?? {};
 
   scripts.prepare = 'lumos create-config --silent';
 

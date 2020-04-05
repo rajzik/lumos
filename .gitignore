@@ -12,10 +12,11 @@ logs/
 # Directories
 node_modules/
 lib/
+build*/
+coverage/
 
 # Configs
 .babelrc
-.eslintignore
 .prettierignore
 babel.config.js
 jest.config.js
@@ -26,4 +27,3 @@ webpack.config.js
 .npmrc
 junit.xml
 TEST-RESULTS.xml
-coverage

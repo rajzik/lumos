@@ -1,0 +1,15 @@
+coverage/
+node_modules/
+public/
+esm/
+lib/
+tmp/
+dist/
+build/
+configs/
+*.d.ts
+jest.config.js
+babel.config.js
+webpack.config.js
+build*/
+*.config.js

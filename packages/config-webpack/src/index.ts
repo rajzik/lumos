@@ -4,7 +4,15 @@ import { ASSET_EXT_PATTERN, EXTS, GQL_EXT_PATTERN, TJSX_EXT_PATTERN } from '@raj
 import path from 'path';
 import TerserPlugin from 'terser-webpack-plugin';
 import { Configuration } from 'webpack';
-import { getESMAliases, getPlugins, getUniqueName, PORT, PROD, ROOT } from './helpers';
+import {
+  getESMAliases,
+  getParallelValue,
+  getPlugins,
+  getUniqueName,
+  PORT,
+  PROD,
+  ROOT,
+} from './helpers';
 import { WebpackOptions } from './types';
 
 export function getConfig({
@@ -13,16 +21,19 @@ export function getConfig({
   port = PORT,
   react = false,
   sourceMaps = false,
+  parallel = true,
+  root = ROOT,
+  publicPath,
   srcFolder,
   entryPoint,
 }: WebpackOptions): WebpackConfig {
-  const srcPath = path.join(ROOT, srcFolder);
-  const publicPath = path.join(ROOT, buildFolder);
+  const srcPath = path.join(root, srcFolder);
+  const internalPublicPath = publicPath ?? path.join(root, buildFolder);
   let entryFiles: Configuration['entry'] = {
     core: [srcPath],
   };
   let output: Configuration['output'] = {
-    path: publicPath,
+    path: internalPublicPath,
     publicPath: '/',
     filename: PROD ? 'assets/[name].[contenthash].js' : 'assets/[name].js',
     chunkFilename: PROD ? 'assets/[name].[contenthash].chunk.js' : 'assets/[name].[id].js',
@@ -39,9 +50,9 @@ export function getConfig({
   });
 
   if (entryPoint && PROD) {
-    entryFiles = path.join(ROOT, srcFolder, entryPoint);
+    entryFiles = path.join(root, srcFolder, entryPoint);
     output = {
-      path: publicPath,
+      path: internalPublicPath,
       filename: 'index.js',
       chunkFilename: '[name].[contenthash].chunk.js',
       sourceMapFilename: '[file].map',
@@ -49,7 +60,7 @@ export function getConfig({
     };
   } else if (entryPoint) {
     entryFiles = {
-      core: [path.join(ROOT, srcFolder, entryPoint)],
+      core: [path.join(root, srcFolder, entryPoint)],
     };
   }
 
@@ -59,6 +70,8 @@ export function getConfig({
     bail: PROD,
 
     entry: entryFiles,
+
+    context: root,
 
     plugins,
 
@@ -112,7 +125,7 @@ export function getConfig({
     // @ts-ignore
     devServer: {
       compress: true,
-      contentBase: publicPath,
+      contentBase: internalPublicPath,
       disableHostCheck: true,
       headers: {
         'Service-Worker-Allowed': '/',
@@ -131,6 +144,7 @@ export function getConfig({
       minimizer: [
         new TerserPlugin({
           sourceMap: sourceMaps,
+          parallel: getParallelValue(parallel),
         }),
       ],
     },

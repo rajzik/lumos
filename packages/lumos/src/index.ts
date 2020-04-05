@@ -177,6 +177,7 @@ export default function cli(tool: Beemo) {
       env: {
         SOURCE_MAPS: context.args.sourceMaps ? 'true' : '',
         WEBPACK_ANALYZE: context.args.analyze ? 'true' : '',
+        WEBPACK_PARALLEL: String(context.args.parallel || ''),
       },
     });
   }, 'webpack');
