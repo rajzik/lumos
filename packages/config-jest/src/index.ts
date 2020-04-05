@@ -80,7 +80,7 @@ export function getConfig({
     collectCoverageFrom: [createCoveragePattern(srcFolder), createCoveragePattern(testsFolder)],
     coverageDirectory: './coverage',
     coveragePathIgnorePatterns: IGNORE_PATHS.filter(ignore => !ignore.startsWith('*')),
-    coverageReporters: ['lcov', 'json-summary', 'html'],
+    coverageReporters: ['lcov', 'json-summary', 'html', 'cobertura'],
     coverageThreshold: {
       global: {
         branches: threshold,
