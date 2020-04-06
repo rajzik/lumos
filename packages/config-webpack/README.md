@@ -20,12 +20,15 @@ modules.exports = {
 ### Main settings
 
 ```ts
-interface WebpackOptions {
+export interface WebpackOptions {
   analyzeBundle?: boolean;
   buildFolder?: string;
   port?: string | number;
+  parallel?: boolean | string | number;
+  root?: string;
   react?: boolean;
   sourceMaps?: boolean;
+  publicPath?: string;
   srcFolder: string;
   entryPoint?: string;
 }
@@ -41,6 +44,8 @@ interface WebpackOptions {
   react = false,
   sourceMaps = false,
   srcFolder = 'src',
+  publicPath = '/',
+  root = process.cwd(),
 }
 ```
 
@@ -60,5 +65,11 @@ interface WebpackOptions {
   - Defines source code folder
 - entryPoint
   - Defines file which will be acting as entry point instead of index.html
+- publicPath
+  - Defined path where to get scripts
+  - useful values: '/', './'
+- parallel
+  - Settings for terser plugin
+  - fast AF boii
 
 ### [Beemo/webpack](https://milesj.gitbook.io/beemo/driver/webpack)

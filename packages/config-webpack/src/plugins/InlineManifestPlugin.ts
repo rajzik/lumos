@@ -1,4 +1,4 @@
-/* eslint-disable no-param-reassign, import/no-extraneous-dependencies */
+/* eslint-disable no-param-reassign */
 
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import sourceMappingURL from 'source-map-url';
@@ -22,7 +22,7 @@ function inlineWhenMatched(
     if (isManifestScript) {
       return {
         tagName: 'script',
-        voidTag: true,
+        voidTag: false,
         attributes: {
           type: 'text/javascript',
         },

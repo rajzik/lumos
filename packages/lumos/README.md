@@ -98,6 +98,9 @@ export interface LumosSettings {
   testsFolder: string;
   typesFolder: string;
   entryPoint?: string;
+  publicPath?: string;
+  root?: string;
+  parallel?: boolean | string | number;
   testResultFileName?: string;
 }
 ```
@@ -119,6 +122,9 @@ export interface LumosSettings {
   srcFolder: 'src',
   testsFolder: 'tests',
   typesFolder: 'types',
+  root: process.cwd(),
+  parallel: true,
+  testResultFileName: 'TEST-RESULTS.xml',
 }
 ```
 

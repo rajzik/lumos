@@ -5,4 +5,5 @@ module.exports = getConfig({
   srcFolder: 'src',
   entryPoint: 'index.js',
   buildFolder: 'build2',
+  publicPath: './',
 });

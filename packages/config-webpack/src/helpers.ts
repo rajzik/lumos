@@ -98,6 +98,7 @@ export function getPlugins({
   analyzeBundle,
   srcFolder,
   entryPoint,
+  react,
 }: WebpackOptions): Configuration['plugins'] {
   const srcPath = path.join(ROOT, srcFolder);
 
@@ -115,28 +116,26 @@ export function getPlugins({
     }),
   ];
 
-  if (analyzeBundle) {
-    plugins.push(new BundleAnalyzerPlugin());
-  }
-
   if (!PROD) {
     plugins.push(
       new HtmlWebpackPlugin({
         chunks: ['runtime', 'core'],
-        chunksSortMode: 'auto', // 'none',
         template: `${srcFolder}/index.html`,
         filename: 'index.html',
         favicon: getFavIcon(srcPath),
       }),
-      new webpack.HotModuleReplacementPlugin(),
     );
+  }
+
+  if (analyzeBundle) {
+    plugins.push(new BundleAnalyzerPlugin());
   }
 
   if (!entryPoint && PROD) {
     plugins.push(
       new HtmlWebpackPlugin({
         chunks: ['runtime', 'core'],
-        chunksSortMode: 'auto', // 'none',
+        chunksSortMode: 'auto',
         template: `${srcFolder}/index.html`,
         filename: 'index.html',
         favicon: getFavIcon(srcPath),
@@ -144,6 +143,11 @@ export function getPlugins({
       new InlineManifestPlugin(),
     );
   }
+
+  if (react && !PROD) {
+    plugins.push(new webpack.HotModuleReplacementPlugin());
+  }
+
   return plugins;
 }
 

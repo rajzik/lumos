@@ -23,18 +23,18 @@ export function getConfig({
   sourceMaps = false,
   parallel = true,
   root = ROOT,
-  publicPath,
+  publicPath = '/',
   srcFolder,
   entryPoint,
 }: WebpackOptions): WebpackConfig {
   const srcPath = path.join(root, srcFolder);
-  const internalPublicPath = publicPath ?? path.join(root, buildFolder);
+  const internalPath = path.join(root, buildFolder);
   let entryFiles: Configuration['entry'] = {
     core: [srcPath],
   };
   let output: Configuration['output'] = {
-    path: internalPublicPath,
-    publicPath: '/',
+    path: internalPath,
+    publicPath,
     filename: PROD ? 'assets/[name].[contenthash].js' : 'assets/[name].js',
     chunkFilename: PROD ? 'assets/[name].[contenthash].chunk.js' : 'assets/[name].[id].js',
     sourceMapFilename: '[file].map',
@@ -52,7 +52,8 @@ export function getConfig({
   if (entryPoint && PROD) {
     entryFiles = path.join(root, srcFolder, entryPoint);
     output = {
-      path: internalPublicPath,
+      path: internalPath,
+      publicPath,
       filename: 'index.js',
       chunkFilename: '[name].[contenthash].chunk.js',
       sourceMapFilename: '[file].map',
@@ -96,7 +97,7 @@ export function getConfig({
             options: {
               limit: 1000,
               name: 'assets/[name].[ext]?[hash:7]',
-              publicPath: '/',
+              publicPath,
             },
           },
         },
@@ -125,7 +126,7 @@ export function getConfig({
     // @ts-ignore
     devServer: {
       compress: true,
-      contentBase: internalPublicPath,
+      contentBase: internalPath,
       disableHostCheck: true,
       headers: {
         'Service-Worker-Allowed': '/',
