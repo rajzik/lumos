@@ -27,7 +27,7 @@
     "lumos-eject": "./bin/lumos-eject"
   },
   "engines": {
-    "node": ">=12.16.0"
+    "node": ">=10.16.0"
   },
   "dependencies": {
     "@beemo/cli": "^1.0.10",

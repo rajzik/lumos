@@ -5,11 +5,9 @@ esm/
 lib/
 tmp/
 dist/
-build/
-configs/
+build
 *.d.ts
 jest.config.js
 babel.config.js
 webpack.config.js
-build*/
 *.config.js
