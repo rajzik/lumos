@@ -20,7 +20,7 @@
     "access": "public"
   },
   "engines": {
-    "node": ">=12.16.0"
+    "node": ">=10.16.0"
   },
   "devDependencies": {
     "@types/node": "^13.11.0"
