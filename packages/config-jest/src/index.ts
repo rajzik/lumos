@@ -2,6 +2,7 @@ import { Path } from '@beemo/core';
 import { JestConfig } from '@beemo/driver-jest';
 import {
   ASSET_EXT_PATTERN,
+  CSS_EXT_PATTERN,
   EXTS,
   GQL_EXT_PATTERN,
   IGNORE_PATHS,
@@ -96,6 +97,7 @@ export function getConfig({
     moduleFileExtensions: ['mock.js', ...exts, 'node'],
     moduleNameMapper: {
       [`^.+${ASSET_EXT_PATTERN.source}`]: fromHere('mocks/file.js'),
+      [`^.+${CSS_EXT_PATTERN.source}`]: fromHere('mocks/file.js'),
     },
     roots,
     setupFiles,

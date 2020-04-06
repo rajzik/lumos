@@ -1,9 +1,17 @@
 /* eslint-disable no-nested-ternary */
 import { WebpackConfig } from '@beemo/driver-webpack';
-import { ASSET_EXT_PATTERN, EXTS, GQL_EXT_PATTERN, TJSX_EXT_PATTERN } from '@rajzik/lumos-common';
+import {
+  ASSET_EXT_PATTERN,
+  CSS_EXT_PATTERN,
+  CSS_MODULE_EXT_PATTERN,
+  EXTS,
+  GQL_EXT_PATTERN,
+  TJSX_EXT_PATTERN,
+} from '@rajzik/lumos-common';
 import path from 'path';
 import TerserPlugin from 'terser-webpack-plugin';
 import { Configuration } from 'webpack';
+import { POSTCSS_SETTING, POSTCSS_SETTING_PROD } from './constants';
 import {
   getESMAliases,
   getParallelValue,
@@ -91,6 +99,29 @@ export function getConfig({
           },
         },
         {
+          test: CSS_MODULE_EXT_PATTERN,
+          use: [
+            'style-loader',
+            {
+              loader: 'css-loader',
+              options: {
+                importLoaders: 1,
+                modules: {
+                  localIdentName: '[local]_[hash:base64:5]',
+                },
+              },
+            },
+            PROD ? POSTCSS_SETTING_PROD : POSTCSS_SETTING,
+          ],
+          sideEffects: true,
+        },
+        {
+          test: CSS_EXT_PATTERN,
+          exclude: CSS_MODULE_EXT_PATTERN,
+          use: ['style-loader', 'css-loader', PROD ? POSTCSS_SETTING_PROD : POSTCSS_SETTING],
+          sideEffects: true,
+        },
+        {
           test: ASSET_EXT_PATTERN,
           use: {
             loader: 'url-loader',
@@ -98,6 +129,7 @@ export function getConfig({
               limit: 1000,
               name: 'assets/[name].[ext]?[hash:7]',
               publicPath,
+              esModule: false,
             },
           },
         },

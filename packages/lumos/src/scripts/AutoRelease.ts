@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-call */
 import { Script } from '@beemo/core';
 import { ExecaReturnValue } from 'execa';
 import { LERNA_VERSION_ARGS } from '../constants';

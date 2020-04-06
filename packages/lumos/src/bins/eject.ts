@@ -1,4 +1,4 @@
-/* eslint-disable no-restricted-syntax, no-await-in-loop, @typescript-eslint/prefer-nullish-coalescing */
+/* eslint-disable  @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-member-access, no-restricted-syntax, no-await-in-loop, @typescript-eslint/prefer-nullish-coalescing */
 
 import { Path } from '@beemo/core';
 import { LumosPackage } from '@rajzik/lumos-common';

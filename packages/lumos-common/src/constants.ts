@@ -6,7 +6,11 @@ export const EXTS_GROUP = '{ts,tsx,js,jsx}';
 
 export const TJSX_EXT_PATTERN = /\.m?(t|j)sx?$/;
 
-export const ASSET_EXT_PATTERN = /\.(ttf|eot|otf|svg|woff|woff2|mp3|png|jpg|jpeg|gif|ico|css|scss)$/;
+export const ASSET_EXT_PATTERN = /\.(ttf|eot|otf|svg|woff|woff2|mp3|png|jpg|jpeg|gif|ico)$/;
+
+export const CSS_EXT_PATTERN = /\.(css|scss)$/;
+
+export const CSS_MODULE_EXT_PATTERN = /\.module\.css$/;
 
 export const GQL_EXT_PATTERN = /\.(gql|graphql)$/;
 

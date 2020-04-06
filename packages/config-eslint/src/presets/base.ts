@@ -1,6 +1,12 @@
 import { Path } from '@beemo/core';
 import { ESLintConfig } from '@beemo/driver-eslint';
-import { ASSET_EXT_PATTERN, EXTS, EXTS_GROUP, GQL_EXT_PATTERN } from '@rajzik/lumos-common';
+import {
+  ASSET_EXT_PATTERN,
+  CSS_EXT_PATTERN,
+  EXTS,
+  EXTS_GROUP,
+  GQL_EXT_PATTERN,
+} from '@rajzik/lumos-common';
 
 const config: ESLintConfig = {
   root: true,
@@ -46,7 +52,13 @@ const config: ESLintConfig = {
 
   settings: {
     propWrapperFunctions: ['forbidExtraProps', 'exact', 'Object.freeze'],
-    'import/ignore': ['node_modules', '\\.json$', ASSET_EXT_PATTERN.source, GQL_EXT_PATTERN.source],
+    'import/ignore': [
+      'node_modules',
+      '\\.json$',
+      ASSET_EXT_PATTERN.source,
+      CSS_EXT_PATTERN.source,
+      GQL_EXT_PATTERN.source,
+    ],
     'import/extensions': EXTS,
     'import/resolver': {
       node: {
