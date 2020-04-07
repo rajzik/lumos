@@ -9,3 +9,6 @@ console.log(mod);
 console.log('Webpack build test!');
 
 import('./module').then(module => module.default());
+
+// eslint-disable-next-line no-undef
+document.getElementById('test').classList.add(mod.another);
