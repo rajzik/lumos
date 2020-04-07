@@ -178,6 +178,8 @@ export default function cli(tool: Beemo) {
         SOURCE_MAPS: context.args.sourceMaps ? 'true' : '',
         WEBPACK_ANALYZE: context.args.analyze ? 'true' : '',
         WEBPACK_PARALLEL: String(context.args.parallel || ''),
+        LUMOS_BUILD_FOLDER: context.args.buildFolder as string,
+        LUMOS_ENTRY_POINT: context.args.entryPoint as string,
       },
     });
   }, 'webpack');

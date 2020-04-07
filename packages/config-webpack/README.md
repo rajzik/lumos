@@ -72,4 +72,24 @@ export interface WebpackOptions {
   - Settings for terser plugin
   - fast AF boii
 
+### CLI Options
+
+- `--sourceMaps`
+  - Enable source map generation
+- `--analyze`
+  - Enable bundle analyze
+- `--parallel` / `--parallel=<number | string | boolean>`
+  - Enable/sets parallel configuration
+- `--buildFolder=<string>`
+  - sets build folder
+- `--entryPoint=<string>`
+  - sets entry point for build
+  - Entry point is relative to srcFolder
+
+**Example:**
+
+```bash
+lumos webpack --entryPoint=appEntry.tsx --sourceMaps --analyze --buildFolder=build
+```
+
 ### [Beemo/webpack](https://milesj.gitbook.io/beemo/driver/webpack)

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/prefer-nullish-coalescing */
 import { getConfig } from '@rajzik/config-webpack';
 import { getSettings } from '@rajzik/lumos-common';
 
@@ -9,9 +10,9 @@ export = getConfig({
   port: process.env.PORT,
   react,
   sourceMaps: !!process.env.SOURCE_MAPS,
-  buildFolder,
+  buildFolder: process.env.LUMOS_BUILD_FOLDER || buildFolder,
   srcFolder,
-  entryPoint,
+  entryPoint: process.env.LUMOS_ENTRY_POINT || entryPoint,
   publicPath,
   root,
 });

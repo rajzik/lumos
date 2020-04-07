@@ -10,14 +10,14 @@ export = context.args.referenceWorkspaces
       react,
     })
   : getConfig({
-      buildFolder,
+      buildFolder: (context.args.buildFolder as string) || buildFolder,
       includeTests: !!context.args.noEmit,
       library,
       node,
       react,
-      srcFolder,
-      testsFolder,
-      typesFolder,
+      srcFolder: (context.args.srcFolder as string) || srcFolder,
+      testsFolder: (context.args.testsFolder as string) || testsFolder,
+      typesFolder: (context.args.typesFolder as string) || typesFolder,
       workspaces: context.workspaces,
       emitDeclarationOnly: !!context.args.emitDeclarationOnly,
     });

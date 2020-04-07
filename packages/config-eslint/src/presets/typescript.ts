@@ -112,7 +112,7 @@ const config: ESLintConfig = {
         '@typescript-eslint/prefer-as-const': 'error',
         '@typescript-eslint/prefer-for-of': 'error',
         '@typescript-eslint/prefer-namespace-keyword': 'error',
-        // '@typescript-eslint/prefer-nullish-coalescing': 'off', // Lots of false positives
+        '@typescript-eslint/prefer-nullish-coalescing': 'off', // Lots of false positives
         '@typescript-eslint/prefer-optional-chain': 'error',
         '@typescript-eslint/promise-function-async': 'off', // Conflicts with other async rules
         '@typescript-eslint/require-await': 'error',
@@ -120,10 +120,10 @@ const config: ESLintConfig = {
         '@typescript-eslint/triple-slash-reference': 'error',
         '@typescript-eslint/type-annotation-spacing': 'error',
         '@typescript-eslint/unified-signatures': 'error',
-        '@typescript-eslint/prefer-nullish-coalescing': [
-          'warn',
-          { ignoreConditionalTests: false, ignoreMixedLogicalExpressions: false },
-        ],
+        // '@typescript-eslint/prefer-nullish-coalescing': [
+        //   'warn',
+        //   { ignoreConditionalTests: false, ignoreMixedLogicalExpressions: false },
+        // ],
       },
     },
   ],

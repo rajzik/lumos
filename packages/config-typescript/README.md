@@ -55,8 +55,28 @@ interface BabelOptions {
 
 ### CLI Options
 
-- `--[no-]clean` (bool) - Clean the target `outDir` before transpiling. Defaults to `true`.
-- `--reference-workspaces` (bool) - Automatically generate project references based on workspace
-  dependency graph. Defaults to `false`.
+- `--[no-]clean`
+  - clean the target `outDir` before transpiling. Defaults to `true`.
+- `--reference-workspaces` / `--reference-workspaces=<string>`
+  - automatically generate project references based on workspace dependency graph. Defaults to
+    `false`.
+- `--emitDeclarationOnly`
+  - emit d.ts files only
+- `--noEmit`
+  - include tests
+- `--buildFolder=<string>`
+  - sets build folder
+- `--srcFolder=<string>`
+  - sets src folder
+- `--testsFolder=<string>`
+  - sets tests folder
+- `--typesFolder=<string>`
+  - sets types folder
+
+**Example:**
+
+```bash
+lumos typescript --emitDeclarationOnly --typesFolder=types
+```
 
 ### [Beemo/typescript](https://milesj.gitbook.io/beemo/driver/typescript)

@@ -6,7 +6,7 @@ lib/
 tmp/
 dist/
 build/
-configs/
+/configs/
 *.d.ts
 jest.config.js
 babel.config.js

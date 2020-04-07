@@ -40,7 +40,8 @@
     ],
     "settings": {
       "node": true,
-      "testsFolder": "test"
+      "testsFolder": "test",
+      "library": true
     },
     "eslint": {
       "env": {
