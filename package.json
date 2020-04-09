@@ -75,7 +75,7 @@
     "@rajzik/conventional-changelog-lint-config-beemo": "^1.0.1",
     "graphql": "^14.6.0",
     "graphql-tag": "^2.10.3",
-    "husky": "^4.2.3",
+    "husky": "^4.2.4",
     "lerna": "^3.20.2",
     "rimraf": "^3.0.2"
   }
