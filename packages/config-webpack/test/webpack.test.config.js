@@ -5,4 +5,5 @@ module.exports = getConfig({
   buildFolder: `build${process.env.NODE_ENV}`,
   srcFolder: 'src',
   publicPath: './',
+  react: true,
 });
