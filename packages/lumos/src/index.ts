@@ -19,6 +19,7 @@ export default function cli(tool: Beemo) {
   const usingBabel = tool.isPluginEnabled('driver', 'babel');
   const usingPrettier = tool.isPluginEnabled('driver', 'prettier');
   const usingJest = tool.isPluginEnabled('driver', 'jest');
+  const usingTypescript = tool.isPluginEnabled('driver', 'typescript');
   const workspaces = tool.getWorkspacePaths({ relative: true });
   const pathPrefix = workspaces.length ? createWorkspacesGlob(workspaces) : '';
   const exts = ['.ts', '.tsx', '.js', '.jsx'];
@@ -115,7 +116,9 @@ export default function cli(tool: Beemo) {
       context.addOptions(['--logHeapUsage', '--detectOpenHandles']);
     }
 
-    driver.options.dependencies.push('typescript');
+    if (usingTypescript) {
+      driver.options.dependencies.push('typescript');
+    }
 
     driver.options.env.NODE_ENV = 'test';
     driver.options.env.TZ = 'UTC';
@@ -169,7 +172,9 @@ export default function cli(tool: Beemo) {
       process.env.ESM = 'true';
     }
 
-    driver.options.dependencies.push('typescript');
+    if (usingTypescript) {
+      driver.options.dependencies.push('typescript');
+    }
 
     // Since webpack config uses references and doesn't have access to Beemo,
     // we need to set these environment variables for easy access.
