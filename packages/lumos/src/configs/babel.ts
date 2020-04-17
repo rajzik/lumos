@@ -13,5 +13,5 @@ export = getConfig({
   node,
   react,
   typescript: tool.isPluginEnabled('driver', 'typescript'),
-  empty: !!context.args.empty || empty,
+  empty,
 });
