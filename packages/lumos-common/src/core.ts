@@ -48,6 +48,7 @@ export interface LumosSettings {
   root?: string;
   parallel?: boolean | string | number;
   testResultFileName?: string;
+  empty: boolean;
 }
 
 export interface LumosPackage extends PackageStructure {
@@ -110,6 +111,7 @@ export function getSettings(): LumosSettings {
     srcFolder: 'src',
     testsFolder: 'tests',
     typesFolder: 'types',
+    empty: false,
     ...settings,
   };
 }

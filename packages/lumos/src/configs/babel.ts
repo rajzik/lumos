@@ -2,7 +2,7 @@ import { getConfig } from '@rajzik/config-babel';
 import { getSettings } from '@rajzik/lumos-common';
 
 const { context, tool } = process.beemo;
-const { graphql, library, next, node, react, env } = getSettings();
+const { graphql, library, next, node, react, env, empty } = getSettings();
 
 export = getConfig({
   env,
@@ -13,4 +13,5 @@ export = getConfig({
   node,
   react,
   typescript: tool.isPluginEnabled('driver', 'typescript'),
+  empty: !!context.args.empty || empty,
 });

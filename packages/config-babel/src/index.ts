@@ -10,6 +10,7 @@ interface BabelOptions {
   node?: boolean;
   react?: boolean;
   typescript?: boolean;
+  empty?: boolean;
 }
 
 export function getConfig({
@@ -21,7 +22,12 @@ export function getConfig({
   node = false,
   react = false,
   typescript = false,
+  empty = false,
 }: BabelOptions): BabelConfig {
+  if (empty) {
+    return {};
+  }
+
   const envOptions = {
     loose: true,
     modules: esm ? false : 'commonjs',
