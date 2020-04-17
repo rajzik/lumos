@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/prefer-nullish-coalescing */
 import { getConfig } from '@rajzik/config-webpack';
 import { getSettings } from '@rajzik/lumos-common';
 
