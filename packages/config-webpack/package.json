@@ -32,7 +32,7 @@
   "dependencies": {
     "@babel/core": "^7.9.0",
     "@beemo/core": "^1.1.6",
-    "@beemo/driver-webpack": "^1.2.4",
+    "@beemo/driver-webpack": "^1.2.5",
     "@rajzik/lumos-common": "^1.11.2",
     "babel-loader": "^8.1.0",
     "cross-env": "^7.0.2",
