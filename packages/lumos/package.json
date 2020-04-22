@@ -31,7 +31,7 @@
   },
   "dependencies": {
     "@beemo/cli": "^1.0.11",
-    "@beemo/core": "^1.1.6",
+    "@beemo/core": "^1.1.7",
     "@rajzik/conventional-changelog-beemo": "^2.0.1",
     "@rajzik/lumos-common": "^1.11.2",
     "chalk": "^4.0.0",
