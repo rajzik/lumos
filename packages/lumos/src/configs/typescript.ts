@@ -2,7 +2,16 @@ import { getConfig, getConfigWithProjectRefs } from '@rajzik/config-typescript';
 import { getSettings } from '@rajzik/lumos-common';
 
 const { context } = process.beemo;
-const { buildFolder, srcFolder, testsFolder, typesFolder, node, react, library } = getSettings();
+const {
+  buildFolder,
+  srcFolder,
+  testsFolder,
+  typesFolder,
+  node,
+  react,
+  library,
+  aliasPattern,
+} = getSettings();
 
 export = context.args.referenceWorkspaces
   ? getConfigWithProjectRefs({
@@ -21,4 +30,5 @@ export = context.args.referenceWorkspaces
       typesFolder: (context.args.typesFolder as string) || typesFolder,
       workspaces: context.workspaces,
       emitDeclarationOnly: !!context.args.emitDeclarationOnly,
+      aliasPattern,
     });

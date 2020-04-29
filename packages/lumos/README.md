@@ -102,6 +102,7 @@ export interface LumosSettings {
   root?: string;
   parallel?: boolean | string | number;
   testResultFileName?: string;
+  aliasPattern?: string;
 }
 ```
 
@@ -125,6 +126,7 @@ export interface LumosSettings {
   root: process.cwd(),
   parallel: true,
   testResultFileName: 'TEST-RESULTS.xml',
+  aliasPattern: '~*',
 }
 ```
 

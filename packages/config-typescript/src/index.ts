@@ -12,6 +12,7 @@ export interface TypeScriptOptions {
   typesFolder: string;
   workspaces?: string[];
   emitDeclarationOnly?: boolean;
+  aliasPattern: string;
 }
 
 export function getCompilerOptions({
@@ -21,6 +22,7 @@ export function getCompilerOptions({
   react = false,
   emitDeclarationOnly = false,
   srcFolder = 'src',
+  aliasPattern,
 }: Partial<TypeScriptOptions>) {
   const options: TypeScriptConfig['compilerOptions'] = {
     allowSyntheticDefaultImports: true,
@@ -54,7 +56,7 @@ export function getCompilerOptions({
   if (!library) {
     options.baseUrl = '.';
     options.paths = {
-      '~/*': [`./${srcFolder}/*`],
+      [aliasPattern!]: [`./${srcFolder}/*`],
     };
   }
 
