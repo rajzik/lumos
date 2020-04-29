@@ -11,6 +11,8 @@ interface BabelOptions {
   react?: boolean;
   typescript?: boolean;
   empty?: boolean;
+  srcFolder: string;
+  aliasPattern: string;
 }
 
 export function getConfig({
@@ -23,6 +25,8 @@ export function getConfig({
   react = false,
   typescript = false,
   empty = false,
+  srcFolder,
+  aliasPattern,
 }: BabelOptions): BabelConfig {
   if (empty) {
     return {};
@@ -97,6 +101,18 @@ export function getConfig({
     if (!removePropTypes) {
       plugins.push('babel-plugin-typescript-to-proptypes');
     }
+  }
+
+  if (!library) {
+    plugins.push([
+      'babel-plugin-module-resolver',
+      {
+        root: ['.'],
+        alias: {
+          [aliasPattern]: `${srcFolder}/*`,
+        },
+      },
+    ]);
   }
 
   if (useNext) {

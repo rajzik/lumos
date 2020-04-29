@@ -19,6 +19,7 @@ export interface JestOptions {
   workspaces?: string[];
   testingLibrary?: boolean;
   testResultFileName?: string;
+  aliasPattern: string;
 }
 
 const exts = EXTS.map(ext => ext.slice(1));
@@ -50,6 +51,7 @@ export function getConfig({
   workspaces = [],
   testingLibrary = false,
   testResultFileName = 'TEST-RESULTS.xml',
+  aliasPattern,
 }: JestOptions): JestConfig {
   const roots: string[] = [];
   const setupFiles = [fromHere('setup/shims.js'), fromHere('setup/console.js')];
@@ -98,6 +100,7 @@ export function getConfig({
     moduleNameMapper: {
       [`^.+${ASSET_EXT_PATTERN.source}`]: fromHere('mocks/file.js'),
       [`^.+${CSS_EXT_PATTERN.source}`]: fromHere('mocks/file.js'),
+      [`^${aliasPattern.replace('*', '(.*)')}`]: `<rootDir>/${srcFolder}/$1`,
     },
     roots,
     setupFiles,

@@ -1,6 +1,9 @@
+/* eslint-disable import/no-unresolved */
+/* eslint-disable import/extensions */
 import './test.css';
 
 import mod from './test.module.css';
+import aliasModule from '~/mdl';
 
 // eslint-disable-next-line no-console
 console.log(mod);
@@ -17,6 +20,8 @@ const test = {
   test: '1234',
   asfg: 1234,
 };
+
+aliasModule();
 
 const c = { ...test, ...{ sup: 'mate' } };
 

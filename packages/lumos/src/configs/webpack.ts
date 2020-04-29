@@ -1,7 +1,7 @@
 import { getConfig } from '@rajzik/config-webpack';
 import { getSettings } from '@rajzik/lumos-common';
 
-const { srcFolder, react, entryPoint, publicPath, root, buildFolder } = getSettings();
+const { srcFolder, react, entryPoint, publicPath, root, buildFolder, aliasPattern } = getSettings();
 
 export = getConfig({
   analyzeBundle: !!process.env.WEBPACK_ANALYZE,
@@ -14,4 +14,5 @@ export = getConfig({
   entryPoint: process.env.LUMOS_ENTRY_POINT || entryPoint,
   publicPath,
   root,
+  aliasPattern,
 });

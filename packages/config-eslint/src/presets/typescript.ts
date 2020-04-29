@@ -11,6 +11,9 @@ const project = fromRoot('tsconfig.eslint.json', true) || fromRoot('tsconfig.jso
 
 const config: ESLintConfig = {
   settings: {
+    'import/resolver': {
+      typescript: {},
+    },
     'import/parsers': {
       '@typescript-eslint/parser': ['.ts', '.tsx'],
     },

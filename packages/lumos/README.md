@@ -126,7 +126,7 @@ export interface LumosSettings {
   root: process.cwd(),
   parallel: true,
   testResultFileName: 'TEST-RESULTS.xml',
-  aliasPattern: '~*',
+  aliasPattern: '~/*',
 }
 ```
 

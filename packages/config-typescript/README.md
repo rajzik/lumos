@@ -38,6 +38,7 @@ interface BabelOptions {
   node?: boolean;
   react?: boolean;
   emitDeclarationOnly?: boolean;
+  aliasPattern?: string;
 }
 ```
 
@@ -50,6 +51,7 @@ interface BabelOptions {
   node = false,
   react = false,
   emitDeclarationOnly = false,
+  aliasPattern = '~/*',
 }
 ```
 

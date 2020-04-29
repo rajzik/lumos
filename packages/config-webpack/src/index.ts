@@ -34,6 +34,7 @@ export function getConfig({
   publicPath = '/',
   srcFolder,
   entryPoint,
+  aliasPattern,
 }: WebpackOptions): WebpackConfig {
   const srcPath = path.join(root, srcFolder);
   const internalPath = path.join(root, buildFolder);
@@ -55,7 +56,9 @@ export function getConfig({
     sourceMaps,
     entryPoint,
     srcFolder,
+    aliasPattern,
   });
+  console.log(aliasPattern.replace(/[*/]/, ''));
 
   if (entryPoint && PROD) {
     entryFiles = path.join(root, srcFolder, entryPoint);
@@ -147,7 +150,10 @@ export function getConfig({
     },
 
     resolve: {
-      alias: getESMAliases(),
+      alias: {
+        [aliasPattern.replace(/[*/]/, '')]: path.join(root, srcFolder, '/'),
+        ...getESMAliases(),
+      },
       extensions: ['.wasm', '.mjs', ...EXTS],
     },
 
