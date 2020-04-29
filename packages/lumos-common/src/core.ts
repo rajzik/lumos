@@ -97,8 +97,10 @@ export function getSettings(): LumosSettings {
     Object.assign(settings, pkg.lumos.settings);
   }
 
+  const buildFolder = settings.library ? 'lib' : 'build';
+
   return {
-    buildFolder: 'lib',
+    buildFolder,
     coverage: 75,
     docsFolder: 'docs',
     env: {},
