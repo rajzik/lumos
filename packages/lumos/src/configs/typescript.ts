@@ -8,6 +8,7 @@ export = context.args.referenceWorkspaces
   ? getConfigWithProjectRefs({
       node,
       react,
+      library,
     })
   : getConfig({
       buildFolder: (context.args.buildFolder as string) || buildFolder,
