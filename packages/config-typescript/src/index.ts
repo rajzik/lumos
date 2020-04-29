@@ -20,6 +20,7 @@ export function getCompilerOptions({
   node = false,
   react = false,
   emitDeclarationOnly = false,
+  srcFolder = 'src',
 }: Partial<TypeScriptOptions>) {
   const options: TypeScriptConfig['compilerOptions'] = {
     allowSyntheticDefaultImports: true,
@@ -48,6 +49,13 @@ export function getCompilerOptions({
 
   if (react) {
     options.jsx = 'react';
+  }
+
+  if (!library) {
+    options.baseUrl = '.';
+    options.paths = {
+      '~/*': [`./${srcFolder}/*`],
+    };
   }
 
   return options;
