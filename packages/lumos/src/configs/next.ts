@@ -1,14 +1,13 @@
 import { getConfig } from '@rajzik/config-next';
 import { getSettings } from '@rajzik/lumos-common';
 
-const { context } = process.beemo;
 const { srcFolder, root, aliasPattern, buildFolder, nextTarget, nextOptions } = getSettings();
 
 export = getConfig({
-  buildFolder: (context.args.buildFolder as string) || buildFolder,
+  buildFolder: (process.env.LUMOS_BUILD_FOLDER as string) || buildFolder,
   analyzeBundle: !!process.env.ANALYZE,
-  srcFolder: (context.args.srcFolder as string) || srcFolder,
-  target: (context.args.target as typeof nextTarget) || nextTarget,
+  srcFolder: (process.env.LUMOS_SRC_FOLDER as string) || srcFolder,
+  target: (process.env.LUMOS_TARGET as typeof nextTarget) || nextTarget,
   root,
   aliasPattern,
   nextOptions,

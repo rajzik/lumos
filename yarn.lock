@@ -4047,6 +4047,11 @@ beemo-driver-next@^0.1.1:
   resolved "https://registry.yarnpkg.com/beemo-driver-next/-/beemo-driver-next-0.1.1.tgz#088002306e637cf0337a4bcac20bf49a34ee5e41"
   integrity sha512-I9WS8PxJewvDPgTBXGP0EQ/D1Mn24B0DDzv9DyG8C9MIDg3uWBCIHfvMMGNMJ4m8jixLGVjcZsWA3Wfz2GLnUA==
 
+beemo-driver-next@^0.1.3:
+  version "0.1.3"
+  resolved "https://registry.yarnpkg.com/beemo-driver-next/-/beemo-driver-next-0.1.3.tgz#f534bf1bfbe94f694f033dd7557222f270cc94e1"
+  integrity sha512-IZWvtyNBwYOA9TgvPsRtQKVB6GX17wt8iTfTZMie0lDmaKM3g9WAwQE64c2TQy2R400LxVNsU7P65fln+Syp5w==
+
 before-after-hook@^2.0.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/before-after-hook/-/before-after-hook-2.1.0.tgz#b6c03487f44e24200dd30ca5e6a1979c5d2fb635"
