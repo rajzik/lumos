@@ -41,6 +41,16 @@ export default function cli(tool: Beemo) {
   }, 'babel');
 
   /**
+   * NEXT JS
+   */
+
+  tool.onRunDriver.listen((_context, driver) => {
+    if (!usingTypescript) {
+      driver.options.dependencies.push('typescript');
+    }
+  }, 'next');
+
+  /**
    * ESLINT
    * - Add default extensions.
    * - Lint source and test folders by default.

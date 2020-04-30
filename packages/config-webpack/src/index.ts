@@ -5,22 +5,16 @@ import {
   CSS_EXT_PATTERN,
   CSS_MODULE_EXT_PATTERN,
   EXTS,
+  getESMAliases,
   GQL_EXT_PATTERN,
   TJSX_EXT_PATTERN,
+  WEBPACK_ROOT,
 } from '@rajzik/lumos-common';
 import path from 'path';
 import TerserPlugin from 'terser-webpack-plugin';
 import { Configuration } from 'webpack';
 import { POSTCSS_SETTING, POSTCSS_SETTING_PROD } from './constants';
-import {
-  getESMAliases,
-  getParallelValue,
-  getPlugins,
-  getUniqueName,
-  PORT,
-  PROD,
-  ROOT,
-} from './helpers';
+import { getParallelValue, getPlugins, getUniqueName, PORT, PROD } from './helpers';
 import { WebpackOptions } from './types';
 
 export function getConfig({
@@ -30,7 +24,7 @@ export function getConfig({
   react = false,
   sourceMaps = false,
   parallel = true,
-  root = ROOT,
+  root = WEBPACK_ROOT,
   publicPath = '/',
   srcFolder,
   entryPoint,
@@ -58,7 +52,6 @@ export function getConfig({
     srcFolder,
     aliasPattern,
   });
-  console.log(aliasPattern.replace(/[*/]/, ''));
 
   if (entryPoint && PROD) {
     entryFiles = path.join(root, srcFolder, entryPoint);

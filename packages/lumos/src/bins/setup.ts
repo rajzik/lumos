@@ -45,6 +45,11 @@ function addLumosToPackage(response: SetupPrompt) {
     lumos.settings!.library = true;
   }
 
+  if (response.type === 'ssr-app') {
+    lumos.settings!.buildFolder = '.next';
+    lumos.settings!.nextTarget = 'server';
+  }
+
   if (response.next) {
     lumos.settings!.next = true;
   }
@@ -110,6 +115,15 @@ function addScriptsToPackage(response: SetupPrompt) {
     delete scripts.postbuild;
   }
 
+  if (drivers.includes('next')) {
+    scripts.build = 'lumos next build';
+    scripts.start = 'lumos next dev -p 3000';
+    scripts['start-next'] = 'lumos next start';
+
+    delete scripts.prebuild;
+    delete scripts.postbuild;
+  }
+
   pkg.set('scripts', scripts);
   pkg.save();
 }
@@ -130,6 +144,7 @@ export async function setup() {
         { message: 'Prettier', name: 'prettier' },
         { message: 'TypeScript', name: 'typescript' },
         { message: 'Webpack', name: 'webpack' },
+        { message: 'Next', name: 'next' },
       ],
     },
     {
@@ -148,6 +163,7 @@ export async function setup() {
       message: 'Which type of project is this?',
       choices: [
         { message: 'Application', name: 'app' },
+        { message: 'Next App(SSR)', name: 'ssr-app' },
         { message: 'Library', name: 'lib' },
         { message: 'Library (monorepo)', name: 'monolib' },
       ],
@@ -186,6 +202,15 @@ export async function setup() {
   if (response.drivers.includes('jest') && !response.drivers.includes('babel')) {
     response.drivers.push('babel');
   }
+
+  if (response.drivers.includes('next') && !response.drivers.includes('typescript')) {
+    response.drivers.push('typescript');
+  }
+
+  if (response.type === 'ssr-app' && !response.drivers.includes('next')) {
+    response.drivers.push('next');
+  }
+
   console.log(`${chalk.cyan('[2/6]')} Updating package settings`);
 
   addLumosToPackage(response);

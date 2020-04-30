@@ -1,6 +1,5 @@
 import { Path } from '@beemo/core';
-import { getCommitHash, getPackage } from '@rajzik/lumos-common';
-import glob from 'fast-glob';
+import { getCommitHash, getPackage, WEBPACK_ROOT } from '@rajzik/lumos-common';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import path from 'path';
 import webpack, { Configuration } from 'webpack';
@@ -9,71 +8,8 @@ import { INVALID_CHARS, NUMBER_REGEX } from './constants';
 import { InlineManifestPlugin } from './plugins';
 import { WebpackOptions } from './types';
 
-const { WEBPACK_ESM_SCOPES, WEBPACK_ESM_PACKAGES } = process.env;
-
-export const ROOT = process.cwd();
 export const PROD = process.env.NODE_ENV === 'production';
 export const PORT = 3000;
-
-const esmScopes = ['@ori'];
-const esmPackages = ['@ori-*'];
-
-if (WEBPACK_ESM_SCOPES) {
-  esmScopes.push(...WEBPACK_ESM_SCOPES.split(','));
-}
-
-if (WEBPACK_ESM_PACKAGES) {
-  esmPackages.push(...WEBPACK_ESM_PACKAGES.split(','));
-}
-
-export interface AliasMap {
-  [key: string]: string;
-}
-
-export function getESMAliases(): AliasMap {
-  const aliases: AliasMap = {};
-  const pkg = getPackage();
-  const buildTargets = ['lib', 'build', 'dist'];
-
-  glob
-    .sync([`node_modules/{${esmScopes.join(',')}}/*`, `node_modules/{${esmPackages.join(',')}}`], {
-      absolute: true,
-      cwd: ROOT,
-      onlyDirectories: true,
-      onlyFiles: false,
-    })
-    .forEach(modulePath => {
-      const packageName = modulePath.split('/node_modules/')[1];
-      const esLessName = packageName.replace(/-es$/, '');
-      const esPath = new Path(modulePath, 'es');
-      const esmPath = new Path(modulePath, 'esm');
-
-      // ori-foo/lib -> ori-foo/esm
-      // optimal/lib -> optimal/esm
-      if (esPath.exists() || esmPath.exists()) {
-        const aliasPath = esPath.exists() ? `${packageName}/es` : `${packageName}/esm`;
-        const aliased = buildTargets.some(targetFolder => {
-          if (new Path(modulePath, targetFolder).exists()) {
-            aliases[`${packageName}/${targetFolder}`] = aliasPath;
-
-            return true;
-          }
-
-          return false;
-        });
-
-        if (!aliased) {
-          aliases[`${packageName}$`] = aliasPath;
-        }
-
-        // lodash -> lodash-es
-      } else if (packageName.endsWith('-es') && pkg.dependencies && pkg.dependencies[esLessName]) {
-        aliases[esLessName] = packageName;
-      }
-    });
-
-  return aliases;
-}
 
 let favicon = '';
 
@@ -100,7 +36,7 @@ export function getPlugins({
   entryPoint,
   react,
 }: WebpackOptions): Configuration['plugins'] {
-  const srcPath = path.join(ROOT, srcFolder);
+  const srcPath = path.join(WEBPACK_ROOT, srcFolder);
 
   const plugins = [
     new webpack.NamedChunksPlugin(),

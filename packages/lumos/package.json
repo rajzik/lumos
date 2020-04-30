@@ -46,6 +46,7 @@
     "@rajzik/config-danger": "^1.5.14",
     "@rajzik/config-eslint": "^2.4.0",
     "@rajzik/config-jest": "^1.10.0",
+    "@rajzik/config-next": "^0.0.0",
     "@rajzik/config-prettier": "^1.6.16",
     "@rajzik/config-typescript": "^1.7.0",
     "@rajzik/config-webpack": "^2.2.0"
