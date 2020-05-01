@@ -2976,10 +2976,10 @@
   resolved "https://registry.yarnpkg.com/@types/json5/-/json5-0.0.29.tgz#ee28707ae94e11d2b827bcbe5270bcea7f3e71ee"
   integrity sha1-7ihweulOEdK4J7y+UnC86n8+ce4=
 
-"@types/lodash@4.14.108":
-  version "4.14.108"
-  resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.108.tgz#02656af3add2e5b3174f830862c47421c00ef817"
-  integrity sha512-WD2vUOKfBBVHxWUV9iMR9RMfpuf8HquxWeAq2yqGVL7Nc4JW2+sQama0pREMqzNI3Tutj0PyxYUJwuoxxvX+xA==
+"@types/lodash@4.14.150":
+  version "4.14.150"
+  resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.150.tgz#649fe44684c3f1fcb6164d943c5a61977e8cf0bd"
+  integrity sha512-kMNLM5JBcasgYscD9x/Gvr6lTAv2NVgsKtet/hm93qMyf/D1pt+7jeEZklKJKxMVmXjxbRVQQGfqDSfipYCO6w==
 
 "@types/micromatch@^4.0.1":
   version "4.0.1"
@@ -4041,11 +4041,6 @@ bcrypt-pbkdf@^1.0.0:
   integrity sha1-pDAdOJtqQ/m2f/PKEaP2Y342Dp4=
   dependencies:
     tweetnacl "^0.14.3"
-
-beemo-driver-next@^0.1.1:
-  version "0.1.1"
-  resolved "https://registry.yarnpkg.com/beemo-driver-next/-/beemo-driver-next-0.1.1.tgz#088002306e637cf0337a4bcac20bf49a34ee5e41"
-  integrity sha512-I9WS8PxJewvDPgTBXGP0EQ/D1Mn24B0DDzv9DyG8C9MIDg3uWBCIHfvMMGNMJ4m8jixLGVjcZsWA3Wfz2GLnUA==
 
 beemo-driver-next@^0.1.3:
   version "0.1.3"
