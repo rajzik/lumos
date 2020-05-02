@@ -64,11 +64,13 @@ npm lumos typescript --build --reference-workspaces
 ## Supported drivers
 
 - [babel](../config-babel)
-- [prettier](../config-prettier)
+- [danger](../config-danger)
 - [eslint](../config-eslint)
+- [jest](../config-jest)
+- [next](../config-next)
+- [prettier](../config-prettier)
 - [typescript](../config-typescript)
 - [webpack](../config-webpack)
-- [jest](../config-jest)
 
 ### Set drivers manually
 
@@ -99,10 +101,15 @@ export interface LumosSettings {
   typesFolder: string;
   entryPoint?: string;
   publicPath?: string;
+  nextTarget?: 'server' | 'serverless';
   root?: string;
   parallel?: boolean | string | number;
   testResultFileName?: string;
-  aliasPattern?: string;
+  emptyBabelConfig: boolean;
+  aliasPattern: string;
+  nextOptions?: Partial<NextConfigObject>;
+  allowJs: boolean;
+  skipLibCheck: boolean;
 }
 ```
 
@@ -123,6 +130,10 @@ export interface LumosSettings {
   srcFolder: 'src',
   testsFolder: 'tests',
   typesFolder: 'types',
+  emptyBabelConfig: false,
+  aliasPattern: '~/*',
+  allowJs: false,
+  skipLibCheck: false,
   root: process.cwd(),
   parallel: true,
   testResultFileName: 'TEST-RESULTS.xml',

@@ -41,6 +41,9 @@ interface BabelOptions {
   node?: boolean;
   react?: boolean;
   typescript?: boolean;
+  empty?: boolean;
+  srcFolder: string;
+  aliasPattern: string;
 }
 ```
 
@@ -87,8 +90,33 @@ interface LumosEnvSetting {
   node = false,
   react = false,
   typescript = false,
+  empty = false,
 }
 ```
+
+### Options
+
+- env
+  - Babel preset evn config
+- buildFolder
+  - Defines build folder
+- react
+  - Enable/Disable react usage
+- typescript
+  - Enable/Disable typescript usage
+- esm
+  - Enable/Disable esm bundle
+- empty
+  - This will generate empty babelrc
+  - This can be handy when you need special babelrc config
+- graphql
+  - Enable/Disable graph QL usage
+- library
+  - Enable/Disable optimization for library
+- next
+  - Enable/Disable experimental plugins
+- node
+  - Enable/Disable only node support
 
 ### CLI Options
 

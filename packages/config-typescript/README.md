@@ -32,13 +32,22 @@ modules.exports = {
 ### Main settings
 
 ```ts
-interface BabelOptions {
+export interface TypeScriptOptions {
+  buildFolder: string;
+  includeTests?: boolean;
   library?: boolean;
   next?: boolean;
   node?: boolean;
   react?: boolean;
+  usingNext?: boolean;
+  srcFolder: string;
+  testsFolder: string;
+  typesFolder: string;
+  workspaces?: string[];
   emitDeclarationOnly?: boolean;
-  aliasPattern?: string;
+  aliasPattern: string;
+  allowJs?: boolean;
+  skipLibCheck?: boolean;
 }
 ```
 
@@ -50,8 +59,12 @@ interface BabelOptions {
   next = false,
   node = false,
   react = false,
+  usingNext = false,
   emitDeclarationOnly = false,
+  srcFolder = 'src',
   aliasPattern = '~/*',
+  allowJs = false,
+  skipLibCheck = false,
 }
 ```
 
