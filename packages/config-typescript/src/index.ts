@@ -14,6 +14,8 @@ export interface TypeScriptOptions {
   workspaces?: string[];
   emitDeclarationOnly?: boolean;
   aliasPattern: string;
+  allowJs?: boolean;
+  skipLibCheck?: boolean;
 }
 
 export function getCompilerOptions({
@@ -25,6 +27,8 @@ export function getCompilerOptions({
   emitDeclarationOnly = false,
   srcFolder = 'src',
   aliasPattern,
+  allowJs = false,
+  skipLibCheck = false,
 }: Partial<TypeScriptOptions>) {
   const options: TypeScriptConfig['compilerOptions'] = {
     allowSyntheticDefaultImports: true,
@@ -32,7 +36,7 @@ export function getCompilerOptions({
     esModuleInterop: true,
     forceConsistentCasingInFileNames: true,
     isolatedModules: next && !library,
-    jsx: usingNext ? 'preserve' : 'react',
+    jsx: 'preserve',
     lib: ['dom', 'esnext'],
     module: node ? 'commonjs' : 'esnext',
     moduleResolution: 'node',
@@ -49,6 +53,8 @@ export function getCompilerOptions({
     // Use define in development for spec accuracy,
     // but omit in production for smaller file sizes.
     useDefineForClassFields: next && process.env.NODE_ENV === 'development',
+    allowJs,
+    skipLibCheck,
   };
 
   if (react) {
@@ -60,6 +66,12 @@ export function getCompilerOptions({
     options.paths = {
       [aliasPattern!]: [`./${srcFolder}/*`],
     };
+  }
+
+  if (usingNext) {
+    options.jsx = 'preserve';
+    options.isolatedModules = true;
+    options.noEmit = true;
   }
 
   return options;

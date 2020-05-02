@@ -53,6 +53,8 @@ export interface LumosSettings {
   emptyBabelConfig: boolean;
   aliasPattern: string;
   nextOptions?: Partial<NextConfigObject>;
+  allowJs: boolean;
+  skipLibCheck: boolean;
 }
 
 export interface LumosPackage extends PackageStructure {
@@ -117,6 +119,8 @@ export function getSettings(): LumosSettings {
     typesFolder: 'types',
     emptyBabelConfig: false,
     aliasPattern: '~/*',
+    allowJs: false,
+    skipLibCheck: false,
     ...settings,
   };
 }

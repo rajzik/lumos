@@ -11,6 +11,9 @@ const {
   react,
   library,
   aliasPattern,
+  next,
+  allowJs,
+  skipLibCheck,
 } = getSettings();
 
 export = context.args.referenceWorkspaces
@@ -25,6 +28,7 @@ export = context.args.referenceWorkspaces
       library,
       node,
       react,
+      next,
       usingNext: tool.isPluginEnabled('driver', 'next'),
       srcFolder: (context.args.srcFolder as string) || srcFolder,
       testsFolder: (context.args.testsFolder as string) || testsFolder,
@@ -32,4 +36,6 @@ export = context.args.referenceWorkspaces
       workspaces: context.workspaces,
       emitDeclarationOnly: !!context.args.emitDeclarationOnly,
       aliasPattern,
+      allowJs,
+      skipLibCheck,
     });
