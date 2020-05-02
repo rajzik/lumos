@@ -1,7 +1,7 @@
 import { getConfig } from '@rajzik/config-next';
 import { getSettings } from '@rajzik/lumos-common';
 
-const { srcFolder, root, aliasPattern, buildFolder, nextTarget, nextOptions } = getSettings();
+const { srcFolder, root, aliasPattern, buildFolder, nextTarget } = getSettings();
 
 export = getConfig({
   buildFolder: (process.env.LUMOS_BUILD_FOLDER as string) || buildFolder,
@@ -10,5 +10,4 @@ export = getConfig({
   target: (process.env.LUMOS_TARGET as typeof nextTarget) || nextTarget,
   root,
   aliasPattern,
-  nextOptions,
 });

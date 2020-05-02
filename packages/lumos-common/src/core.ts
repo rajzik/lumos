@@ -1,6 +1,5 @@
 import Beemo, { BeemoConfig } from '@beemo/core';
 import { PackageStructure } from '@boost/common';
-import { NextConfigObject } from 'beemo-driver-next';
 import execa from 'execa';
 import glob from 'fast-glob';
 import fs from 'fs';
@@ -46,13 +45,12 @@ export interface LumosSettings {
   typesFolder: string;
   entryPoint?: string;
   publicPath?: string;
-  nextTarget?: 'server' | 'serverless';
+  nextTarget?: 'server' | 'serverless' | 'experimental-serverless-trace';
   root?: string;
   parallel?: boolean | string | number;
   testResultFileName?: string;
   emptyBabelConfig: boolean;
   aliasPattern: string;
-  nextOptions?: Partial<NextConfigObject>;
   allowJs: boolean;
   skipLibCheck: boolean;
 }
