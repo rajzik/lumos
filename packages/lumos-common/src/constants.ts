@@ -15,11 +15,13 @@ export const CSS_MODULE_EXT_PATTERN = /\.module\.css$/;
 export const GQL_EXT_PATTERN = /\.(gql|graphql)$/;
 
 export const IGNORE_PATHS = [
+  '.next/',
   'coverage/',
   'node_modules/',
   'public/',
   'esm/',
   'lib/',
+  '!src/lib',
   'tmp/',
   'dist/',
   'build/',
