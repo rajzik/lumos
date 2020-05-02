@@ -5,7 +5,7 @@
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "isolatedModules": false,
-    "jsx": "react",
+    "jsx": "preserve",
     "lib": [
       "dom",
       "esnext"
@@ -22,6 +22,8 @@
     "target": "es2018",
     "resolveJsonModule": true,
     "useDefineForClassFields": false,
+    "allowJs": false,
+    "skipLibCheck": false,
     "composite": true,
     "declarationMap": true
   }
