@@ -16,10 +16,10 @@ const {
 
 export = tool.isPluginEnabled('driver', 'next')
   ? getNextConfig({
-      env,
       graphql,
       next,
       react,
+      typescript: tool.isPluginEnabled('driver', 'typescript'),
       srcFolder,
       aliasPattern,
     })
