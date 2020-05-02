@@ -12,7 +12,6 @@ interface NextOptions {
   target?: NextConfigObject['target'];
   srcFolder: string;
   aliasPattern: string;
-  nextOptions?: Partial<NextConfigObject>;
 }
 
 export function getConfig({
@@ -22,25 +21,21 @@ export function getConfig({
   target = 'server',
   srcFolder = 'src',
   aliasPattern,
-  nextOptions = {},
 }: NextOptions): NextConfig {
-  const options: NextConfigObject = mergeConfig(
-    {
-      distDir: buildFolder,
-      target,
-      webpack: config => {
-        return mergeConfig(config, {
-          resolve: {
-            alias: {
-              [aliasPattern.replace(/[*/]/, '')]: path.join(root, srcFolder, '/'),
-              ...getESMAliases(),
-            },
+  const options: NextConfigObject = {
+    distDir: buildFolder,
+    target,
+    webpack: config => {
+      return mergeConfig(config, {
+        resolve: {
+          alias: {
+            [aliasPattern.replace(/[*/]/, '')]: path.join(root, srcFolder, '/'),
+            ...getESMAliases(),
           },
-        });
-      },
+        },
+      });
     },
-    nextOptions,
-  );
+  };
 
   if (analyzeBundle) {
     return bundleAnalyzer({
