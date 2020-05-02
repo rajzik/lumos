@@ -15,6 +15,94 @@ interface BabelOptions {
   aliasPattern: string;
 }
 
+export function getNextConfig({
+  graphql,
+  next,
+  react,
+  typescript,
+  srcFolder,
+  aliasPattern,
+}: BabelOptions): BabelConfig {
+  const presets: NonNullable<BabelConfig['presets']> = ['next/babel'];
+  const plugins: NonNullable<BabelConfig['plugins']> = [
+    ['babel-plugin-transform-dev', { evaluate: false }],
+  ];
+
+  let useNext = next;
+  let removePropTypes = false;
+
+  switch (process.env.NODE_ENV) {
+    case 'test': {
+      plugins.push('babel-plugin-dynamic-import-node');
+      break;
+    }
+
+    case 'development': {
+      if (react) {
+        plugins.push(
+          '@babel/plugin-transform-react-jsx-source',
+          '@babel/plugin-transform-react-jsx-self',
+        );
+      }
+      break;
+    }
+
+    case 'production':
+    default: {
+      if (react) {
+        plugins.push([
+          'babel-plugin-transform-react-remove-prop-types',
+          {
+            mode: 'remove',
+            removeImport: true,
+            additionalLibraries: ['airbnb-prop-types'],
+            ignoreFilenames: ['node_modules'],
+          },
+        ]);
+
+        removePropTypes = true;
+      }
+      break;
+    }
+  }
+
+  if (graphql) {
+    plugins.push('babel-plugin-graphql-tag');
+  }
+
+  if (typescript) {
+    useNext = true;
+    presets.push('@babel/preset-typescript');
+
+    if (!removePropTypes) {
+      plugins.push('babel-plugin-typescript-to-proptypes');
+    }
+  }
+
+  if (useNext) {
+    plugins.push(
+      '@babel/plugin-proposal-class-properties',
+      '@babel/plugin-proposal-export-namespace-from',
+    );
+  }
+
+  plugins.push([
+    'babel-plugin-module-resolver',
+    {
+      root: ['.'],
+      alias: {
+        [aliasPattern]: `${srcFolder}/*`,
+      },
+    },
+  ]);
+
+  return {
+    ignore: [...IGNORE_PATHS, '__tests__', '__mocks__'],
+    plugins,
+    presets,
+  };
+}
+
 export function getConfig({
   env = {},
   esm = false,

@@ -117,8 +117,8 @@ function addScriptsToPackage(response: SetupPrompt) {
 
   if (drivers.includes('next')) {
     scripts.build = 'lumos next build';
-    scripts.start = 'lumos next dev -p 3000';
-    scripts['start-next'] = 'lumos next start';
+    scripts.start = 'lumos create-config next --silent && next dev -p 3000';
+    scripts['start-next'] = 'lumos create-config next --silent && next start';
 
     delete scripts.prebuild;
     delete scripts.postbuild;

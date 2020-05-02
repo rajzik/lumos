@@ -7,6 +7,7 @@ export interface TypeScriptOptions {
   next?: boolean;
   node?: boolean;
   react?: boolean;
+  usingNext?: boolean;
   srcFolder: string;
   testsFolder: string;
   typesFolder: string;
@@ -20,6 +21,7 @@ export function getCompilerOptions({
   next = false,
   node = false,
   react = false,
+  usingNext = false,
   emitDeclarationOnly = false,
   srcFolder = 'src',
   aliasPattern,
@@ -30,7 +32,7 @@ export function getCompilerOptions({
     esModuleInterop: true,
     forceConsistentCasingInFileNames: true,
     isolatedModules: next && !library,
-    jsx: 'preserve',
+    jsx: usingNext ? 'preserve' : 'react',
     lib: ['dom', 'esnext'],
     module: node ? 'commonjs' : 'esnext',
     moduleResolution: 'node',

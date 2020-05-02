@@ -5,7 +5,7 @@
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "isolatedModules": false,
-    "jsx": "preserve",
+    "jsx": "react",
     "lib": [
       "dom",
       "esnext"

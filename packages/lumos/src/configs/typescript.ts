@@ -1,7 +1,7 @@
 import { getConfig, getConfigWithProjectRefs } from '@rajzik/config-typescript';
 import { getSettings } from '@rajzik/lumos-common';
 
-const { context } = process.beemo;
+const { context, tool } = process.beemo;
 const {
   buildFolder,
   srcFolder,
@@ -25,6 +25,7 @@ export = context.args.referenceWorkspaces
       library,
       node,
       react,
+      usingNext: tool.isPluginEnabled('driver', 'next'),
       srcFolder: (context.args.srcFolder as string) || srcFolder,
       testsFolder: (context.args.testsFolder as string) || testsFolder,
       typesFolder: (context.args.typesFolder as string) || typesFolder,
