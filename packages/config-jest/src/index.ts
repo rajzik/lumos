@@ -100,7 +100,8 @@ export function getConfig({
     moduleNameMapper: {
       [`^.+${ASSET_EXT_PATTERN.source}`]: fromHere('mocks/file.js'),
       [`^.+${CSS_EXT_PATTERN.source}`]: fromHere('mocks/file.js'),
-      [`^${aliasPattern.replace('*', '(.*)')}`]: `<rootDir>/${srcFolder}/$1`,
+      [`^${aliasPattern}(.*)`]: `<rootDir>/${srcFolder}/$1`,
+      [`^${aliasPattern}/(.*)`]: `<rootDir>/${srcFolder}/$1`,
     },
     roots,
     setupFiles,

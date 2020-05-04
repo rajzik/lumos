@@ -144,8 +144,9 @@ export function getConfig({
 
     resolve: {
       alias: {
-        [aliasPattern.replace(/[*/]/, '')]: path.join(root, srcFolder, '/'),
         ...getESMAliases(),
+        [`${aliasPattern}(.+)`]: `./${srcFolder}/\\1`,
+        [`${aliasPattern}/(.+)`]: `./${srcFolder}/\\1`,
       },
       extensions: ['.wasm', '.mjs', ...EXTS],
     },

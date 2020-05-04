@@ -116,7 +116,7 @@ export function getSettings(): LumosSettings {
     testsFolder: 'tests',
     typesFolder: 'types',
     emptyBabelConfig: false,
-    aliasPattern: '~/*',
+    aliasPattern: '~',
     allowJs: false,
     skipLibCheck: false,
     ...settings,

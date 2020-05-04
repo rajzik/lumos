@@ -1,5 +1,5 @@
 import { BabelConfig } from '@beemo/driver-babel';
-import { IGNORE_PATHS, LumosEnvSetting, NODE_TARGET, WEB_TARGET } from '@rajzik/lumos-common';
+import { EXTS, IGNORE_PATHS, LumosEnvSetting, NODE_TARGET, WEB_TARGET } from '@rajzik/lumos-common';
 
 interface BabelOptions {
   env?: LumosEnvSetting;
@@ -89,9 +89,10 @@ export function getNextConfig({
   plugins.push([
     'babel-plugin-module-resolver',
     {
-      root: ['.'],
+      extensions: EXTS,
       alias: {
-        [aliasPattern]: `${srcFolder}/*`,
+        [aliasPattern]: `./${srcFolder}`,
+        [`${aliasPattern}(.+)`]: `./${srcFolder}/\\1`,
       },
     },
   ]);
@@ -195,9 +196,9 @@ export function getConfig({
     plugins.push([
       'babel-plugin-module-resolver',
       {
-        root: ['.'],
+        extensions: ['ts', 'tsx', 'js', 'jsx'],
         alias: {
-          [aliasPattern]: `${srcFolder}/*`,
+          [aliasPattern]: `./${srcFolder}`,
         },
       },
     ]);

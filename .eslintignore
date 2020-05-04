@@ -1,8 +1,10 @@
+.next/
 coverage/
 node_modules/
 public/
 esm/
 lib/
+!src/lib
 tmp/
 dist/
 build/
