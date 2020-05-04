@@ -146,7 +146,6 @@ export function getConfig({
       alias: {
         ...getESMAliases(),
         [`${aliasPattern}`]: path.join(root, srcFolder, '/'),
-        [`${aliasPattern}(.+)`]: `${path.join(root, srcFolder)}/\\1`,
         [`${aliasPattern}/(.+)`]: `${path.join(root, srcFolder)}/\\1`,
       },
       extensions: ['.wasm', '.mjs', ...EXTS],
