@@ -29,7 +29,7 @@ export function getConfig({
       return mergeConfig(config, {
         resolve: {
           alias: {
-            [`${aliasPattern}`]: `${path.join(root, srcFolder, '/')}`,
+            [`${aliasPattern}`]: path.join(root, srcFolder, '/'),
             [`${aliasPattern}(.+)`]: `${path.join(root, srcFolder)}/\\1`,
             [`${aliasPattern}/(.+)`]: `${path.join(root, srcFolder)}/\\1`,
             ...getESMAliases(),

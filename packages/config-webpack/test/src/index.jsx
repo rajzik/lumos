@@ -4,6 +4,7 @@ import './test.css';
 
 import mod from './test.module.css';
 import aliasModule from '~/mdl';
+import anotherAlias from '~mdl';
 
 // eslint-disable-next-line no-console
 console.log(mod);
@@ -22,6 +23,7 @@ const test = {
 };
 
 aliasModule();
+anotherAlias();
 
 const c = { ...test, ...{ sup: 'mate' } };
 
