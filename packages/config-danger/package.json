@@ -23,7 +23,7 @@
     "node": ">=10.16.0"
   },
   "devDependencies": {
-    "@types/node": "^13.13.4"
+    "@types/node": "^13.13.5"
   },
   "dependencies": {
     "@rajzik/conventional-changelog-beemo": "^2.0.1",
