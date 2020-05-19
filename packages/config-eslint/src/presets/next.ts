@@ -36,7 +36,6 @@ const config: ESLintConfig = {
     'react/jsx-props-no-spreading': 'off',
     'react/state-in-constructor': 'off',
     'react/static-property-placement': 'off',
-
     // IMPORT
     'import/default': 'error',
     'import/namespace': 'error',
@@ -63,7 +62,7 @@ const config: ESLintConfig = {
       },
     ],
     'react/jsx-key': 'error',
-    'react/jsx-no-literals': 'error',
+    'react/jsx-no-literals': ['error', { noStrings: true, ignoreProps: true }],
     'react/jsx-no-useless-fragment': 'error',
     'react/jsx-no-script-url': 'error',
     'react/jsx-sort-default-props': [
