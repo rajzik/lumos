@@ -27,7 +27,7 @@
     "@beemo/core": "^1.1.7",
     "@next/bundle-analyzer": "^9.4.2",
     "@rajzik/lumos-common": "^2.0.7",
-    "beemo-driver-next": "^0.1.6",
+    "beemo-driver-next": "^0.1.7",
     "lodash": "^4.17.15",
     "next": "^9.4.2"
   },
