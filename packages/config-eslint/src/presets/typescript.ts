@@ -83,7 +83,7 @@ const config: ESLintConfig = {
         // TYPESCRIPT
         '@typescript-eslint/adjacent-overload-signatures': 'error',
         '@typescript-eslint/await-thenable': 'error',
-        '@typescript-eslint/class-name-casing': ['error', { allowUnderscorePrefix: true }],
+        // '@typescript-eslint/class-name-casing': ['error', { allowUnderscorePrefix: true }],
         '@typescript-eslint/consistent-type-assertions': [
           'error',
           { assertionStyle: 'as', objectLiteralTypeAssertions: 'allow-as-parameter' },
