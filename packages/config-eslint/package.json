@@ -21,7 +21,7 @@
     "node": ">=10.16.0"
   },
   "dependencies": {
-    "@beemo/core": "^1.1.7",
+    "@beemo/core": "^1.1.8",
     "@beemo/driver-eslint": "^1.2.3",
     "@rajzik/lumos-common": "^2.0.8",
     "@typescript-eslint/eslint-plugin": "^3.0.0",

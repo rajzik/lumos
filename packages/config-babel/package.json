@@ -31,7 +31,7 @@
     "@babel/preset-env": "^7.9.6",
     "@babel/preset-react": "^7.9.4",
     "@babel/preset-typescript": "^7.9.0",
-    "@beemo/core": "^1.1.7",
+    "@beemo/core": "^1.1.8",
     "@beemo/driver-babel": "^1.2.5",
     "@rajzik/lumos-common": "^2.0.8",
     "babel-plugin-graphql-tag": "^2.5.0",
