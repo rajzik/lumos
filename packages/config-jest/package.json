@@ -23,7 +23,7 @@
   "dependencies": {
     "@babel/core": "^7.9.0",
     "@beemo/core": "^1.1.7",
-    "@beemo/driver-babel": "^1.2.4",
+    "@beemo/driver-babel": "^1.2.5",
     "@beemo/driver-jest": "^1.2.2",
     "@rajzik/lumos-common": "^2.0.8",
     "@types/jest": "^25.2.3",

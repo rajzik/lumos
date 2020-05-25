@@ -32,7 +32,7 @@
     "@babel/preset-react": "^7.9.4",
     "@babel/preset-typescript": "^7.9.0",
     "@beemo/core": "^1.1.7",
-    "@beemo/driver-babel": "^1.2.4",
+    "@beemo/driver-babel": "^1.2.5",
     "@rajzik/lumos-common": "^2.0.8",
     "babel-plugin-graphql-tag": "^2.5.0",
     "babel-plugin-module-resolver": "^4.0.0",
