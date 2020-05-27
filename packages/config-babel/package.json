@@ -30,7 +30,7 @@
     "@babel/plugin-transform-runtime": "^7.10.0",
     "@babel/preset-env": "^7.10.0",
     "@babel/preset-react": "^7.10.0",
-    "@babel/preset-typescript": "^7.9.0",
+    "@babel/preset-typescript": "^7.10.1",
     "@beemo/core": "^1.1.8",
     "@beemo/driver-babel": "^1.2.5",
     "@rajzik/lumos-common": "^2.0.9",
