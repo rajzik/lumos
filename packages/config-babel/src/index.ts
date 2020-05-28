@@ -55,7 +55,7 @@ export function getNextConfig({
           {
             mode: 'remove',
             removeImport: true,
-            additionalLibraries: ['airbnb-prop-types'],
+            additionalLibraries: [],
             ignoreFilenames: ['node_modules'],
           },
         ]);
@@ -81,7 +81,8 @@ export function getNextConfig({
 
   if (useNext) {
     plugins.push(
-      '@babel/plugin-proposal-class-properties',
+      ['@babel/plugin-proposal-class-properties', { loose: true }],
+      ['@babel/plugin-proposal-private-methods', { loose: true }],
       '@babel/plugin-proposal-export-namespace-from',
     );
   }
@@ -134,6 +135,10 @@ export function getConfig({
     '@babel/plugin-transform-runtime',
   ];
 
+  // https://babeljs.io/blog/2020/03/16/7.9.0#highlights
+  // @ts-ignore Not typed upstream
+  envOptions.bugfixes = typeof envOptions.targets === 'object' && !!envOptions.targets?.esmodules;
+
   // Flags
   let useNext = next;
   let removePropTypes = false;
@@ -164,7 +169,7 @@ export function getConfig({
           {
             mode: 'remove',
             removeImport: true,
-            additionalLibraries: ['airbnb-prop-types'],
+            additionalLibraries: [],
             ignoreFilenames: ['node_modules'],
           },
         ]);
@@ -206,7 +211,8 @@ export function getConfig({
 
   if (useNext) {
     plugins.push(
-      '@babel/plugin-proposal-class-properties',
+      ['@babel/plugin-proposal-class-properties', { loose: envOptions.loose }],
+      ['@babel/plugin-proposal-private-methods', { loose: envOptions.loose }],
       '@babel/plugin-proposal-export-namespace-from',
     );
   }
