@@ -14,4 +14,6 @@ jest.config.js
 babel.config.js
 webpack.config.js
 build*/
+\.eslintrc.js
 *.config.js
+packages/config-babel/test/fixtures/**/*

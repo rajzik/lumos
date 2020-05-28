@@ -61,5 +61,12 @@ export function getExtendsList({
 }
 
 export function getIgnoreList(): string[] {
-  return [...IGNORE_PATHS, 'jest.config.js', 'babel.config.js', 'webpack.config.js', 'build*/'];
+  return [
+    ...IGNORE_PATHS,
+    'jest.config.js',
+    'babel.config.js',
+    'webpack.config.js',
+    'build*/',
+    '\\.eslintrc.js',
+  ];
 }

@@ -52,7 +52,8 @@
         "@typescript-eslint/interface-name-prefix": "off"
       },
       "ignore": [
-        "*.config.js"
+        "*.config.js",
+        "packages/config-babel/test/fixtures/**/*"
       ]
     },
     "prettier": {
