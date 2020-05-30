@@ -29,7 +29,7 @@
     "@babel/plugin-transform-react-jsx-self": "^7.10.1",
     "@babel/plugin-transform-react-jsx-source": "^7.10.1",
     "@babel/plugin-transform-runtime": "^7.10.1",
-    "@babel/preset-env": "^7.10.1",
+    "@babel/preset-env": "^7.10.2",
     "@babel/preset-react": "^7.10.1",
     "@babel/preset-typescript": "^7.10.1",
     "@beemo/core": "^1.1.8",
