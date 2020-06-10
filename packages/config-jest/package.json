@@ -31,7 +31,8 @@
     "cross-env": "^7.0.2",
     "dom-storage": "^2.1.0",
     "jest": "^26.0.1",
-    "jest-junit": "^10.0.0"
+    "jest-junit": "^10.0.0",
+    "jest-environment-jsdom-sixteen": "^1.0.3"
   },
   "peerDependencies": {
     "@testing-library/jest-dom": ">=5",

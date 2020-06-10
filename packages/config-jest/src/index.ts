@@ -106,7 +106,7 @@ export function getConfig({
     roots,
     setupFiles,
     setupFilesAfterEnv,
-    testEnvironment: node && !react ? 'node' : 'jsdom',
+    testEnvironment: node && !react ? 'node' : 'jest-environment-jsdom-sixteen',
     transformIgnorePatterns: ['/node_modules/', '/esm/', '/lib/'],
     testURL: 'http://localhost',
     timers: 'fake',
