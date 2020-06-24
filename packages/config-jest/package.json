@@ -30,7 +30,7 @@
     "airbnb-js-shims": "^2.2.1",
     "cross-env": "^7.0.2",
     "dom-storage": "^2.1.0",
-    "jest": "^26.0.1",
+    "jest": "^26.1.0",
     "jest-environment-jsdom-sixteen": "^1.0.3",
     "jest-junit": "^11.0.1"
   },
