@@ -72,7 +72,7 @@
   ],
   "devDependencies": {
     "@commitlint/cli": "^9.0.1",
-    "@commitlint/config-conventional": "^8.3.4",
+    "@commitlint/config-conventional": "^9.0.1",
     "@rajzik/conventional-changelog-lint-config-beemo": "^1.0.1",
     "graphql": "^15.1.0",
     "graphql-tag": "^2.10.3",
