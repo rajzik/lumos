@@ -28,7 +28,7 @@
     "@next/bundle-analyzer": "^9.4.4",
     "@rajzik/lumos-common": "^2.0.12",
     "beemo-driver-next": "^0.1.13",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.18",
     "next": "^9.4.4"
   },
   "peerDependencies": {
