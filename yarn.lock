@@ -3531,10 +3531,10 @@
   dependencies:
     "@types/node" ">= 8"
 
-"@rajzik/conventional-changelog-beemo@^2.0.4":
-  version "2.0.4"
-  resolved "https://registry.yarnpkg.com/@rajzik/conventional-changelog-beemo/-/conventional-changelog-beemo-2.0.4.tgz#56827e75651608970ec7d520d59d1efc4f5c1626"
-  integrity sha512-QKo7U58Ufb3WEXZLCJERsyYGjwpzMcCbKMRWv2ZR0zh7J3SpKkKnrB8Ij1EJOeXPptaslTzNSzxTmGQp+ZjqCw==
+"@rajzik/conventional-changelog-beemo@^2.0.5":
+  version "2.0.5"
+  resolved "https://registry.yarnpkg.com/@rajzik/conventional-changelog-beemo/-/conventional-changelog-beemo-2.0.5.tgz#5a65b65c451d5026a784d777b8f1acd143947d57"
+  integrity sha512-v7Nioi7EKo7vM3IcoCCkoBiGqScxA7u6zpSD6FhYdJ4P4yJme6kifCqGtmt6U9KvBso9y3Sy9NfBiN7iga4Tkg==
 
 "@rajzik/conventional-changelog-lint-config-beemo@^1.0.2":
   version "1.0.2"
