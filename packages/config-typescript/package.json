@@ -23,6 +23,6 @@
   "dependencies": {
     "@beemo/core": "^1.1.8",
     "@beemo/driver-typescript": "^1.4.0",
-    "typescript": "^3.9.6"
+    "typescript": "^3.9.7"
   }
 }
