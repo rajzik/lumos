@@ -1973,10 +1973,10 @@
     pretty-ms "^5.1.0"
     yaml "^1.9.2"
 
-"@boost/common@^2.0.0":
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/@boost/common/-/common-2.0.0.tgz#3a9ecc961e547266695a7b26ed39cf6a0b7528b5"
-  integrity sha512-j4LOWX+3CC+2llmERThc+iU+iuqQ9vgSWsmKQta2go2LlK0m3cZMWQZWI7bAMuoeqd0a1i+MpIgTvO18Dsxnww==
+"@boost/common@^2.1.0":
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/@boost/common/-/common-2.1.0.tgz#b66acf7ad79033e75ac64aaebe7fa55e9c86a2f2"
+  integrity sha512-GrfC0ghs+nFDAChJR+CYn8dd/C7F6mn/JScXmSC/sC0P/Up9kn06WZmbFPTzAOheIEv31pIEO0sUTW1DyBGzzg==
   dependencies:
     "@boost/internal" "^2.0.0"
     fast-glob "^3.2.4"
