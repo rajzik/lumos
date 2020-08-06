@@ -21,7 +21,7 @@
     "node": ">=10.16.0"
   },
   "devDependencies": {
-    "@types/lodash": "4.14.158"
+    "@types/lodash": "4.14.159"
   },
   "dependencies": {
     "@beemo/core": "^1.1.8",
