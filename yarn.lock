@@ -4254,10 +4254,10 @@ bcrypt-pbkdf@^1.0.0:
   dependencies:
     tweetnacl "^0.14.3"
 
-beemo-driver-next@^0.1.16:
-  version "0.1.16"
-  resolved "https://registry.yarnpkg.com/beemo-driver-next/-/beemo-driver-next-0.1.16.tgz#403cc6d6868ddffa600b24cacb824e35f541866c"
-  integrity sha512-NccXM+hWLHsV+X/xcaaOHkN/uhLmjY6flteZgeSqOG9QS4udyD88AfKCb23s2/V2tQ0IrpcAXb97BhzHpUmYcg==
+beemo-driver-next@^0.1.17:
+  version "0.1.17"
+  resolved "https://registry.yarnpkg.com/beemo-driver-next/-/beemo-driver-next-0.1.17.tgz#50b3874d81af1198a560738fc5275ff9b047d6e2"
+  integrity sha512-+u3/91OCoTb7PEIRgedCYkVWRMGoHZW50THw+GR1Y638ZypWaVJarqINPOSgEOhsryTf+ak2/CzentXjbbUKzQ==
 
 before-after-hook@^2.0.0:
   version "2.1.0"
@@ -9384,15 +9384,6 @@ jest-worker@24.9.0:
   dependencies:
     merge-stream "^2.0.0"
     supports-color "^6.1.0"
-
-jest-worker@^26.2.1, jest-worker@^26.3.0:
-  version "26.3.0"
-  resolved "https://registry.yarnpkg.com/jest-worker/-/jest-worker-26.3.0.tgz#7c8a97e4f4364b4f05ed8bca8ca0c24de091871f"
-  integrity sha512-Vmpn2F6IASefL+DVBhPzI2J9/GJUsqzomdeN+P+dK8/jKxbh8R3BtFnx3FIta7wYlPU62cpJMJQo4kuOowcMnw==
-  dependencies:
-    "@types/node" "*"
-    merge-stream "^2.0.0"
-    supports-color "^7.0.0"
 
 jest-worker@^26.3.0:
   version "26.3.0"
