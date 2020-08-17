@@ -1521,12 +1521,13 @@
     pretty-ms "^5.1.0"
     yaml "^1.9.2"
 
-"@boost/common@^2.1.0":
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/@boost/common/-/common-2.1.0.tgz#b66acf7ad79033e75ac64aaebe7fa55e9c86a2f2"
-  integrity sha512-GrfC0ghs+nFDAChJR+CYn8dd/C7F6mn/JScXmSC/sC0P/Up9kn06WZmbFPTzAOheIEv31pIEO0sUTW1DyBGzzg==
+"@boost/common@^2.2.0":
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/@boost/common/-/common-2.2.0.tgz#b663298c83e0437ed2dabb3e0292afa97d6c8f5b"
+  integrity sha512-QyDUt1ncwwkreQiXxq5vMUxGeMkXukGQxdJqOvt3I7CVKkxeQuujGGZqGTIPdJnn66meC30ltpSdV+98h57U0g==
   dependencies:
-    "@boost/internal" "^2.0.0"
+    "@boost/decorators" "^2.0.0"
+    "@boost/internal" "^2.1.0"
     fast-glob "^3.2.4"
     json5 "^2.1.3"
     optimal "^4.2.0"
@@ -1573,6 +1574,11 @@
     execa "^3.4.0"
     fast-glob "^3.2.2"
 
+"@boost/decorators@^2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@boost/decorators/-/decorators-2.0.0.tgz#2831ccabf576fc626803e0a06e6bcbb9992ce711"
+  integrity sha512-T+3O+nidXjo6983KZVCgeLrhwh26Ki0gz7ZWV66xl4noOminiTBxGBNyfIJGNu9CbLKq8iA7g7KVGeMxMdbV9Q==
+
 "@boost/event@^1.3.1":
   version "1.3.1"
   resolved "https://registry.yarnpkg.com/@boost/event/-/event-1.3.1.tgz#0f12d7a6accd06531c56faaf5580e3e6cb57d529"
@@ -1588,12 +1594,11 @@
     chalk "^3.0.0"
     debug "^4.1.1"
 
-"@boost/internal@^2.0.0":
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/@boost/internal/-/internal-2.0.0.tgz#4fc15b4321f1ade579c7628b71b679117fc9a544"
-  integrity sha512-RQn1iRM+7k0VzJJvaofx28YYpvJWWCUVMoYGI91q1tELEWobNR6v3udps0QW/QSHOoUvM4j6aCkT57hd+ojzQw==
+"@boost/internal@^2.1.0":
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/@boost/internal/-/internal-2.1.0.tgz#0f94e78ea9a108479491d72957fb08bf1e8f9124"
+  integrity sha512-0ZLyuo9plqOHRp/00epTvdQO+xvk7WSiHt9f7j7r2XBkjPvcjk99oE8Ufm1SuQlGWeiKDUH1fWG1pzoRRHPLQA==
   dependencies:
-    chalk "^4.1.0"
     debug "^4.1.1"
 
 "@boost/log@^1.2.0":
