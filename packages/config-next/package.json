@@ -25,7 +25,7 @@
   },
   "dependencies": {
     "@beemo/core": "^1.1.8",
-    "@next/bundle-analyzer": "^9.5.2",
+    "@next/bundle-analyzer": "^9.5.3",
     "@rajzik/lumos-common": "^2.0.15",
     "beemo-driver-next": "^0.1.17",
     "lodash": "^4.17.20",
