@@ -1,0 +1,20 @@
+---
+to: .releaserc
+---
+{
+  "branches": [
+    "release",
+    {
+      "name": "develop",
+      "channel": "channel-next",
+      "prerelease": true
+    },
+    {
+      "name": "*",
+      "channel": "channel-${name}",
+      "prerelease": true
+    }
+  ],
+  "extends": "@rajzik/az-semantic-release-config",
+  "repositoryUrl": ""
+}

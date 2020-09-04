@@ -45,6 +45,10 @@ function addLumosToPackage(response: SetupPrompt) {
     lumos.settings!.library = true;
   }
 
+  if (response.type === 'app') {
+    lumos.settings!.entryPoint = 'app-loader.tsx';
+  }
+
   if (response.type === 'ssr-app') {
     lumos.settings!.buildFolder = '.next';
     lumos.settings!.nextTarget = 'server';

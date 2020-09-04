@@ -29,9 +29,11 @@ export function getConfig({
   srcFolder,
   entryPoint,
   aliasPattern,
+  devServerContentBase = 'public',
 }: WebpackOptions): WebpackConfig {
   const srcPath = path.join(root, srcFolder);
   const internalPath = path.join(root, buildFolder);
+  const devServerPublicPath = path.join(root, devServerContentBase);
   let entryFiles: Configuration['entry'] = {
     core: [srcPath],
   };
@@ -158,13 +160,17 @@ export function getConfig({
     // @ts-ignore
     devServer: {
       compress: true,
-      contentBase: internalPath,
+      contentBase: devServerPublicPath,
+      watchContentBase: true,
       disableHostCheck: true,
       headers: {
         'Service-Worker-Allowed': '/',
       },
-      historyApiFallback: true,
+      historyApiFallback: {
+        disableDotRule: true,
+      },
       hot: true,
+      quiet: true,
       port, // This can be a unix socket path so a string is valid
       watchOptions: {
         ignored: /node_modules/,

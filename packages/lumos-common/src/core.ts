@@ -53,6 +53,7 @@ export interface LumosSettings {
   aliasPattern: string;
   allowJs: boolean;
   skipLibCheck: boolean;
+  devServerContentBase?: string;
 }
 
 export interface LumosPackage extends PackageStructure {

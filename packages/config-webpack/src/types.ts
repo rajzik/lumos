@@ -10,4 +10,5 @@ export interface WebpackOptions {
   srcFolder: string;
   entryPoint?: string;
   aliasPattern: string;
+  devServerContentBase?: string;
 }

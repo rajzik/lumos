@@ -41,4 +41,5 @@ export const SCAFFOLD_DEPS = [
   '@rajzik/conventional-changelog-lint-config-beemo',
   '@commitlint/cli',
   'husky',
+  'lint-staged',
 ];
