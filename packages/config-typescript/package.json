@@ -22,7 +22,7 @@
   },
   "dependencies": {
     "@beemo/core": "^1.1.8",
-    "@beemo/driver-typescript": "^1.4.0",
+    "@beemo/driver-typescript": "^1.4.1",
     "typescript": "^4.0.2"
   }
 }
