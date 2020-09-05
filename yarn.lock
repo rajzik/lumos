@@ -3940,10 +3940,10 @@ bcrypt-pbkdf@^1.0.0:
   dependencies:
     tweetnacl "^0.14.3"
 
-beemo-driver-next@^0.1.18:
-  version "0.1.18"
-  resolved "https://registry.yarnpkg.com/beemo-driver-next/-/beemo-driver-next-0.1.18.tgz#bf8673076cf2f5ce955c94528d4a0093c477f632"
-  integrity sha512-APuiyQCpS9wh2RWI0hH8KyOt7Zo0TP21RRI1xqE19z2pw/7gCnkqQ5+zUN5NKE4BvmbVaoT+vkn3gJ6NyNv6Wg==
+beemo-driver-next@^0.1.19:
+  version "0.1.19"
+  resolved "https://registry.yarnpkg.com/beemo-driver-next/-/beemo-driver-next-0.1.19.tgz#2c75528d3135a92d145fb4e5f372b62e0d9952b1"
+  integrity sha512-VIRYB3owvX0UgawHzpaV098XHJ6tYE7Apo+B1RZzB8+S48q6BeQAPn6hQkcOH6G2Xup4njM3DGFD4MgIIMiLAg==
 
 before-after-hook@^2.0.0:
   version "2.1.0"
