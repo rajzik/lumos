@@ -214,6 +214,7 @@ export function getConfig({
     plugins.push(
       ['@babel/plugin-proposal-class-properties', { loose: envOptions.loose }],
       ['@babel/plugin-proposal-private-methods', { loose: envOptions.loose }],
+      ['@babel/plugin-proposal-private-property-in-object', { loose: envOptions.loose }],
       '@babel/plugin-proposal-export-namespace-from',
     );
   }
