@@ -4,6 +4,7 @@ import HtmlWebpackPlugin from 'html-webpack-plugin';
 import path from 'path';
 import webpack, { Configuration } from 'webpack';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
+import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin';
 import { INVALID_CHARS, NUMBER_REGEX } from './constants';
 import { InlineManifestPlugin } from './plugins';
 import { WebpackOptions } from './types';
@@ -81,7 +82,7 @@ export function getPlugins({
   }
 
   if (react && !PROD) {
-    plugins.push(new webpack.HotModuleReplacementPlugin());
+    plugins.push(new webpack.HotModuleReplacementPlugin(), new ReactRefreshWebpackPlugin());
   }
 
   return plugins;

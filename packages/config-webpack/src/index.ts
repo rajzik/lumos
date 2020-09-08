@@ -163,6 +163,7 @@ export function getConfig({
       contentBase: devServerPublicPath,
       watchContentBase: true,
       disableHostCheck: true,
+      clientLogLevel: 'none',
       headers: {
         'Service-Worker-Allowed': '/',
       },
@@ -170,7 +171,7 @@ export function getConfig({
         disableDotRule: true,
       },
       hot: true,
-      quiet: true,
+      quiet: false,
       port, // This can be a unix socket path so a string is valid
       watchOptions: {
         ignored: /node_modules/,
