@@ -1,11 +1,11 @@
-name: Pull request check
+name: Primary code validation
 
 on:
   push:
     branches-ignore:
       - master
 jobs:
-  pull_request_check:
+  primary_code_validation:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
