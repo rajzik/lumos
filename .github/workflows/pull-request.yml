@@ -11,9 +11,5 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
-      - uses: borales/actions-yarn@v2.0.0
-        with:
-          cmd: install --frozen-lockfile --ignore-engines # will run `yarn install` command - uses: borales/actions-yarn@v2.0.0
-      - uses: borales/actions-yarn@v2.0.0
-        with:
-          cmd: beemo run-script pull-request-checks
+      - run: yarn install --frozen-lockfile --ignore-engines
+      - run: yarn beemo run-script pull-request-checks
