@@ -4,6 +4,7 @@ on:
   push:
     branches-ignore:
       - master
+
 jobs:
   primary_code_validation:
     runs-on: ubuntu-latest
