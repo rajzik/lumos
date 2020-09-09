@@ -1,3 +1,4 @@
+import core from '@actions/core';
 import { context } from '@actions/github';
 import { Script } from '@beemo/core';
 import { Octokit } from '@octokit/rest';
@@ -5,7 +6,7 @@ import { checkCommitFormat } from '@rajzik/conventional-changelog-beemo';
 import path from 'path';
 import { createGitHubClient } from '../helpers/createGitHubClient';
 
-const { GITHUB_REF } = process.env;
+const { GITHUB_REF, GITHUB_TOKEN } = process.env;
 
 const parsePullRequestId = (githubRef: string) => {
   const result = /refs\/pull\/(\d+)\/merge/g.exec(githubRef);
@@ -29,18 +30,20 @@ export default class PullRequestChecksScript extends Script {
   }
 
   bootstrap() {
+    const myToken = core.getInput(GITHUB_TOKEN!);
     this.pullRequest = parsePullRequestId(GITHUB_REF!);
 
     if (this.pullRequest === 'false') {
       return;
     }
+    console.log(context);
     const {
       repo: { owner, repo },
     } = context;
 
     this.owner = owner;
     this.repo = repo;
-    this.client = createGitHubClient();
+    this.client = createGitHubClient(myToken);
 
     this.task('Checking for invalid lock file changes', this.checkForInvalidLocks);
     this.task('Checking pull request title', this.checkForConventionalTitle);
