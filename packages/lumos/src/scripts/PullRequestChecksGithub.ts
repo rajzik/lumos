@@ -1,4 +1,4 @@
-import github from '@actions/github';
+import { context } from '@actions/github';
 import { Script } from '@beemo/core';
 import { Octokit } from '@octokit/rest';
 import { checkCommitFormat } from '@rajzik/conventional-changelog-beemo';
@@ -6,7 +6,6 @@ import path from 'path';
 import { createGitHubClient } from '../helpers/createGitHubClient';
 
 const { GITHUB_REF } = process.env;
-const { context } = github;
 
 const parsePullRequestId = (githubRef: string) => {
   const result = /refs\/pull\/(\d+)\/merge/g.exec(githubRef);
