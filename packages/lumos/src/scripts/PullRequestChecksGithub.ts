@@ -6,6 +6,7 @@ import path from 'path';
 import { createGitHubClient } from '../helpers/createGitHubClient';
 
 const { GITHUB_REF } = process.env;
+const { context } = github;
 
 const parsePullRequestId = (githubRef: string) => {
   const result = /refs\/pull\/(\d+)\/merge/g.exec(githubRef);
@@ -30,7 +31,6 @@ export default class PullRequestChecksScript extends Script {
 
   bootstrap() {
     this.pullRequest = parsePullRequestId(GITHUB_REF!);
-    const { context } = github;
 
     if (this.pullRequest === 'false') {
       return;
