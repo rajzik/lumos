@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### 3.2.1 - 2020-09-09
+
+#### 🛠 Internals
+
+- New pipelines. (#642) ([1a593cd](https://github.com/rajzik/lumos/commit/1a593cd)), closes [#642](https://github.com/rajzik/lumos/issues/642)
+
+**Note:** Version bump only for package @rajzik/config-webpack
+
+
+
+
+
 ## 3.2.0 - 2020-09-08
 
 #### 🚀 Updates

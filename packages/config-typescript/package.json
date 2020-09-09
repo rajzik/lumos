@@ -1,6 +1,6 @@
 {
   "name": "@rajzik/config-typescript",
-  "version": "1.7.14",
+  "version": "1.7.15",
   "description": "Reusable TypeScript configs.",
   "keywords": [
     "lumos",
