@@ -1,9 +1,8 @@
-import { ESLintConfig } from '@beemo/driver-eslint';
+import type { ESLintConfig } from '@beemo/driver-eslint';
 import { EXTS_GROUP } from '@rajzik/lumos-common';
 
 const config: ESLintConfig = {
   plugins: ['promise', 'unicorn'],
-
   rules: {
     // Not enabled in Airbnb
     'default-param-last': 'error',

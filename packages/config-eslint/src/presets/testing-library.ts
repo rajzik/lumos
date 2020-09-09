@@ -1,4 +1,4 @@
-import { ESLintConfig } from '@beemo/driver-eslint';
+import type { ESLintConfig } from '@beemo/driver-eslint';
 import { EXTS_GROUP } from '@rajzik/lumos-common';
 
 const config: ESLintConfig = {

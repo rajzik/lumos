@@ -1,4 +1,4 @@
-import { ESLintConfig } from '@beemo/driver-eslint';
+import type { ESLintConfig } from '@beemo/driver-eslint';
 import { EXTS_GROUP, fromRoot } from '@rajzik/lumos-common';
 
 // In TS, all arguments are required for type information,
@@ -93,12 +93,43 @@ const config: ESLintConfig = {
         '@typescript-eslint/member-delimiter-style': 'error',
         '@typescript-eslint/member-ordering': 'off', // Prefer react/sort-comp
         '@typescript-eslint/no-array-constructor': 'error',
+        '@typescript-eslint/array-type': [
+          'warn',
+          {
+            default: 'array-simple',
+          },
+        ],
+        '@typescript-eslint/consistent-type-imports': [
+          'warn',
+          {
+            prefer: 'type-imports',
+          },
+        ],
         '@typescript-eslint/no-empty-function': 'off', // Default props are usually empty
         '@typescript-eslint/no-empty-interface': 'error',
+        '@typescript-eslint/ban-types': [
+          'error',
+          {
+            types: {
+              Function:
+                "Don't use Function as a type. Use explicit types like `(...args: any[]) => void`",
+              String: {
+                message: 'Use string instead',
+                fixWith: 'string',
+              },
+            },
+          },
+        ],
+        '@typescript-eslint/no-inferrable-types': 'warn',
+        '@typescript-eslint/method-signature-style': ['warn', 'method'],
         '@typescript-eslint/no-explicit-any': [
           'error',
-          { fixToUnknown: true, ignoreRestArgs: true },
+          { fixToUnknown: false, ignoreRestArgs: true },
         ],
+        '@typescript-eslint/prefer-includes': 'warn',
+        '@typescript-eslint/prefer-regexp-exec': 'warn',
+        '@typescript-eslint/prefer-ts-expect-error': 'warn',
+        '@typescript-eslint/no-unnecessary-type-assertion': 'error',
         '@typescript-eslint/no-extra-parens': 'error',
         '@typescript-eslint/no-for-in-array': 'error',
         '@typescript-eslint/no-misused-new': 'error',

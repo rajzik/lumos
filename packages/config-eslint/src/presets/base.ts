@@ -1,5 +1,5 @@
 import { Path } from '@beemo/core';
-import { ESLintConfig } from '@beemo/driver-eslint';
+import type { ESLintConfig } from '@beemo/driver-eslint';
 import {
   ASSET_EXT_PATTERN,
   CSS_EXT_PATTERN,
