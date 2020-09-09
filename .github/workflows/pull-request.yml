@@ -10,8 +10,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-        with:
-          ref: ${{ github.event.pull_request.head.sha }}
       - uses: actions/setup-node@v1
       - run: yarn install --frozen-lockfile --ignore-engines
-      - run: yarn beemo run-script pull-request-checks
+      - run: yarn beemo run-script pull-request-checks-github
