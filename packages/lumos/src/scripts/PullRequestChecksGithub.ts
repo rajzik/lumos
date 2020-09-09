@@ -1,4 +1,3 @@
-import * as core from '@actions/core';
 import { context } from '@actions/github';
 import { Script } from '@beemo/core';
 import { Octokit } from '@octokit/rest';
@@ -30,13 +29,12 @@ export default class PullRequestChecksScript extends Script {
   }
 
   bootstrap() {
-    const myToken = core.getInput(GITHUB_TOKEN!);
+    // const myToken = core.getInput(GITHUB_TOKEN!);
     this.pullRequest = parsePullRequestId(GITHUB_REF!);
 
     if (this.pullRequest === 'false') {
       return;
     }
-    console.log(context);
     const {
       repo: { owner, repo },
     } = context;
