@@ -5,7 +5,7 @@ import { checkCommitFormat } from '@rajzik/conventional-changelog-beemo';
 import path from 'path';
 import { createGitHubClient } from '../helpers/createGitHubClient';
 
-const { GITHUB_REF, GITHUB_TOKEN } = process.env;
+const { GITHUB_REF /* GITHUB_TOKEN */ } = process.env;
 
 const parsePullRequestId = (githubRef: string) => {
   const result = /refs\/pull\/(\d+)\/merge/g.exec(githubRef);
