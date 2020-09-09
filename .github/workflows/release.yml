@@ -15,17 +15,6 @@ jobs:
           token: ${{ secrets.GH_TOKEN }}
 
       - uses: actions/setup-node@v1
-      # - name: Git Identity
-      #   run: |
-      #     git config --global user.name 'lumos bot'
-      #     git config --global user.email 'lumos.bot@users.noreply.github.com'
-      #     git remote set-url origin https://${GITHUB_TOKEN}@github.com/$GITHUB_REPOSITORY
-      #     git checkout master
-      #   env:
-      #     GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
-
-      # - name: Checkout and pull branch
-      #   run: git checkout "${GITHUB_REF:11}" && git pull
 
       - name: Authenticate with Registry
         run: |
