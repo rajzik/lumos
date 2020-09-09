@@ -1,13 +1,13 @@
+import github from '@actions/github';
 import { Script } from '@beemo/core';
 import { Octokit } from '@octokit/rest';
 import { checkCommitFormat } from '@rajzik/conventional-changelog-beemo';
 import path from 'path';
 import { createGitHubClient } from '../helpers/createGitHubClient';
 
-const { GITHUB_REF, TRAVIS_PULL_REQUEST_SLUG } = process.env;
+const { GITHUB_REF } = process.env;
 
 const parsePullRequestId = (githubRef: string) => {
-  console.log(githubRef);
   const result = /refs\/pull\/(\d+)\/merge/g.exec(githubRef);
   if (!result) throw new Error('Reference not found.');
   const [, pullRequestId] = result;
@@ -30,12 +30,14 @@ export default class PullRequestChecksScript extends Script {
 
   bootstrap() {
     this.pullRequest = parsePullRequestId(GITHUB_REF!);
+    const { context } = github;
 
     if (this.pullRequest === 'false') {
       return;
     }
-
-    const [owner, repo] = TRAVIS_PULL_REQUEST_SLUG!.split('/');
+    const {
+      repo: { owner, repo },
+    } = context;
 
     this.owner = owner;
     this.repo = repo;
