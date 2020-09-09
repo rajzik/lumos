@@ -41,7 +41,7 @@ export default class PullRequestChecksScript extends Script {
 
     this.owner = owner;
     this.repo = repo;
-    this.client = createGitHubClient(myToken);
+    this.client = createGitHubClient(/* myToken */);
 
     this.task('Checking for invalid lock file changes', this.checkForInvalidLocks);
     this.task('Checking pull request title', this.checkForConventionalTitle);
