@@ -132,13 +132,22 @@ const config: ESLintConfig = {
     ],
 
     // UNICORN
+    'unicorn/better-regex': 'error',
+    'unicorn/filename-case': [
+      'warn',
+      {
+        cases: {
+          camelCase: true,
+          pascalCase: true,
+        },
+      },
+    ],
     'unicorn/catch-error-name': 'error',
     'unicorn/consistent-function-scoping': 'error',
     'unicorn/custom-error-definition': 'error',
     'unicorn/error-message': 'error',
     'unicorn/escape-case': 'error',
     'unicorn/explicit-length-check': 'error',
-    'unicorn/filename-case': 'off',
     'unicorn/import-index': 'error',
     'unicorn/new-for-builtins': 'error',
     'unicorn/no-abusive-eslint-disable': 'off',
@@ -151,6 +160,7 @@ const config: ESLintConfig = {
     'unicorn/no-zero-fractions': 'error',
     'unicorn/number-literal-case': 'error',
     'unicorn/prefer-add-event-listener': 'error',
+    'prefer-array-find': 'error',
     'unicorn/prefer-dataset': 'error',
     'unicorn/prefer-event-key': 'error',
     'unicorn/prefer-flat-map': 'error',
@@ -161,12 +171,13 @@ const config: ESLintConfig = {
     'unicorn/prefer-node-remove': 'error',
     'unicorn/prefer-starts-ends-with': 'error',
     'unicorn/prefer-string-slice': 'error',
-    'unicorn/prefer-spread': 'off', // Currently broken
+    'unicorn/prefer-spread': 'warn',
     'unicorn/prefer-text-content': 'error',
     'unicorn/prefer-trim-start-end': 'error',
     'unicorn/prefer-type-error': 'error',
-    'unicorn/regex-shorthand': 'error',
     'unicorn/throw-new-error': 'error',
+    'unicorn/prefer-replace-all': 'error',
+    'unicorn/prefer-set-has': 'error',
   },
 
   overrides: [
