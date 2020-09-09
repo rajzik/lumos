@@ -1,4 +1,4 @@
-import core from '@actions/core';
+import * as core from '@actions/core';
 import { context } from '@actions/github';
 import { Script } from '@beemo/core';
 import { Octokit } from '@octokit/rest';
