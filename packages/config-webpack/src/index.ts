@@ -10,10 +10,12 @@ import {
   TJSX_EXT_PATTERN,
   WEBPACK_ROOT,
 } from '@rajzik/lumos-common';
+// @ts-expect-error
+import CssnanoWebpackPlugin from 'cssnano-webpack-plugin';
 import path from 'path';
 import TerserPlugin from 'terser-webpack-plugin';
 import { Configuration } from 'webpack';
-import { POSTCSS_SETTING, POSTCSS_SETTING_PROD } from './constants';
+import { POSTCSS_SETTING } from './constants';
 import { getParallelValue, getPlugins, getUniqueName, PORT, PROD } from './helpers';
 import { WebpackOptions } from './types';
 
@@ -109,14 +111,14 @@ export function getConfig({
                 },
               },
             },
-            PROD ? POSTCSS_SETTING_PROD : POSTCSS_SETTING,
+            POSTCSS_SETTING,
           ],
           sideEffects: true,
         },
         {
           test: CSS_EXT_PATTERN,
           exclude: CSS_MODULE_EXT_PATTERN,
-          use: ['style-loader', 'css-loader', PROD ? POSTCSS_SETTING_PROD : POSTCSS_SETTING],
+          use: ['style-loader', 'css-loader', POSTCSS_SETTING],
           sideEffects: true,
         },
         {
@@ -185,6 +187,9 @@ export function getConfig({
         new TerserPlugin({
           sourceMap: sourceMaps,
           parallel: getParallelValue(parallel),
+        }),
+        new CssnanoWebpackPlugin({
+          sourceMap: sourceMaps,
         }),
       ],
     },
