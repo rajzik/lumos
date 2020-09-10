@@ -1,10 +1,6 @@
 import execa from 'execa';
 
-export async function removeDeps(
-  deps: string[],
-  isYarn: boolean = false,
-  isMonorepo: boolean = false,
-) {
+export async function removeDeps(deps: string[], isYarn = false, isMonorepo = false) {
   const args: string[] = [];
 
   if (isYarn) {

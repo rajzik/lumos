@@ -137,7 +137,7 @@ export function getConfig({
   ];
 
   // https://babeljs.io/blog/2020/03/16/7.9.0#highlights
-  // @ts-ignore Not typed upstream
+  // @ts-expect-error Not typed upstream
   envOptions.bugfixes = typeof envOptions.targets === 'object' && !!envOptions.targets?.esmodules;
 
   // Flags

@@ -1,7 +1,7 @@
 import { Path } from '@beemo/core';
 import { LumosPackage, SCAFFOLD_DEPS, TESTING_LIBRARY_DEPS } from '@rajzik/lumos-common';
 import chalk from 'chalk';
-// @ts-ignore
+// @ts-expect-error
 import editJsonFile from 'edit-json-file';
 import { prompt } from 'enquirer';
 import execa from 'execa';

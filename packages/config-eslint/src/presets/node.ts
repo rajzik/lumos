@@ -1,4 +1,4 @@
-import type { ESLintConfig } from '@beemo/driver-eslint';
+import { ESLintConfig } from '@beemo/driver-eslint';
 
 const config: ESLintConfig = {
   env: {

@@ -20,8 +20,8 @@ export interface LumosEnvSetting {
   loose?: boolean;
   modules?: 'amd' | 'umd' | 'systemjs' | 'commonjs' | 'cjs' | 'auto' | false;
   debug?: boolean;
-  include?: (string | RegExp)[];
-  exclude?: (string | RegExp)[];
+  include?: Array<string | RegExp>;
+  exclude?: Array<string | RegExp>;
   useBuiltIns?: 'usage' | 'entry' | false;
   forceAllTransforms?: boolean;
   configPath?: string;
@@ -62,7 +62,7 @@ export interface LumosPackage extends PackageStructure {
 
 export { execa, glob };
 
-export function fromRoot(filePath: string, existsCheck: boolean = false): string {
+export function fromRoot(filePath: string, existsCheck = false): string {
   const absPath = path.join(process.cwd(), filePath);
 
   if (existsCheck && !fs.existsSync(absPath)) {

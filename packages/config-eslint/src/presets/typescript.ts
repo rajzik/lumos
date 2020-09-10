@@ -1,4 +1,4 @@
-import type { ESLintConfig } from '@beemo/driver-eslint';
+import { ESLintConfig } from '@beemo/driver-eslint';
 import { EXTS_GROUP, fromRoot } from '@rajzik/lumos-common';
 
 // In TS, all arguments are required for type information,
@@ -102,7 +102,7 @@ const config: ESLintConfig = {
         '@typescript-eslint/consistent-type-imports': [
           'warn',
           {
-            prefer: 'type-imports',
+            prefer: 'no-type-imports',
           },
         ],
         '@typescript-eslint/no-empty-function': 'off', // Default props are usually empty

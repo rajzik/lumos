@@ -37,7 +37,7 @@ function inlineWhenMatched(
 export default class InlineManifestPlugin implements webpack.Plugin {
   name: string;
 
-  constructor(name: string = 'runtime') {
+  constructor(name = 'runtime') {
     this.name = name;
   }
 
@@ -74,7 +74,7 @@ export default class InlineManifestPlugin implements webpack.Plugin {
         (htmlPluginData, cb) => {
           const assetName = getAssetName(compilation.chunks, name);
 
-          // @ts-ignore Option exists
+          // @ts-expect-error Option exists
           if (assetName && htmlPluginData.plugin.options.inject === false) {
             const { assets } = htmlPluginData;
             const runtime = `<script>${sourceMappingURL.removeFrom(

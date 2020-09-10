@@ -157,7 +157,7 @@ export function getConfig({
 
     devtool: PROD ? (sourceMaps ? 'source-map' : false) : 'cheap-module-source-map',
 
-    // @ts-ignore
+    // @ts-expect-error
     devServer: {
       compress: true,
       contentBase: devServerPublicPath,

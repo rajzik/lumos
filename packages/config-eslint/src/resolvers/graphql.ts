@@ -3,7 +3,7 @@ import { GQL_EXT_PATTERN } from '@rajzik/lumos-common';
 export const interfaceVersion = 2;
 
 export function resolve(source: string): { found: boolean; path?: unknown } {
-  if (source.match(GQL_EXT_PATTERN)) {
+  if (GQL_EXT_PATTERN.exec(source)) {
     return { found: true, path: null };
   }
 

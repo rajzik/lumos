@@ -116,7 +116,7 @@ function migratePackageScripts(lumos: LumosPackage['lumos']) {
 function migrateEslint() {
   const configPath = Path.resolve('.eslintrc.js').path();
   const { extends: extendPaths, ...rootConfig } = require(configPath);
-  let config: { extends: string[]; parserOptions?: object } = { extends: [] };
+  let config: { extends: string[]; parserOptions?: Record<string, unknown> } = { extends: [] };
 
   (extendPaths as string[]).forEach(extendPath => {
     if (extendPath.startsWith('.')) {
