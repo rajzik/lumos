@@ -37,7 +37,7 @@
     "@rajzik/lumos-common": "^3.0.2",
     "babel-loader": "^8.1.0",
     "cross-env": "^7.0.2",
-    "css-loader": "^4.2.2",
+    "css-loader": "^4.3.0",
     "execa": "^4.0.3",
     "fast-glob": "^3.2.4",
     "file-loader": "^6.1.0",
