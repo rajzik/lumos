@@ -7,7 +7,6 @@ configurations. [Built on and powered by Beemo](https://github.com/beemojs/beemo
 
 Lumos is designed around my projects. _Use at your own risk._
 
-
 [Lumos Documentation](./packages/lumos)
 
 </div>
