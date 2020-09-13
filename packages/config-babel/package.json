@@ -33,7 +33,7 @@
     "@beemo/core": "^1.1.8",
     "@beemo/driver-babel": "^1.2.6",
     "@rajzik/lumos-common": "^3.1.0",
-    "babel-plugin-graphql-tag": "^3.0.0",
+    "babel-plugin-graphql-tag": "^3.1.0",
     "babel-plugin-module-resolver": "^4.0.0",
     "babel-plugin-transform-dev": "^2.0.1",
     "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
