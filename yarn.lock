@@ -1233,10 +1233,10 @@
     pretty-ms "^5.1.0"
     yaml "^1.9.2"
 
-"@boost/common@^2.2.0":
-  version "2.2.0"
-  resolved "https://registry.yarnpkg.com/@boost/common/-/common-2.2.0.tgz#b663298c83e0437ed2dabb3e0292afa97d6c8f5b"
-  integrity sha512-QyDUt1ncwwkreQiXxq5vMUxGeMkXukGQxdJqOvt3I7CVKkxeQuujGGZqGTIPdJnn66meC30ltpSdV+98h57U0g==
+"@boost/common@^2.2.1":
+  version "2.2.1"
+  resolved "https://registry.yarnpkg.com/@boost/common/-/common-2.2.1.tgz#095360a219012342334e2fffd1b0ae9929804774"
+  integrity sha512-EAXELwRdsMIN5a8Y1ChHcKFRj8S0tZubRmBkMRWuL0gAZQJ2KRqhW5qfZ4duFTLYkVJsqDnKHToytFgvr0Dliw==
   dependencies:
     "@boost/decorators" "^2.0.0"
     "@boost/internal" "^2.1.0"
