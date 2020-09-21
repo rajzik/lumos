@@ -242,7 +242,7 @@ export function getConfig({
     );
   }
 
-  plugins.push('@babel/plugin-transform-runtime', '@babel/plugin-transform-object-assign');
+  plugins.push('@babel/plugin-transform-runtime');
 
   return {
     ignore: [...IGNORE_PATHS, '__tests__', '__mocks__'],
