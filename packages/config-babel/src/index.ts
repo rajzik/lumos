@@ -24,9 +24,7 @@ export function getNextConfig({
   aliasPattern,
 }: BabelOptions): BabelConfig {
   const presets: NonNullable<BabelConfig['presets']> = ['next/babel'];
-  const plugins: NonNullable<BabelConfig['plugins']> = [
-    ['babel-plugin-transform-dev', { evaluate: false }],
-  ];
+  const plugins: NonNullable<BabelConfig['plugins']> = ['babel-plugin-optimize-clsx'];
 
   let useNext = next;
   let removePropTypes = false;
@@ -73,7 +71,22 @@ export function getNextConfig({
 
   if (typescript) {
     useNext = true;
-    presets.push('@babel/preset-typescript');
+    presets.push([
+      '@babel/preset-typescript',
+      {
+        onlyRemoveTypeImports: true,
+      },
+    ]);
+
+    plugins.unshift(
+      [
+        '@babel/plugin-proposal-decorators',
+        {
+          legacy: true,
+        },
+      ],
+      'babel-plugin-parameter-decorator',
+    );
 
     if (!removePropTypes) {
       plugins.push('babel-plugin-typescript-to-proptypes');
@@ -88,16 +101,19 @@ export function getNextConfig({
     );
   }
 
-  plugins.push([
-    'babel-plugin-module-resolver',
-    {
-      extensions: EXTS,
-      alias: {
-        [aliasPattern]: `./${srcFolder}`,
-        [`${aliasPattern}(.+)`]: `./${srcFolder}/\\1`,
+  plugins.push(
+    [
+      'babel-plugin-module-resolver',
+      {
+        extensions: EXTS,
+        alias: {
+          [aliasPattern]: `./${srcFolder}`,
+          [`${aliasPattern}(.+)`]: `./${srcFolder}/\\1`,
+        },
       },
-    },
-  ]);
+    ],
+    '@babel/plugin-transform-runtime',
+  );
 
   return {
     ignore: [...IGNORE_PATHS, '__tests__', '__mocks__'],
@@ -131,10 +147,7 @@ export function getConfig({
     ...env,
   };
   const presets: NonNullable<BabelConfig['presets']> = [['@babel/preset-env', envOptions]];
-  const plugins: NonNullable<BabelConfig['plugins']> = [
-    ['babel-plugin-transform-dev', { evaluate: false }],
-    '@babel/plugin-transform-runtime',
-  ];
+  const plugins: NonNullable<BabelConfig['plugins']> = ['babel-plugin-optimize-clsx'];
 
   // https://babeljs.io/blog/2020/03/16/7.9.0#highlights
   // @ts-expect-error Not typed upstream
@@ -193,6 +206,16 @@ export function getConfig({
     useNext = true;
     presets.push('@babel/preset-typescript');
 
+    plugins.unshift(
+      [
+        '@babel/plugin-proposal-decorators',
+        {
+          legacy: true,
+        },
+      ],
+      'babel-plugin-parameter-decorator',
+    );
+
     if (!removePropTypes) {
       plugins.push('babel-plugin-typescript-to-proptypes');
     }
@@ -218,6 +241,8 @@ export function getConfig({
       '@babel/plugin-proposal-export-namespace-from',
     );
   }
+
+  plugins.push('@babel/plugin-transform-runtime', '@babel/plugin-transform-object-assign');
 
   return {
     ignore: [...IGNORE_PATHS, '__tests__', '__mocks__'],
