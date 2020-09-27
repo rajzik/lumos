@@ -53,7 +53,7 @@
     "postcss-modules-values": "^3.0.0",
     "postcss-normalize": "^9.0.0",
     "postcss-preset-env": "^6.7.0",
-    "postcss-reporter": "^7.0.0",
+    "postcss-reporter": "^7.0.1",
     "postcss-url": "^8.0.0",
     "react-refresh": "^0.8.3",
     "style-loader": "^1.2.1",
