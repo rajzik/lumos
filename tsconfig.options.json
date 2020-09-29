@@ -21,6 +21,7 @@
     "strictNullChecks": true,
     "target": "es2018",
     "resolveJsonModule": true,
+    "experimentalDecorators": true,
     "useDefineForClassFields": false,
     "allowJs": false,
     "skipLibCheck": false,
