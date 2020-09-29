@@ -6,7 +6,6 @@ export interface ESLintOptions {
   node?: boolean;
   prettier?: boolean;
   typescript?: boolean;
-  testingLibrary?: boolean;
 }
 
 function fromHere(filePath: string): string {
@@ -20,7 +19,6 @@ export function getExtendsList({
   node = false,
   prettier = false,
   typescript = false,
-  testingLibrary = false,
 }: ESLintOptions): string[] {
   const paths = [fromHere('presets/base.js')];
 
@@ -40,9 +38,7 @@ export function getExtendsList({
   }
 
   // Testing library
-  if (testingLibrary) {
-    paths.push(fromHere('presets/testing-library.js'));
-  }
+  paths.push(fromHere('presets/testing-library.js'));
 
   // Prettier (must be last)
   if (prettier) {

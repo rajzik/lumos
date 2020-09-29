@@ -1,5 +1,12 @@
 import { BabelConfig } from '@beemo/driver-babel';
-import { EXTS, IGNORE_PATHS, LumosEnvSetting, NODE_TARGET, WEB_TARGET } from '@rajzik/lumos-common';
+import {
+  ALIAS_PATTERN,
+  EXTS,
+  IGNORE_PATHS,
+  LumosEnvSetting,
+  NODE_TARGET,
+  WEB_TARGET,
+} from '@rajzik/lumos-common';
 
 interface BabelOptions {
   env?: LumosEnvSetting;
@@ -12,7 +19,6 @@ interface BabelOptions {
   typescript?: boolean;
   empty?: boolean;
   srcFolder: string;
-  aliasPattern: string;
 }
 
 export function getNextConfig({
@@ -21,7 +27,6 @@ export function getNextConfig({
   react,
   typescript,
   srcFolder,
-  aliasPattern,
 }: BabelOptions): BabelConfig {
   const presets: NonNullable<BabelConfig['presets']> = ['next/babel'];
   const plugins: NonNullable<BabelConfig['plugins']> = ['babel-plugin-optimize-clsx'];
@@ -107,8 +112,7 @@ export function getNextConfig({
       {
         extensions: EXTS,
         alias: {
-          [aliasPattern]: `./${srcFolder}`,
-          [`${aliasPattern}(.+)`]: `./${srcFolder}/\\1`,
+          [ALIAS_PATTERN]: `./${srcFolder}`,
         },
       },
     ],
@@ -133,7 +137,6 @@ export function getConfig({
   typescript = false,
   empty = false,
   srcFolder,
-  aliasPattern,
 }: BabelOptions): BabelConfig {
   if (empty) {
     return {};
@@ -228,7 +231,7 @@ export function getConfig({
       {
         extensions: ['ts', 'tsx', 'js', 'jsx'],
         alias: {
-          [aliasPattern]: `./${srcFolder}`,
+          [ALIAS_PATTERN]: `./${srcFolder}`,
         },
       },
     ]);

@@ -43,7 +43,6 @@ interface BabelOptions {
   typescript?: boolean;
   empty?: boolean;
   srcFolder: string;
-  aliasPattern: string;
 }
 ```
 

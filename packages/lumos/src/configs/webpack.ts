@@ -8,7 +8,6 @@ const {
   publicPath,
   root,
   buildFolder,
-  aliasPattern,
   devServerContentBase,
 } = getSettings();
 
@@ -23,6 +22,5 @@ export = getConfig({
   entryPoint: process.env.LUMOS_ENTRY_POINT || entryPoint,
   publicPath,
   root,
-  aliasPattern,
   devServerContentBase,
 });

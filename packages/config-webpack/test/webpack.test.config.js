@@ -6,5 +6,4 @@ module.exports = getConfig({
   srcFolder: 'src',
   publicPath: './',
   react: true,
-  aliasPattern: '~',
 });

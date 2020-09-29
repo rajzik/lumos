@@ -38,7 +38,6 @@ export interface LumosSettings {
   library: boolean;
   next: boolean;
   node: boolean;
-  testingLibrary: boolean;
   react: boolean;
   srcFolder: string;
   testsFolder: string;
@@ -50,7 +49,6 @@ export interface LumosSettings {
   parallel?: boolean | string | number;
   testResultFileName?: string;
   emptyBabelConfig: boolean;
-  aliasPattern: string;
   allowJs: boolean;
   skipLibCheck: boolean;
   devServerContentBase?: string;
@@ -103,7 +101,7 @@ export function getSettings(): LumosSettings {
   }
 
   return {
-    buildFolder: 'lib',
+    buildFolder: settings.library ? 'lib' : 'build',
     coverage: 75,
     docsFolder: 'docs',
     env: {},
@@ -112,12 +110,10 @@ export function getSettings(): LumosSettings {
     next: false,
     node: false,
     react: false,
-    testingLibrary: false,
     srcFolder: 'src',
     testsFolder: 'tests',
     typesFolder: 'types',
     emptyBabelConfig: false,
-    aliasPattern: '~',
     allowJs: false,
     skipLibCheck: false,
     ...settings,

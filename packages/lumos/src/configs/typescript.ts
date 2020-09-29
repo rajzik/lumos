@@ -10,7 +10,6 @@ const {
   node,
   react,
   library,
-  aliasPattern,
   next,
   allowJs,
   skipLibCheck,
@@ -35,7 +34,6 @@ export = context.args.referenceWorkspaces
       typesFolder: (context.args.typesFolder as string) || typesFolder,
       workspaces: context.workspaces,
       emitDeclarationOnly: !!context.args.emitDeclarationOnly,
-      aliasPattern,
       allowJs,
       skipLibCheck,
     });

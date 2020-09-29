@@ -7,5 +7,4 @@ module.exports = getConfig({
   buildFolder: `build2${process.env.NODE_ENV}`,
   publicPath: './',
   react: true,
-  aliasPattern: '~',
 });

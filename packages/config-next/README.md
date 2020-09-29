@@ -55,7 +55,6 @@ interface NextOptions {
   root?: string;
   target?: 'server' | 'serverless' | 'experimental-serverless-trace';
   srcFolder: string;
-  aliasPattern: string;
 }
 ```
 
@@ -68,7 +67,6 @@ interface NextOptions {
   buildFolder = '.next',
   target = 'server',
   srcFolder = 'src',
-  aliasPattern = '~/*',
   nextOptions = {},
 }
 ```

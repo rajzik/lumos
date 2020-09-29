@@ -14,6 +14,8 @@ export const CSS_MODULE_EXT_PATTERN = /\.module\.css$/;
 
 export const GQL_EXT_PATTERN = /\.(gql|graphql)$/;
 
+export const ALIAS_PATTERN = '~';
+
 export const IGNORE_PATHS = [
   '.next/',
   'coverage/',
@@ -34,8 +36,6 @@ export const NODE_VERSION = '12.16';
 export const NODE_TARGET = { node: NODE_VERSION };
 
 export const WEB_TARGET = { ie: 11 };
-
-export const TESTING_LIBRARY_DEPS = ['@testing-library/jest-dom', '@testing-library/react'];
 
 export const SCAFFOLD_DEPS = [
   '@rajzik/conventional-changelog-lint-config-beemo',

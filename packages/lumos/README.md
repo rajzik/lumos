@@ -106,7 +106,6 @@ export interface LumosSettings {
   parallel?: boolean | string | number;
   testResultFileName?: string;
   emptyBabelConfig: boolean;
-  aliasPattern: string;
   nextOptions?: Partial<NextConfigObject>;
   allowJs: boolean;
   skipLibCheck: boolean;
@@ -131,13 +130,11 @@ export interface LumosSettings {
   testsFolder: 'tests',
   typesFolder: 'types',
   emptyBabelConfig: false,
-  aliasPattern: '~/*',
   allowJs: false,
   skipLibCheck: false,
   root: process.cwd(),
   parallel: true,
   testResultFileName: 'TEST-RESULTS.xml',
-  aliasPattern: '~/*',
 }
 ```
 

@@ -11,7 +11,6 @@ const {
   env,
   emptyBabelConfig: empty,
   srcFolder,
-  aliasPattern,
 } = getSettings();
 
 export = tool.isPluginEnabled('driver', 'next')
@@ -21,7 +20,6 @@ export = tool.isPluginEnabled('driver', 'next')
       react,
       typescript: tool.isPluginEnabled('driver', 'typescript'),
       srcFolder,
-      aliasPattern,
     })
   : getConfig({
       env,
@@ -34,5 +32,4 @@ export = tool.isPluginEnabled('driver', 'next')
       typescript: tool.isPluginEnabled('driver', 'typescript'),
       empty,
       srcFolder,
-      aliasPattern,
     });

@@ -45,7 +45,6 @@ export interface TypeScriptOptions {
   typesFolder: string;
   workspaces?: string[];
   emitDeclarationOnly?: boolean;
-  aliasPattern: string;
   allowJs?: boolean;
   skipLibCheck?: boolean;
 }
@@ -62,7 +61,6 @@ export interface TypeScriptOptions {
   usingNext = false,
   emitDeclarationOnly = false,
   srcFolder = 'src',
-  aliasPattern = '~/*',
   allowJs = false,
   skipLibCheck = false,
 }

@@ -1,5 +1,5 @@
 import { Path } from '@beemo/core';
-import { LumosPackage, SCAFFOLD_DEPS, TESTING_LIBRARY_DEPS } from '@rajzik/lumos-common';
+import { LumosPackage, SCAFFOLD_DEPS } from '@rajzik/lumos-common';
 import chalk from 'chalk';
 import editJsonFile from 'edit-json-file';
 import { prompt } from 'enquirer';
@@ -15,7 +15,6 @@ interface SetupPrompt {
   next: boolean;
   scaffold: boolean;
   scripts: boolean;
-  testingLibrary: boolean;
   yarn: boolean;
 }
 
@@ -30,10 +29,6 @@ function addLumosToPackage(response: SetupPrompt) {
 
   if (response.libs.includes('react')) {
     lumos.settings!.react = true;
-  }
-
-  if (response.libs.includes('testingLibrary')) {
-    lumos.settings!.testingLibrary = true;
   }
 
   if (response.libs.includes('graphql')) {
@@ -90,7 +85,7 @@ function addScriptsToPackage(response: SetupPrompt) {
 
   if (drivers.includes('jest')) {
     scripts.jest = 'cross-env NODE_ENV=test TZ=UTC lumos jest';
-    scripts['jest:coverage'] = `${client} run jest -- --coverage`;
+    scripts['jest:coverage'] = `${client} run jest ${response.yarn ? '' : '--'} --coverage`;
     scripts.test = `${client} run jest:coverage`;
   }
 
@@ -156,7 +151,6 @@ export async function setup() {
       message: 'Which libraries are you going to use?',
       choices: [
         { message: 'React', name: 'react' },
-        { message: 'Testing library', name: 'testingLibrary' },
         { message: 'GraphQL', name: 'graphql' },
       ],
     },
@@ -198,10 +192,6 @@ export async function setup() {
     },
   ]);
 
-  if (response.libs.includes('testingLibrary') && !response.drivers.includes('jest')) {
-    response.drivers.push('jest');
-  }
-
   if (response.drivers.includes('jest') && !response.drivers.includes('babel')) {
     response.drivers.push('babel');
   }
@@ -224,10 +214,6 @@ export async function setup() {
     '@rajzik/lumos',
     ...response.drivers.map(driver => `@rajzik/config-${driver}`),
   ];
-
-  if (response.testingLibrary) {
-    dependencies = [...dependencies, ...TESTING_LIBRARY_DEPS];
-  }
 
   if (response.scaffold) {
     dependencies = [...dependencies, ...SCAFFOLD_DEPS];

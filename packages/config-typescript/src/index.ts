@@ -1,4 +1,5 @@
 import { TypeScriptConfig } from '@beemo/driver-typescript';
+import { ALIAS_PATTERN } from '@rajzik/lumos-common';
 // Keep in sync with the `tsconfig.options.json` file in this package.
 export interface TypeScriptOptions {
   buildFolder: string;
@@ -13,7 +14,6 @@ export interface TypeScriptOptions {
   typesFolder: string;
   workspaces?: string[];
   emitDeclarationOnly?: boolean;
-  aliasPattern: string;
   allowJs?: boolean;
   skipLibCheck?: boolean;
 }
@@ -26,7 +26,6 @@ export function getCompilerOptions({
   usingNext = false,
   emitDeclarationOnly = false,
   srcFolder = 'src',
-  aliasPattern,
   allowJs = false,
   skipLibCheck = false,
 }: Partial<TypeScriptOptions>) {
@@ -65,8 +64,7 @@ export function getCompilerOptions({
   if (!library) {
     options.baseUrl = '.';
     options.paths = {
-      [`${aliasPattern!}/*`]: [`./${srcFolder}/*`],
-      [`${aliasPattern!}*`]: [`./${srcFolder}/*`],
+      [`${ALIAS_PATTERN}*`]: [`./${srcFolder}/*`],
     };
   }
 

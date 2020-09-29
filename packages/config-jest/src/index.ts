@@ -1,6 +1,7 @@
 import { Path } from '@beemo/core';
 import { JestConfig } from '@beemo/driver-jest';
 import {
+  ALIAS_PATTERN,
   ASSET_EXT_PATTERN,
   CSS_EXT_PATTERN,
   EXTS,
@@ -17,9 +18,7 @@ export interface JestOptions {
   testsFolder: string;
   threshold?: number;
   workspaces?: string[];
-  testingLibrary?: boolean;
   testResultFileName?: string;
-  aliasPattern: string;
 }
 
 const exts = EXTS.map(ext => ext.slice(1));
@@ -49,9 +48,7 @@ export function getConfig({
   testsFolder,
   threshold = 40,
   workspaces = [],
-  testingLibrary = false,
   testResultFileName = 'TEST-RESULTS.xml',
-  aliasPattern,
 }: JestOptions): JestConfig {
   const roots: string[] = [];
   const setupFiles = [fromHere('setup/shims.js'), fromHere('setup/console.js')];
@@ -74,9 +71,7 @@ export function getConfig({
     setupFilesAfterEnv.unshift(fromHere('bootstrap/graphql.js'));
   }
 
-  if (testingLibrary) {
-    setupFilesAfterEnv.push('@testing-library/jest-dom/extend-expect');
-  }
+  setupFilesAfterEnv.push('@testing-library/jest-dom/extend-expect');
 
   const config: JestConfig = {
     bail: false,
@@ -100,13 +95,12 @@ export function getConfig({
     moduleNameMapper: {
       [`^.+${ASSET_EXT_PATTERN.source}`]: fromHere('mocks/file.js'),
       [`^.+${CSS_EXT_PATTERN.source}`]: fromHere('mocks/file.js'),
-      [`^${aliasPattern}(.*)`]: `<rootDir>/${srcFolder}/$1`,
-      [`^${aliasPattern}/(.*)`]: `<rootDir>/${srcFolder}/$1`,
+      [`^${ALIAS_PATTERN}/(.*)`]: `<rootDir>/${srcFolder}/$1`,
     },
     roots,
     setupFiles,
     setupFilesAfterEnv,
-    testEnvironment: node && !react ? 'node' : 'jest-environment-jsdom-sixteen',
+    testEnvironment: node && !react ? 'node' : 'jsdom',
     transformIgnorePatterns: ['/node_modules/', '/esm/', '/lib/'],
     testURL: 'http://localhost',
     timers: 'fake',

@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-return */
 import bundleAnalyzer from '@next/bundle-analyzer';
-import { getESMAliases, WEBPACK_ROOT } from '@rajzik/lumos-common';
+import { ALIAS_PATTERN, getESMAliases, WEBPACK_ROOT } from '@rajzik/lumos-common';
 import { NextConfig, NextConfigObject } from 'beemo-driver-next';
 import path from 'path';
 import { mergeConfig } from './helpers';
@@ -11,7 +11,6 @@ interface NextOptions {
   root?: string;
   target?: NextConfigObject['target'];
   srcFolder: string;
-  aliasPattern: string;
 }
 
 export function getConfig({
@@ -20,7 +19,6 @@ export function getConfig({
   buildFolder = '.next',
   target = 'server',
   srcFolder = 'src',
-  aliasPattern,
 }: NextOptions): NextConfig {
   const options: NextConfigObject = {
     distDir: buildFolder,
@@ -29,9 +27,9 @@ export function getConfig({
       return mergeConfig(config, {
         resolve: {
           alias: {
-            [`${aliasPattern}`]: path.join(root, srcFolder, '/'),
-            [`${aliasPattern}(.+)`]: `${path.join(root, srcFolder)}/\\1`,
-            [`${aliasPattern}/(.+)`]: `${path.join(root, srcFolder)}/\\1`,
+            [`${ALIAS_PATTERN}`]: path.join(root, srcFolder, '/'),
+            [`${ALIAS_PATTERN}(.+)`]: `${path.join(root, srcFolder)}/\\1`,
+            [`${ALIAS_PATTERN}/(.+)`]: `${path.join(root, srcFolder)}/\\1`,
             ...getESMAliases(),
           },
         },

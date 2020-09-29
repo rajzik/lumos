@@ -27,6 +27,7 @@
     "@beemo/driver-jest": "^1.2.3",
     "@rajzik/lumos-common": "^3.2.0",
     "@types/jest": "^26.0.14",
+    "@testing-library/jest-dom": "^5.11.4",
     "airbnb-js-shims": "^2.2.1",
     "cross-env": "^7.0.2",
     "dom-storage": "^2.1.0",
@@ -34,8 +35,7 @@
     "jest-environment-jsdom-sixteen": "^1.0.3",
     "jest-junit": "^11.1.0"
   },
-  "peerDependencies": {
-    "@testing-library/jest-dom": ">=5",
-    "@testing-library/react": ">=10"
+  "optionalDependencies": {
+    "@testing-library/react": ">=11"
   }
 }

@@ -31,7 +31,6 @@ export interface WebpackOptions {
   publicPath?: string;
   srcFolder: string;
   entryPoint?: string;
-  aliasPattern?: string;
 }
 ```
 
@@ -47,7 +46,6 @@ export interface WebpackOptions {
   srcFolder = 'src',
   publicPath = '/',
   root = process.cwd(),
-  aliasPattern = '~/*',
 }
 ```
 
