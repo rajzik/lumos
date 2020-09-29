@@ -101,7 +101,7 @@ export function getSettings(): LumosSettings {
   }
 
   return {
-    buildFolder: settings.library ? 'lib' : 'build',
+    buildFolder: settings.library ?? true ? 'lib' : 'build',
     coverage: 75,
     docsFolder: 'docs',
     env: {},
