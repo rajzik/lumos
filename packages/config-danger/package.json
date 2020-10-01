@@ -27,6 +27,6 @@
   },
   "dependencies": {
     "@rajzik/conventional-changelog-beemo": "^2.1.1",
-    "danger": "^10.4.1"
+    "danger": "^10.5.0"
   }
 }
