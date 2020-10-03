@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### 5.0.1 - 2020-10-03
+
+#### 📦 Dependencies
+
+- bump postcss-loader from 4.0.2 to 4.0.3 (#709) ([ebecdaf](https://github.com/rajzik/lumos/commit/ebecdaf)), closes [#709](https://github.com/rajzik/lumos/issues/709)
+
+#### 🛠 Internals
+
+- release [ci skip]. ([baad588](https://github.com/rajzik/lumos/commit/baad588))
+
+**Note:** Version bump only for package @rajzik/config-webpack
+
+
+
+
+
 # 5.0.0 - 2020-09-29
 
 #### 💥 Breaking
