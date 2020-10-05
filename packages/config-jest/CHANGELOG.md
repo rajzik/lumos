@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### 3.0.1 - 2020-10-05
+
+#### 📦 Dependencies
+
+- bump jest-junit from 11.1.0 to 12.0.0 (#712) ([78a6b64](https://github.com/rajzik/lumos/commit/78a6b64)), closes [#712](https://github.com/rajzik/lumos/issues/712)
+
+#### 🛠 Internals
+
+- release [ci skip]. ([5fcfe77](https://github.com/rajzik/lumos/commit/5fcfe77))
+
+**Note:** Version bump only for package @rajzik/config-jest
+
+
+
+
+
 # 3.0.0 - 2020-09-29
 
 #### 💥 Breaking
