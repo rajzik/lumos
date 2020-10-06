@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### 4.1.2 - 2020-10-06
+
+#### 📦 Dependencies
+
+- bump @typescript-eslint/parser from 4.3.0 to 4.4.0 (#715) ([ae4ba4c](https://github.com/rajzik/lumos/commit/ae4ba4c)), closes [#715](https://github.com/rajzik/lumos/issues/715)
+- bump eslint-plugin-jest from 24.0.2 to 24.1.0 (#716) ([9b5c3d5](https://github.com/rajzik/lumos/commit/9b5c3d5)), closes [#716](https://github.com/rajzik/lumos/issues/716)
+
+#### 🛠 Internals
+
+- release [ci skip]. ([b0bf78b](https://github.com/rajzik/lumos/commit/b0bf78b))
+
+**Note:** Version bump only for package @rajzik/config-eslint
+
+
+
+
+
 ### 4.1.1 - 2020-10-03
 
 #### 📦 Dependencies
