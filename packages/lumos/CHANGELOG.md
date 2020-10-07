@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### 5.0.9 - 2020-10-07
+
+**Note:** Version bump only for package @rajzik/lumos
+
+
+
+
+
 ### 5.0.8 - 2020-10-06
 
 **Note:** Version bump only for package @rajzik/lumos
