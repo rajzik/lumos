@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### 4.0.1 - 2020-10-09
+
+#### 📦 Dependencies
+
+- bump @boost/common from 2.2.1 to 2.2.2 (#723) ([62c9f5b](https://github.com/rajzik/lumos/commit/62c9f5b)), closes [#723](https://github.com/rajzik/lumos/issues/723)
+
+#### 🛠 Internals
+
+- release [ci skip]. ([f6b342d](https://github.com/rajzik/lumos/commit/f6b342d))
+
+**Note:** Version bump only for package @rajzik/lumos-common
+
+
+
+
+
 # 4.0.0 - 2020-09-29
 
 #### 💥 Breaking
