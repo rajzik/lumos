@@ -3,6 +3,21 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### 5.0.5 - 2020-10-10
+
+#### 📦 Dependencies
+
+- bump file-loader from 6.1.0 to 6.1.1 (#730) ([231f32f](https://github.com/rajzik/lumos/commit/231f32f)), closes [#730](https://github.com/rajzik/lumos/issues/730)
+- bump postcss-loader from 4.0.3 to 4.0.4 (#728) ([2b7d440](https://github.com/rajzik/lumos/commit/2b7d440)), closes [#728](https://github.com/rajzik/lumos/issues/728)
+- bump style-loader from 1.3.0 to 2.0.0 (#726) ([136dae0](https://github.com/rajzik/lumos/commit/136dae0)), closes [#726](https://github.com/rajzik/lumos/issues/726)
+- bump url-loader from 4.1.0 to 4.1.1 (#733) ([32a134e](https://github.com/rajzik/lumos/commit/32a134e)), closes [#733](https://github.com/rajzik/lumos/issues/733)
+
+**Note:** Version bump only for package @rajzik/config-webpack
+
+
+
+
+
 ### 5.0.4 - 2020-10-09
 
 #### 🛠 Internals
