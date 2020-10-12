@@ -179,6 +179,7 @@ export function getConfig({
     },
 
     optimization: {
+      chunkIds: 'named',
       runtimeChunk: entryPoint && PROD ? false : 'single',
       minimize: PROD,
       minimizer: [

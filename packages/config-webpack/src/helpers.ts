@@ -40,7 +40,6 @@ export function getPlugins({
   const srcPath = path.join(WEBPACK_ROOT, srcFolder);
 
   const plugins = [
-    new webpack.NamedChunksPlugin(),
     new webpack.EnvironmentPlugin({
       LAZY_LOAD: false,
       RENDER_ENV: 'browser',
@@ -82,7 +81,7 @@ export function getPlugins({
   }
 
   if (react && !PROD) {
-    plugins.push(new webpack.HotModuleReplacementPlugin(), new ReactRefreshWebpackPlugin());
+    plugins.push(new webpack.HotModuleReplacementPlugin({}), new ReactRefreshWebpackPlugin());
   }
 
   return plugins;
