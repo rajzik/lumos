@@ -1,5 +1,5 @@
 import { Path } from '@beemo/core';
-import { getCommitHash, getPackage, WEBPACK_ROOT } from '@rajzik/lumos-common';
+import { getPackage, WEBPACK_ROOT } from '@rajzik/lumos-common';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import path from 'path';
 import webpack, { Configuration, container } from 'webpack';
@@ -40,13 +40,6 @@ export function getPlugins({
   const srcPath = path.join(WEBPACK_ROOT, srcFolder);
 
   const plugins: Configuration['plugins'] = [
-    new webpack.EnvironmentPlugin({
-      LAZY_LOAD: false,
-      RENDER_ENV: 'browser',
-      SILENCE_POLYGLOT_WARNINGS: true,
-      SENTRY_RELEASE: PROD ? getCommitHash() || 'production' : 'development',
-      AMP: false,
-    }),
     new webpack.DefinePlugin({
       __DEV__: JSON.stringify(!PROD),
     }),
