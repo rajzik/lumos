@@ -46,12 +46,7 @@ export function getPlugins({
   ];
 
   if (moduleFederationConfig) {
-    plugins.push(
-      new container.ModuleFederationPlugin({
-        shared: ['react', 'react-dom'],
-        ...moduleFederationConfig,
-      }),
-    );
+    plugins.push(new container.ModuleFederationPlugin(moduleFederationConfig));
   }
 
   if (!PROD) {

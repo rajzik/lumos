@@ -31,7 +31,7 @@ export function getConfig({
   srcFolder,
   entryPoint,
   devServerContentBase = 'public',
-  moduleFederationConfig = {},
+  moduleFederationConfig,
 }: WebpackOptions): WebpackConfig {
   const srcPath = path.join(root, srcFolder);
   const internalPath = path.join(root, buildFolder);
