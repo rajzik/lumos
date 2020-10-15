@@ -6,7 +6,6 @@ import webpack, { Configuration } from 'webpack';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin';
 import { INVALID_CHARS, NUMBER_REGEX } from './constants';
-import { InlineManifestPlugin } from './plugins';
 import { WebpackOptions } from './types';
 
 export const PROD = process.env.NODE_ENV === 'production';
@@ -39,7 +38,7 @@ export function getPlugins({
 }: WebpackOptions): Configuration['plugins'] {
   const srcPath = path.join(WEBPACK_ROOT, srcFolder);
 
-  const plugins = [
+  const plugins: Configuration['plugins'] = [
     new webpack.EnvironmentPlugin({
       LAZY_LOAD: false,
       RENDER_ENV: 'browser',
@@ -76,7 +75,6 @@ export function getPlugins({
         filename: 'index.html',
         favicon: getFavIcon(srcPath),
       }),
-      new InlineManifestPlugin(),
     );
   }
 

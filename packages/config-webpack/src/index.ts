@@ -64,7 +64,7 @@ export function getConfig({
       filename: 'index.js',
       chunkFilename: '[name].[contenthash].chunk.js',
       sourceMapFilename: '[file].map',
-      jsonpFunction: getUniqueName(),
+      uniqueName: getUniqueName(),
     };
   } else if (entryPoint) {
     entryFiles = {
