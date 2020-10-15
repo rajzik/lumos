@@ -2,7 +2,7 @@ import { Path } from '@beemo/core';
 import { getCommitHash, getPackage, WEBPACK_ROOT } from '@rajzik/lumos-common';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import path from 'path';
-import webpack, { Configuration } from 'webpack';
+import webpack, { Configuration, container } from 'webpack';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin';
 import { INVALID_CHARS, NUMBER_REGEX } from './constants';
@@ -35,6 +35,7 @@ export function getPlugins({
   srcFolder,
   entryPoint,
   react,
+  moduleFederationConfig,
 }: WebpackOptions): Configuration['plugins'] {
   const srcPath = path.join(WEBPACK_ROOT, srcFolder);
 
@@ -50,6 +51,15 @@ export function getPlugins({
       __DEV__: JSON.stringify(!PROD),
     }),
   ];
+
+  if (moduleFederationConfig) {
+    plugins.push(
+      new container.ModuleFederationPlugin({
+        shared: ['react', 'react-dom'],
+        ...moduleFederationConfig,
+      }),
+    );
+  }
 
   if (!PROD) {
     plugins.push(

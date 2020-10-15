@@ -11,8 +11,7 @@ import {
   TJSX_EXT_PATTERN,
   WEBPACK_ROOT,
 } from '@rajzik/lumos-common';
-// @ts-expect-error
-import CssnanoWebpackPlugin from 'cssnano-webpack-plugin';
+import CssMinimizerPlugin from 'css-minimizer-webpack-plugin';
 import path from 'path';
 import TerserPlugin from 'terser-webpack-plugin';
 import { Configuration } from 'webpack';
@@ -32,6 +31,7 @@ export function getConfig({
   srcFolder,
   entryPoint,
   devServerContentBase = 'public',
+  moduleFederationConfig = {},
 }: WebpackOptions): WebpackConfig {
   const srcPath = path.join(root, srcFolder);
   const internalPath = path.join(root, buildFolder);
@@ -54,6 +54,7 @@ export function getConfig({
     sourceMaps,
     entryPoint,
     srcFolder,
+    moduleFederationConfig,
   });
 
   if (entryPoint && PROD) {
@@ -157,7 +158,6 @@ export function getConfig({
 
     devtool: PROD ? (sourceMaps ? 'source-map' : false) : 'cheap-module-source-map',
 
-    // @ts-expect-error
     devServer: {
       compress: true,
       contentBase: devServerPublicPath,
@@ -183,12 +183,14 @@ export function getConfig({
       runtimeChunk: entryPoint && PROD ? false : 'single',
       minimize: PROD,
       minimizer: [
+        // @ts-expect-error
         new TerserPlugin({
-          sourceMap: sourceMaps,
           parallel: getParallelValue(parallel),
         }),
-        new CssnanoWebpackPlugin({
+        // @ts-expect-error
+        new CssMinimizerPlugin({
           sourceMap: sourceMaps,
+          parallel: getParallelValue(parallel),
         }),
       ],
     },
