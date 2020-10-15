@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 6.0.0 - 2020-10-15
+
+#### 💥 Breaking
+
+- Webpack 5. (#751) ([e03534c](https://github.com/rajzik/lumos/commit/e03534c)), closes [#751](https://github.com/rajzik/lumos/issues/751)
+
+**Note:** Version bump only for package @rajzik/lumos
+
+
+
+
+
 ### 5.0.18 - 2020-10-13
 
 **Note:** Version bump only for package @rajzik/lumos

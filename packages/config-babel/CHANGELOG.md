@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### 3.0.2 - 2020-10-15
+
+#### 🛠 Internals
+
+- release [ci skip]. ([daafd6f](https://github.com/rajzik/lumos/commit/daafd6f))
+
+**Note:** Version bump only for package @rajzik/config-babel
+
+
+
+
+
 ### 3.0.1 - 2020-10-09
 
 #### 🛠 Internals

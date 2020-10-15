@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### 3.0.6 - 2020-10-15
+
+#### 🛠 Internals
+
+- release [ci skip]. ([daafd6f](https://github.com/rajzik/lumos/commit/daafd6f))
+
+**Note:** Version bump only for package @rajzik/config-jest
+
+
+
+
+
 ### 3.0.5 - 2020-10-12
 
 #### 📦 Dependencies

@@ -1,6 +1,6 @@
 {
   "name": "@rajzik/config-typescript",
-  "version": "3.0.1",
+  "version": "3.0.2",
   "description": "Reusable TypeScript configs.",
   "keywords": [
     "lumos",
@@ -23,7 +23,7 @@
   "dependencies": {
     "@beemo/core": "^1.1.8",
     "@beemo/driver-typescript": "^1.4.1",
-    "@rajzik/lumos-common": "^4.0.1",
+    "@rajzik/lumos-common": "^5.0.0",
     "typescript": "^4.0.3"
   }
 }
