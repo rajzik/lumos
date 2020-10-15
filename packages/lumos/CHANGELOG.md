@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### 6.0.2 - 2020-10-15
+
+#### 📦 Dependencies
+
+- bump edit-json-file from 1.4.1 to 1.5.0 (#745) ([473f635](https://github.com/rajzik/lumos/commit/473f635)), closes [#745](https://github.com/rajzik/lumos/issues/745)
+
+**Note:** Version bump only for package @rajzik/lumos
+
+
+
+
+
 ### 6.0.1 - 2020-10-15
 
 **Note:** Version bump only for package @rajzik/lumos

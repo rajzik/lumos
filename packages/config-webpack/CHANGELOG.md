@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### 6.1.1 - 2020-10-15
+
+#### 🐞 Fixes
+
+- Fix webpack dev server. (#753) ([af803f4](https://github.com/rajzik/lumos/commit/af803f4)), closes [#753](https://github.com/rajzik/lumos/issues/753)
+
+**Note:** Version bump only for package @rajzik/config-webpack
+
+
+
+
+
 ## 6.1.0 - 2020-10-15
 
 #### 🚀 Updates
