@@ -36,6 +36,7 @@
     "@beemo/driver-webpack": "^1.2.6",
     "@pmmmwh/react-refresh-webpack-plugin": "^0.4.2",
     "@rajzik/lumos-common": "^5.0.0",
+    "@webpack-cli/serve": "^1.0.1",
     "babel-loader": "^8.1.0",
     "cross-env": "^7.0.2",
     "css-loader": "^5.0.0",
