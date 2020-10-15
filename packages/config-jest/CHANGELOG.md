@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 3.1.0 - 2020-10-15
+
+#### 🚀 Updates
+
+- Update babel to support new jsx. (#752) ([076501c](https://github.com/rajzik/lumos/commit/076501c)), closes [#752](https://github.com/rajzik/lumos/issues/752)
+
+**Note:** Version bump only for package @rajzik/config-jest
+
+
+
+
+
 ### 3.0.6 - 2020-10-15
 
 #### 🛠 Internals
