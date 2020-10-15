@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### 6.1.2 - 2020-10-15
+
+#### 📦 Dependencies
+
+- bump webpack from 5.1.0 to 5.1.2 (#754) ([7b0fffc](https://github.com/rajzik/lumos/commit/7b0fffc)), closes [#754](https://github.com/rajzik/lumos/issues/754)
+
+**Note:** Version bump only for package @rajzik/config-webpack
+
+
+
+
+
 ### 6.1.1 - 2020-10-15
 
 #### 🐞 Fixes
