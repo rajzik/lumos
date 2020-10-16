@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### 3.1.2 - 2020-10-16
+
+#### 📦 Dependencies
+
+- bump @babel/preset-typescript from 7.12.0 to 7.12.1 (#757) ([a3857a6](https://github.com/rajzik/lumos/commit/a3857a6)), closes [#757](https://github.com/rajzik/lumos/issues/757)
+
+**Note:** Version bump only for package @rajzik/config-babel
+
+
+
+
+
 ### 3.1.1 - 2020-10-16
 
 #### 📦 Dependencies
