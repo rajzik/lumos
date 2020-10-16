@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### 3.1.3 - 2020-10-16
+
+#### 📦 Dependencies
+
+- bump @babel/plugin-transform-react-jsx-source (#760) ([a48910f](https://github.com/rajzik/lumos/commit/a48910f)), closes [#760](https://github.com/rajzik/lumos/issues/760)
+
+**Note:** Version bump only for package @rajzik/config-babel
+
+
+
+
+
 ### 3.1.2 - 2020-10-16
 
 #### 📦 Dependencies
