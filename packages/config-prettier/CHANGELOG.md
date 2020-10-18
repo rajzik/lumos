@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### 2.1.9 - 2020-10-18
+
+#### 🛠 Internals
+
+- bump @types/prettier from 2.1.2 to 2.1.5 (#769) ([586c24e](https://github.com/rajzik/lumos/commit/586c24e)), closes [#769](https://github.com/rajzik/lumos/issues/769)
+- release [ci skip]. ([b1869f9](https://github.com/rajzik/lumos/commit/b1869f9))
+
+**Note:** Version bump only for package @rajzik/config-prettier
+
+
+
+
+
 ### 2.1.8 - 2020-10-16
 
 #### 🛠 Internals

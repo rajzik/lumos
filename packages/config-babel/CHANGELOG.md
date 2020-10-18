@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### 3.1.4 - 2020-10-18
+
+#### 📦 Dependencies
+
+- bump @babel/cli from 7.12.0 to 7.12.1 (#756) ([9b5e082](https://github.com/rajzik/lumos/commit/9b5e082)), closes [#756](https://github.com/rajzik/lumos/issues/756)
+- bump @babel/plugin-transform-react-jsx-self from 7.10.4 to 7.12.1 (#765) ([bb09c3f](https://github.com/rajzik/lumos/commit/bb09c3f)), closes [#765](https://github.com/rajzik/lumos/issues/765)
+- bump @babel/plugin-transform-runtime from 7.12.0 to 7.12.1 (#755) ([ca988ed](https://github.com/rajzik/lumos/commit/ca988ed)), closes [#755](https://github.com/rajzik/lumos/issues/755)
+
+#### 🛠 Internals
+
+- release [ci skip]. ([b1869f9](https://github.com/rajzik/lumos/commit/b1869f9))
+
+**Note:** Version bump only for package @rajzik/config-babel
+
+
+
+
+
 ### 3.1.3 - 2020-10-16
 
 #### 📦 Dependencies
