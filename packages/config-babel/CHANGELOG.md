@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### 3.1.5 - 2020-10-18
+
+#### 📦 Dependencies
+
+- bump @babel/preset-react from 7.10.4 to 7.12.1 (#764) ([c409b9f](https://github.com/rajzik/lumos/commit/c409b9f)), closes [#764](https://github.com/rajzik/lumos/issues/764)
+
+**Note:** Version bump only for package @rajzik/config-babel
+
+
+
+
+
 ### 3.1.4 - 2020-10-18
 
 #### 📦 Dependencies
