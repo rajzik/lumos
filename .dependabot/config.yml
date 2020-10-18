@@ -1,13 +1,16 @@
-version: 1
-update_configs:
-  # Keep package.json (& lockfiles) up to date as soon as
-  # new versions are published to the npm registry
-  - package_manager: 'javascript'
-    directory: '/'
-    update_schedule: 'live'
-    default_reviewers:
-      - 'rajzik'
-    version_requirement_updates: 'increase_versions'
-    commit_message:
-      prefix: 'deps'
-      prefix_development: 'build'
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: "/"
+    schedule:
+      interval: daily
+      time: "04:00"
+    rebase-strategy: "auto"
+    open-pull-requests-limit: 10
+    reviewers:
+      - rajzik
+    versioning-strategy: increase
+    target-branch: "deps"
+    commit-message:
+      prefix: deps
+      prefix-development: build
