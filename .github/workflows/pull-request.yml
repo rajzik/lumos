@@ -4,6 +4,7 @@ on:
   pull_request:
     branches:
       - master
+      - deps
 
 jobs:
   pull_request_check:
