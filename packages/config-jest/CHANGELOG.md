@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### 3.1.3 - 2020-10-20
+
+#### 📦 Dependencies
+
+- bump @types/jest from 26.0.14 to 26.0.15 (#788) ([f51c8e0](https://github.com/rajzik/lumos/commit/f51c8e0)), closes [#788](https://github.com/rajzik/lumos/issues/788)
+- bump jest from 26.5.3 to 26.6.0 (#787) ([2269d00](https://github.com/rajzik/lumos/commit/2269d00)), closes [#787](https://github.com/rajzik/lumos/issues/787)
+
+**Note:** Version bump only for package @rajzik/config-jest
+
+
+
+
+
 ### 3.1.2 - 2020-10-18
 
 #### 📦 Dependencies

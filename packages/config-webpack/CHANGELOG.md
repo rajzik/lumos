@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### 6.1.6 - 2020-10-20
+
+#### 📦 Dependencies
+
+- bump postcss from 8.1.1 to 8.1.2 (#782) ([0ebe50a](https://github.com/rajzik/lumos/commit/0ebe50a)), closes [#782](https://github.com/rajzik/lumos/issues/782)
+- bump webpack-cli from 4.0.0 to 4.1.0 (#784) ([dedbaf4](https://github.com/rajzik/lumos/commit/dedbaf4)), closes [#784](https://github.com/rajzik/lumos/issues/784)
+
+#### 🛠 Internals
+
+- bump @types/terser-webpack-plugin from 4.2.0 to 5.0.0 (#776) ([beb3474](https://github.com/rajzik/lumos/commit/beb3474)), closes [#776](https://github.com/rajzik/lumos/issues/776)
+
+**Note:** Version bump only for package @rajzik/config-webpack
+
+
+
+
+
 ### 6.1.5 - 2020-10-18
 
 #### 📦 Dependencies
