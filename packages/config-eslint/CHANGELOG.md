@@ -3,6 +3,31 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### 4.2.5 - 2020-10-25
+
+#### 📋 Misc
+
+- Update to latest. ([e774b74](https://github.com/rajzik/lumos/commit/e774b74))
+
+#### 📦 Dependencies
+
+- bump @typescript-eslint/eslint-plugin from 4.4.1 to 4.5.0 (#785) ([51a34bc](https://github.com/rajzik/lumos/commit/51a34bc)), closes [#785](https://github.com/rajzik/lumos/issues/785)
+- bump @typescript-eslint/parser from 4.4.1 to 4.5.0 (#789) ([8bbccf2](https://github.com/rajzik/lumos/commit/8bbccf2)), closes [#789](https://github.com/rajzik/lumos/issues/789)
+- bump eslint-config-prettier from 6.13.0 to 6.14.0 (#797) ([222dc18](https://github.com/rajzik/lumos/commit/222dc18)), closes [#797](https://github.com/rajzik/lumos/issues/797)
+- bump eslint-plugin-react from 7.21.4 to 7.21.5 (#786) ([d7ac917](https://github.com/rajzik/lumos/commit/d7ac917)), closes [#786](https://github.com/rajzik/lumos/issues/786)
+- bump eslint-plugin-react-hooks from 4.1.2 to 4.2.0 (#792) ([6844f68](https://github.com/rajzik/lumos/commit/6844f68)), closes [#792](https://github.com/rajzik/lumos/issues/792)
+- bump eslint-plugin-testing-library from 3.9.1 to 3.9.2 (#778) ([dc35472](https://github.com/rajzik/lumos/commit/dc35472)), closes [#778](https://github.com/rajzik/lumos/issues/778)
+
+#### 🛠 Internals
+
+- release [ci skip]. ([1ee07d1](https://github.com/rajzik/lumos/commit/1ee07d1))
+
+**Note:** Version bump only for package @rajzik/config-eslint
+
+
+
+
+
 ### 4.2.4 - 2020-10-20
 
 #### 📦 Dependencies

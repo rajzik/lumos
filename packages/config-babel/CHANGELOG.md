@@ -3,6 +3,29 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### 3.1.8 - 2020-10-25
+
+#### 📋 Misc
+
+- Update to latest. ([e774b74](https://github.com/rajzik/lumos/commit/e774b74))
+
+#### 📦 Dependencies
+
+- bump @babel/plugin-proposal-decorators from 7.10.5 to 7.12.1 (#783) ([4cbb462](https://github.com/rajzik/lumos/commit/4cbb462)), closes [#783](https://github.com/rajzik/lumos/issues/783)
+- bump @babel/plugin-proposal-private-property-in-object (#780) ([2ca9f51](https://github.com/rajzik/lumos/commit/2ca9f51)), closes [#780](https://github.com/rajzik/lumos/issues/780)
+- bump @babel/preset-env from 7.12.0 to 7.12.1 (#777) ([9def702](https://github.com/rajzik/lumos/commit/9def702)), closes [#777](https://github.com/rajzik/lumos/issues/777)
+- bump react-refresh from 0.8.3 to 0.9.0 (#798) ([0716d80](https://github.com/rajzik/lumos/commit/0716d80)), closes [#798](https://github.com/rajzik/lumos/issues/798)
+
+#### 🛠 Internals
+
+- release [ci skip]. ([1ee07d1](https://github.com/rajzik/lumos/commit/1ee07d1))
+
+**Note:** Version bump only for package @rajzik/config-babel
+
+
+
+
+
 ### 3.1.7 - 2020-10-20
 
 #### 📦 Dependencies
