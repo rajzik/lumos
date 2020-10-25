@@ -57,7 +57,7 @@
     "postcss-url": "^9.0.0",
     "react-refresh": "^0.9.0",
     "style-loader": "^2.0.0",
-    "terser-webpack-plugin": "^5.0.0",
+    "terser-webpack-plugin": "^5.0.1",
     "url-loader": "^4.1.1",
     "webpack": "^5.2.0",
     "webpack-bundle-analyzer": "^3.9.0",
