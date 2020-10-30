@@ -43,7 +43,7 @@
     "css-minimizer-webpack-plugin": "^1.1.5",
     "execa": "^4.0.3",
     "fast-glob": "^3.2.4",
-    "file-loader": "^6.1.1",
+    "file-loader": "^6.2.0",
     "html-webpack-plugin": "^4.5.0",
     "is-docker": "^2.1.1",
     "postcss": "^8.1.4",
