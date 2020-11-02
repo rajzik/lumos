@@ -34,7 +34,7 @@
     "@babel/core": "^7.12.3",
     "@beemo/core": "^1.1.8",
     "@beemo/driver-webpack": "^1.2.6",
-    "@pmmmwh/react-refresh-webpack-plugin": "^0.4.2",
+    "@pmmmwh/react-refresh-webpack-plugin": "^0.4.3",
     "@rajzik/lumos-common": "^5.0.1",
     "@webpack-cli/serve": "^1.0.1",
     "babel-loader": "^8.1.0",
