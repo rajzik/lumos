@@ -3,6 +3,31 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### 3.1.5 - 2020-11-09
+
+#### 📋 Misc
+
+- Update to latest. ([64157dc](https://github.com/rajzik/lumos/commit/64157dc))
+
+#### 📦 Dependencies
+
+- bump @testing-library/jest-dom from 5.11.4 to 5.11.5 (#803) ([fba909d](https://github.com/rajzik/lumos/commit/fba909d)), closes [#803](https://github.com/rajzik/lumos/issues/803)
+- bump @types/jest from 26.0.14 to 26.0.15 (#788) ([f51c8e0](https://github.com/rajzik/lumos/commit/f51c8e0)), closes [#788](https://github.com/rajzik/lumos/issues/788)
+- bump jest from 26.5.3 to 26.6.0 (#787) ([2269d00](https://github.com/rajzik/lumos/commit/2269d00)), closes [#787](https://github.com/rajzik/lumos/issues/787)
+- bump jest from 26.6.0 to 26.6.1 (#809) ([59c266d](https://github.com/rajzik/lumos/commit/59c266d)), closes [#809](https://github.com/rajzik/lumos/issues/809)
+- bump jest from 26.6.1 to 26.6.2 (#834) ([c48f845](https://github.com/rajzik/lumos/commit/c48f845)), closes [#834](https://github.com/rajzik/lumos/issues/834)
+- bump jest from 26.6.2 to 26.6.3 (#840) ([56b2371](https://github.com/rajzik/lumos/commit/56b2371)), closes [#840](https://github.com/rajzik/lumos/issues/840)
+
+#### 🛠 Internals
+
+- release [ci skip]. ([1ee07d1](https://github.com/rajzik/lumos/commit/1ee07d1))
+
+**Note:** Version bump only for package @rajzik/config-jest
+
+
+
+
+
 ### 3.1.4 - 2020-10-25
 
 #### 📋 Misc

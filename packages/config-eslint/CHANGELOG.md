@@ -3,6 +3,42 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### 4.2.6 - 2020-11-09
+
+#### 📋 Misc
+
+- Update to latest. ([64157dc](https://github.com/rajzik/lumos/commit/64157dc))
+
+#### 📦 Dependencies
+
+- bump @typescript-eslint/eslint-plugin from 4.4.1 to 4.5.0 (#785) ([51a34bc](https://github.com/rajzik/lumos/commit/51a34bc)), closes [#785](https://github.com/rajzik/lumos/issues/785)
+- bump @typescript-eslint/eslint-plugin from 4.5.0 to 4.6.0 (#810) ([687c210](https://github.com/rajzik/lumos/commit/687c210)), closes [#810](https://github.com/rajzik/lumos/issues/810)
+- bump @typescript-eslint/eslint-plugin from 4.6.0 to 4.6.1 (#833) ([8bd79ae](https://github.com/rajzik/lumos/commit/8bd79ae)), closes [#833](https://github.com/rajzik/lumos/issues/833)
+- bump @typescript-eslint/parser from 4.4.1 to 4.5.0 (#789) ([8bbccf2](https://github.com/rajzik/lumos/commit/8bbccf2)), closes [#789](https://github.com/rajzik/lumos/issues/789)
+- bump @typescript-eslint/parser from 4.5.0 to 4.6.0 (#818) ([13fce85](https://github.com/rajzik/lumos/commit/13fce85)), closes [#818](https://github.com/rajzik/lumos/issues/818)
+- bump @typescript-eslint/parser from 4.6.0 to 4.6.1 (#832) ([09c5c31](https://github.com/rajzik/lumos/commit/09c5c31)), closes [#832](https://github.com/rajzik/lumos/issues/832)
+- bump eslint from 7.11.0 to 7.12.0 ([b554c3c](https://github.com/rajzik/lumos/commit/b554c3c))
+- bump eslint from 7.12.0 to 7.12.1 (#812) ([31b2f4d](https://github.com/rajzik/lumos/commit/31b2f4d)), closes [#812](https://github.com/rajzik/lumos/issues/812)
+- bump eslint from 7.12.1 to 7.13.0 (#851) ([1695eb5](https://github.com/rajzik/lumos/commit/1695eb5)), closes [#851](https://github.com/rajzik/lumos/issues/851)
+- bump eslint-config-airbnb from 18.2.0 to 18.2.1 (#852) ([fbe45c1](https://github.com/rajzik/lumos/commit/fbe45c1)), closes [#852](https://github.com/rajzik/lumos/issues/852)
+- bump eslint-config-prettier from 6.13.0 to 6.14.0 (#797) ([222dc18](https://github.com/rajzik/lumos/commit/222dc18)), closes [#797](https://github.com/rajzik/lumos/issues/797)
+- bump eslint-config-prettier from 6.14.0 to 6.15.0 (#815) ([bc667ad](https://github.com/rajzik/lumos/commit/bc667ad)), closes [#815](https://github.com/rajzik/lumos/issues/815)
+- bump eslint-plugin-jsx-a11y from 6.3.1 to 6.4.1 (#826) ([be209bc](https://github.com/rajzik/lumos/commit/be209bc)), closes [#826](https://github.com/rajzik/lumos/issues/826)
+- bump eslint-plugin-react from 7.21.4 to 7.21.5 (#786) ([d7ac917](https://github.com/rajzik/lumos/commit/d7ac917)), closes [#786](https://github.com/rajzik/lumos/issues/786)
+- bump eslint-plugin-react-hooks from 4.1.2 to 4.2.0 (#792) ([6844f68](https://github.com/rajzik/lumos/commit/6844f68)), closes [#792](https://github.com/rajzik/lumos/issues/792)
+- bump eslint-plugin-testing-library from 3.9.1 to 3.9.2 (#778) ([dc35472](https://github.com/rajzik/lumos/commit/dc35472)), closes [#778](https://github.com/rajzik/lumos/issues/778)
+- bump eslint-plugin-testing-library from 3.9.2 to 3.10.0 (#830) ([a449360](https://github.com/rajzik/lumos/commit/a449360)), closes [#830](https://github.com/rajzik/lumos/issues/830)
+
+#### 🛠 Internals
+
+- release [ci skip]. ([1ee07d1](https://github.com/rajzik/lumos/commit/1ee07d1))
+
+**Note:** Version bump only for package @rajzik/config-eslint
+
+
+
+
+
 ### 4.2.5 - 2020-10-25
 
 #### 📋 Misc

@@ -3,6 +3,33 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### 2.1.13 - 2020-11-09
+
+#### 📋 Misc
+
+- Update to latest. ([64157dc](https://github.com/rajzik/lumos/commit/64157dc))
+
+#### 📦 Dependencies
+
+- bump danger from 10.5.0 to 10.5.1 (#845) ([2024f87](https://github.com/rajzik/lumos/commit/2024f87)), closes [#845](https://github.com/rajzik/lumos/issues/845)
+
+#### 🛠 Internals
+
+- bump @types/node from 14.11.10 to 14.11.11 (#790) ([f071c8c](https://github.com/rajzik/lumos/commit/f071c8c)), closes [#790](https://github.com/rajzik/lumos/issues/790)
+- bump @types/node from 14.11.11 to 14.14.0 (#793) ([6aff591](https://github.com/rajzik/lumos/commit/6aff591)), closes [#793](https://github.com/rajzik/lumos/issues/793)
+- bump @types/node from 14.11.8 to 14.11.10 (#779) ([efed778](https://github.com/rajzik/lumos/commit/efed778)), closes [#779](https://github.com/rajzik/lumos/issues/779)
+- bump @types/node from 14.14.0 to 14.14.2 (#796) ([c011b08](https://github.com/rajzik/lumos/commit/c011b08)), closes [#796](https://github.com/rajzik/lumos/issues/796)
+- bump @types/node from 14.14.2 to 14.14.3 (#808) ([574461a](https://github.com/rajzik/lumos/commit/574461a)), closes [#808](https://github.com/rajzik/lumos/issues/808)
+- bump @types/node from 14.14.3 to 14.14.5 (#814) ([b2f80bc](https://github.com/rajzik/lumos/commit/b2f80bc)), closes [#814](https://github.com/rajzik/lumos/issues/814)
+- bump @types/node from 14.14.5 to 14.14.6 (#816) ([bdcc3aa](https://github.com/rajzik/lumos/commit/bdcc3aa)), closes [#816](https://github.com/rajzik/lumos/issues/816)
+- release [ci skip]. ([1ee07d1](https://github.com/rajzik/lumos/commit/1ee07d1))
+
+**Note:** Version bump only for package @rajzik/config-danger
+
+
+
+
+
 ### 2.1.12 - 2020-10-25
 
 #### 📋 Misc

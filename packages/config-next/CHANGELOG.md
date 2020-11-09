@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### 3.0.9 - 2020-11-09
+
+#### 📦 Dependencies
+
+- bump @next/bundle-analyzer from 10.0.0 to 10.0.1 (#847) ([749f29a](https://github.com/rajzik/lumos/commit/749f29a)), closes [#847](https://github.com/rajzik/lumos/issues/847)
+- bump @next/bundle-analyzer from 9.5.5 to 10.0.0 (#825) ([ebd9569](https://github.com/rajzik/lumos/commit/ebd9569)), closes [#825](https://github.com/rajzik/lumos/issues/825)
+- bump next from 10.0.0 to 10.0.1 (#837) ([1dcc98f](https://github.com/rajzik/lumos/commit/1dcc98f)), closes [#837](https://github.com/rajzik/lumos/issues/837)
+- bump next from 9.5.5 to 10.0.0 (#822) ([3ff41ce](https://github.com/rajzik/lumos/commit/3ff41ce)), closes [#822](https://github.com/rajzik/lumos/issues/822)
+
+#### 🛠 Internals
+
+- bump @types/lodash from 4.14.162 to 4.14.163 (#817) ([be75a81](https://github.com/rajzik/lumos/commit/be75a81)), closes [#817](https://github.com/rajzik/lumos/issues/817)
+- bump @types/lodash from 4.14.163 to 4.14.164 (#828) ([f0b1d62](https://github.com/rajzik/lumos/commit/f0b1d62)), closes [#828](https://github.com/rajzik/lumos/issues/828)
+- bump @types/lodash from 4.14.164 to 4.14.165 (#846) ([46bfdf6](https://github.com/rajzik/lumos/commit/46bfdf6)), closes [#846](https://github.com/rajzik/lumos/issues/846)
+- release [ci skip]. ([1ee07d1](https://github.com/rajzik/lumos/commit/1ee07d1))
+
+**Note:** Version bump only for package @rajzik/config-next
+
+
+
+
+
 ### 3.0.8 - 2020-10-16
 
 #### 🛠 Internals

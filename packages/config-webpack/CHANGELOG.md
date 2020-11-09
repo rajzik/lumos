@@ -3,6 +3,50 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### 6.1.8 - 2020-11-09
+
+#### 📋 Misc
+
+- Update to latest. ([64157dc](https://github.com/rajzik/lumos/commit/64157dc))
+
+#### 📦 Dependencies
+
+- bump @pmmmwh/react-refresh-webpack-plugin from 0.4.2 to 0.4.3 (#827) ([f842b6a](https://github.com/rajzik/lumos/commit/f842b6a)), closes [#827](https://github.com/rajzik/lumos/issues/827)
+- bump @webpack-cli/serve from 1.0.1 to 1.1.0 (#841) ([40ec3ca](https://github.com/rajzik/lumos/commit/40ec3ca)), closes [#841](https://github.com/rajzik/lumos/issues/841)
+- bump css-loader from 5.0.0 to 5.0.1 (#843) ([1639c95](https://github.com/rajzik/lumos/commit/1639c95)), closes [#843](https://github.com/rajzik/lumos/issues/843)
+- bump execa from 4.0.3 to 4.1.0 (#821) ([e35f442](https://github.com/rajzik/lumos/commit/e35f442)), closes [#821](https://github.com/rajzik/lumos/issues/821)
+- bump file-loader from 6.1.1 to 6.2.0 (#820) ([407dc79](https://github.com/rajzik/lumos/commit/407dc79)), closes [#820](https://github.com/rajzik/lumos/issues/820)
+- bump postcss from 8.1.1 to 8.1.2 (#782) ([0ebe50a](https://github.com/rajzik/lumos/commit/0ebe50a)), closes [#782](https://github.com/rajzik/lumos/issues/782)
+- bump postcss from 8.1.2 to 8.1.3 (#800) ([e46b53a](https://github.com/rajzik/lumos/commit/e46b53a)), closes [#800](https://github.com/rajzik/lumos/issues/800)
+- bump postcss from 8.1.3 to 8.1.4 (#807) ([fd84139](https://github.com/rajzik/lumos/commit/fd84139)), closes [#807](https://github.com/rajzik/lumos/issues/807)
+- bump postcss from 8.1.4 to 8.1.6 (#849) ([4f0ac0f](https://github.com/rajzik/lumos/commit/4f0ac0f)), closes [#849](https://github.com/rajzik/lumos/issues/849)
+- bump postcss-import from 12.0.1 to 13.0.0 ([9443a02](https://github.com/rajzik/lumos/commit/9443a02))
+- bump postcss-url from 8.0.0 to 9.0.0 (#804) ([0e28670](https://github.com/rajzik/lumos/commit/0e28670)), closes [#804](https://github.com/rajzik/lumos/issues/804)
+- bump postcss-url from 9.0.0 to 10.1.0 (#839) ([43fd54c](https://github.com/rajzik/lumos/commit/43fd54c)), closes [#839](https://github.com/rajzik/lumos/issues/839)
+- bump react-refresh from 0.8.3 to 0.9.0 (#798) ([0716d80](https://github.com/rajzik/lumos/commit/0716d80)), closes [#798](https://github.com/rajzik/lumos/issues/798)
+- bump terser-webpack-plugin from 5.0.0 to 5.0.1 (#802) ([cfdc7ba](https://github.com/rajzik/lumos/commit/cfdc7ba)), closes [#802](https://github.com/rajzik/lumos/issues/802)
+- bump terser-webpack-plugin from 5.0.1 to 5.0.3 (#819) ([564d6b3](https://github.com/rajzik/lumos/commit/564d6b3)), closes [#819](https://github.com/rajzik/lumos/issues/819)
+- bump webpack from 5.1.3 to 5.2.0 (#799) ([21c7684](https://github.com/rajzik/lumos/commit/21c7684)), closes [#799](https://github.com/rajzik/lumos/issues/799)
+- bump webpack from 5.2.0 to 5.3.2 (#831) ([26a96bb](https://github.com/rajzik/lumos/commit/26a96bb)), closes [#831](https://github.com/rajzik/lumos/issues/831)
+- bump webpack from 5.3.2 to 5.4.0 (#848) ([4b48150](https://github.com/rajzik/lumos/commit/4b48150)), closes [#848](https://github.com/rajzik/lumos/issues/848)
+- bump webpack-bundle-analyzer from 3.9.0 to 4.1.0 (#853) ([f4b54f5](https://github.com/rajzik/lumos/commit/f4b54f5)), closes [#853](https://github.com/rajzik/lumos/issues/853)
+- bump webpack-cli from 4.0.0 to 4.1.0 (#784) ([dedbaf4](https://github.com/rajzik/lumos/commit/dedbaf4)), closes [#784](https://github.com/rajzik/lumos/issues/784)
+- bump webpack-cli from 4.1.0 to 4.2.0 (#838) ([6d2ba59](https://github.com/rajzik/lumos/commit/6d2ba59)), closes [#838](https://github.com/rajzik/lumos/issues/838)
+
+#### 🛠 Internals
+
+- bump @types/html-webpack-plugin from 3.2.3 to 3.2.4 (#801) ([c8817cb](https://github.com/rajzik/lumos/commit/c8817cb)), closes [#801](https://github.com/rajzik/lumos/issues/801)
+- bump @types/terser-webpack-plugin from 4.2.0 to 5.0.0 (#776) ([beb3474](https://github.com/rajzik/lumos/commit/beb3474)), closes [#776](https://github.com/rajzik/lumos/issues/776)
+- bump @types/terser-webpack-plugin from 5.0.0 to 5.0.1 (#823) ([5110f45](https://github.com/rajzik/lumos/commit/5110f45)), closes [#823](https://github.com/rajzik/lumos/issues/823)
+- bump @types/webpack-bundle-analyzer from 3.8.0 to 3.9.0 (#794) ([f9ce9af](https://github.com/rajzik/lumos/commit/f9ce9af)), closes [#794](https://github.com/rajzik/lumos/issues/794)
+- release [ci skip]. ([1ee07d1](https://github.com/rajzik/lumos/commit/1ee07d1))
+
+**Note:** Version bump only for package @rajzik/config-webpack
+
+
+
+
+
 ### 6.1.7 - 2020-10-25
 
 #### 📋 Misc

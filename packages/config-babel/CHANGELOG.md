@@ -3,6 +3,34 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### 3.1.9 - 2020-11-09
+
+#### 📋 Misc
+
+- Update to latest. ([64157dc](https://github.com/rajzik/lumos/commit/64157dc))
+
+#### 📦 Dependencies
+
+- bump @babel/plugin-proposal-decorators from 7.10.5 to 7.12.1 (#783) ([4cbb462](https://github.com/rajzik/lumos/commit/4cbb462)), closes [#783](https://github.com/rajzik/lumos/issues/783)
+- bump @babel/plugin-proposal-private-property-in-object (#780) ([2ca9f51](https://github.com/rajzik/lumos/commit/2ca9f51)), closes [#780](https://github.com/rajzik/lumos/issues/780)
+- bump @babel/plugin-transform-react-jsx-development (#835) ([97ef9d6](https://github.com/rajzik/lumos/commit/97ef9d6)), closes [#835](https://github.com/rajzik/lumos/issues/835)
+- bump @babel/preset-env from 7.12.0 to 7.12.1 (#777) ([9def702](https://github.com/rajzik/lumos/commit/9def702)), closes [#777](https://github.com/rajzik/lumos/issues/777)
+- bump @babel/preset-react from 7.12.1 to 7.12.5 (#844) ([d0e351d](https://github.com/rajzik/lumos/commit/d0e351d)), closes [#844](https://github.com/rajzik/lumos/issues/844)
+- bump babel-plugin-typescript-to-proptypes from 1.4.1 to 1.4.2 (#854) ([b7c8d89](https://github.com/rajzik/lumos/commit/b7c8d89)), closes [#854](https://github.com/rajzik/lumos/issues/854)
+- bump react-refresh from 0.8.3 to 0.9.0 (#798) ([0716d80](https://github.com/rajzik/lumos/commit/0716d80)), closes [#798](https://github.com/rajzik/lumos/issues/798)
+
+#### 🛠 Internals
+
+- bump babel-test from 0.2.3 to 0.2.4 (#824) ([68bab64](https://github.com/rajzik/lumos/commit/68bab64)), closes [#824](https://github.com/rajzik/lumos/issues/824)
+- bump jest-file-snapshot from 0.3.8 to 0.5.0 (#829) ([b1eb57d](https://github.com/rajzik/lumos/commit/b1eb57d)), closes [#829](https://github.com/rajzik/lumos/issues/829)
+- release [ci skip]. ([1ee07d1](https://github.com/rajzik/lumos/commit/1ee07d1))
+
+**Note:** Version bump only for package @rajzik/config-babel
+
+
+
+
+
 ### 3.1.8 - 2020-10-25
 
 #### 📋 Misc
