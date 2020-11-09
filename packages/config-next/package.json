@@ -21,15 +21,15 @@
     "node": ">=10.16.0"
   },
   "devDependencies": {
-    "@types/lodash": "4.14.162"
+    "@types/lodash": "4.14.165"
   },
   "dependencies": {
     "@beemo/core": "^1.1.8",
-    "@next/bundle-analyzer": "^9.5.5",
+    "@next/bundle-analyzer": "^10.0.1",
     "@rajzik/lumos-common": "^5.0.1",
     "beemo-driver-next": "^0.1.21",
     "lodash": "^4.17.20",
-    "next": "^9.5.5"
+    "next": "^10.0.1"
   },
   "peerDependencies": {
     "react": "^16.13.1",
